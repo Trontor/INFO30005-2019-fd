@@ -30,10 +30,9 @@ There are several fields metioned previously in [Account](#Account) section. Ext
     * 1 - Community Manager: Role 2, **plus** the ability to approve the request to create a community and manage communities
     * 2 - User Manager: Role 3, **plus** the ability to deal with report against a post and lock the account making such post if necessary
     * 3 - Normal User
-* [Stars](#Star), integer value
+* [Stars](#Stars), integer value
 * Bio, string value, up to 160 characters
 * Creation Timestamp
-* [Lock](#Ban), boolean value
 
 A normal user entity fetched from database will have a document in the following format
 
@@ -111,7 +110,8 @@ A gaming section will greatly motivate kids to learn. For the purpose of project
 
 #### Lucky spin
 
-Details to be added later
+Kids are able to spin 5 times every day. The spinner has a vareity of fresh/unfresh food in it. After the spin, a result of fresh food earns kids stars, and vise versa.
+There will be a study card for each spin result.
 
 #### Quiz
 

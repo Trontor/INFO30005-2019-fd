@@ -5,7 +5,7 @@
 * Name: Hello Food
 * Type: Web based application
 * Category: Educational website
-* Proposed purpose: A website that helps kids in Melbourne to have a better (easier/simplr) access to fresh food and gain a deeper understanding of fresh food.
+* Proposed purpose: A website that helps kids in Melbourne to raise their awareness of the benefits of fresh food.
 * Techniques
     * Front-end
     * Backend
@@ -13,7 +13,7 @@
     * UI design
 * Members: Rohyl, Kevin, Miley, Yat
 
-## Rough design
+## Basic design
 
 ### User
 
@@ -28,8 +28,8 @@ There are several fields metioned previously in [Account](#Account) section. Ext
 * Role, integer value, either one of
     * 0 - Platform Manager: complete access control
     * 1 - Community Manager: Role 2, **plus** the ability to approve the request to create a community and manage communities
-    * 2 - User Manager: Role 3, **plus** the ability to deal with report against a post and lock the account making such post if necessary
-    * 3 - Normal User
+    * 2 - Parent Account: Role 3, **plus** the ability to manage and control their children's account
+    * 3 - Kid Account: Normal user
 * [Stars](#Stars), integer value
 * Bio, string value, up to 160 characters
 * Creation Timestamp
@@ -62,10 +62,10 @@ Stars will be introduced as the scoring, or reputation system. Kids earn stars t
     * Watch and learn
 * Circumstances under which a user can lose star:
     * Reported by others for misbehaviour
-    * False report
+    * Faulty report
 * How to use stars:
     * Leaderboard for Star available
-    * Enjoy some benefits of discount when purchasing lectures/events on website
+    * Enjoy some benefits of discount when making purchases  on website
 
 #### Avatar
 
@@ -73,13 +73,13 @@ Default avatars are available but kids can choose their own avatars.
 
 ### Operations
 
-* Sign-out
+* Sign-up / Sign-in / Sign-out
 * Donate
 * Delete account
 
 ### Profile
 
-Profile Page includes following fields
+User panel includes the following fields.
 
 * Profile
     * Avatar
@@ -96,13 +96,12 @@ Profile Page includes following fields
 
 ### Events
 
-The events panel is designed for kids to **organise and participate in entertaining events related to fresh food**. Some examples are as follows:
+The events panel is designed for kids to **organise and participate in social/entertaining events related to fresh food**. Some examples are as follows:
 
-* Online studying: There are online lectures and workshops to extend kids' knowledge of green food and learn with fun.
 * Framers Market: Notifications of farmers market events in Melbourne. Kids can organise their own if they wish.
-* Picnic day: Organised by the website organisers to take kids to farms and pick'n'learn different fruits and vegetables. Charge at a relatively low fee.
+* Picnic day: Organised by the website to take kids to farms and pick'n'learn different fruits and vegetables. Charge at a relatively low fee.
 
-Successful participation in events earn kids Stars.
+Successful participation in events earns kids Stars.
 
 ### Games
 
@@ -117,16 +116,18 @@ There will be a study card for each spin result.
 
 * Given picture of fresh food, kids choose name of the food, or vise versa.
 * Kids fill out their eating habits, and according to it, estimate their life condition and provide valuable feedback.
+* Fresh food relating to other aspects. e.g. How much running needed to consume a piece of pizza.
 
 ### Education/Classroom
 
 In the Classroom section, texts to teach kids to **form a good eating habit and a better understanding of food** will be included. Specifically,
 
+* Online studying: There are online videos and workshops to extend kids' knowledge of green food and learn with fun.
 * Habit forming: eat xxx how many times a week
 * Introduction of different types of fresh food and benefits.
 * Wrong food to eat and what harm it does.
 
-Can be done in video or paragraph format (not sure about comic, maybe copy from some websites?)
+Can be done in video or paragraph format (not sure about comics). Quiz might come right after watching a video.
 Stars will be awarded for completing different readings.
 
 ### Community
@@ -135,6 +136,7 @@ The web application will be **community-based** to allow more interaction.
 
 * Add friends, complete challenge together
 * Share ideas on fresh food benefits.
+* Weekly challenge: Each week a kid's diet is evaluated based on fresh food consumption and the range of food he/she eats. Parents verify what the kids eat and approve of their "consumption request". At the end of each week, a leaderboard will show top 5 kids in terms of fresh food consumption and range. 
 
 ### Others
 

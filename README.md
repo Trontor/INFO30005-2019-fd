@@ -2,7 +2,7 @@
 
 ## Overview
 
-* Name: Fresh Food R Us
+* Name: Hello Food
 * Type: Web based application
 * Category: Educational website
 * Proposed purpose: A website that helps kids in Melbourne to have a better (easier/simplr) access to fresh food and gain a deeper understanding of fresh food.

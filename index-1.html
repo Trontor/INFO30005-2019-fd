@@ -1,0 +1,139 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>未知 </title></head><body>
+<h1 id="info30005-freedom-dive">INFO30005-Freedom Dive</h1>
+<h2 id="overview">Overview</h2>
+<ul>
+<li>Name: Hello Food</li>
+<li>Type: Web based application</li>
+<li>Category: Educational website</li>
+<li>Proposed purpose: A website that helps kids in Melbourne to raise their awareness of the benefits of fresh food.</li>
+<li>Techniques<ul>
+<li>Front-end</li>
+<li>Backend</li>
+<li>Database</li>
+<li>UI design</li>
+</ul>
+</li>
+<li>Members: Rohyl, Kevin, Miley, Yat</li>
+</ul>
+<h2 id="basic-design">Basic design</h2>
+<h3 id="user">User</h3>
+<h4 id="account">Account</h4>
+<p>Upon registration, several fields (email, display name, password, confirm password) are mandatory, while other fields (avatar, bio, age, school etc.) are optional. All profile information, except display name which can only be set once during registration, can be customised in <a href="#Profile">profile</a> page if user wish to do so after registration.</p>
+<h4 id="user-profile">User profile</h4>
+<p>There are several fields metioned previously in <a href="#Account">Account</a> section. Extra user profile details will be stored in database. These are listed below:</p>
+<ul>
+<li>Role, integer value, either one of<ul>
+<li>0 - Platform Manager: complete access control</li>
+<li>1 - Community Manager: Role 2, <strong>plus</strong> the ability to approve the request to create a community and manage communities</li>
+<li>2 - Parent Account: Role 3, <strong>plus</strong> the ability to manage and control their children's account</li>
+<li>3 - Kid Account: Normal user</li>
+</ul>
+</li>
+<li><a href="#Stars">Stars</a>, integer value</li>
+<li>Bio, string value, up to 160 characters</li>
+<li>Creation Timestamp</li>
+</ul>
+<p>A normal user entity fetched from database will have a document in the following format</p>
+<p><code>JSON
+{
+    "role": 3,
+    "stars": 0,
+    "bio": "(some bio added by the user, can be empty)",
+    "time": "(creation time)",
+    "lock": false,
+    "remove": "calculate the day that the user wants to totally remove their account"
+}</code></p>
+<h4 id="report">Report</h4>
+<p>A report button to be used for reporting inappropriate behaviours.</p>
+<h4 id="stars">Stars</h4>
+<p>Stars will be introduced as the scoring, or reputation system. Kids earn stars to level up, and stars can be used in many ways.</p>
+<ul>
+<li>How to obtain stars:<ul>
+<li>Play games, e.g. lucky spin, fresh food identification</li>
+<li>Join community and make contributions</li>
+<li>Participate in events</li>
+<li>Watch and learn</li>
+</ul>
+</li>
+<li>Circumstances under which a user can lose star:<ul>
+<li>Reported by others for misbehaviour</li>
+<li>Faulty report</li>
+</ul>
+</li>
+<li>How to use stars:<ul>
+<li>Leaderboard for Star available</li>
+<li>Enjoy some benefits of discount when making purchases  on website</li>
+</ul>
+</li>
+</ul>
+<h4 id="avatar">Avatar</h4>
+<p>Default avatars are available but kids can choose their own avatars.</p>
+<h3 id="operations">Operations</h3>
+<ul>
+<li>Sign-up / Sign-in / Sign-out</li>
+<li>Donate</li>
+<li>Delete account</li>
+</ul>
+<h3 id="profile">Profile</h3>
+<p>User panel includes the following fields.</p>
+<ul>
+<li>Profile<ul>
+<li>Avatar</li>
+<li>Username</li>
+<li>Bio</li>
+</ul>
+</li>
+<li>Status<ul>
+<li>Stars</li>
+<li>Account age</li>
+</ul>
+</li>
+<li>Activity<ul>
+<li>Events</li>
+<li>Posts</li>
+</ul>
+</li>
+</ul>
+<h2 id="sections">Sections</h2>
+<h3 id="events">Events</h3>
+<p>The events panel is designed for kids to <strong>organise and participate in social/entertaining events related to fresh food</strong>. Some examples are as follows:</p>
+<ul>
+<li>Framers Market: Notifications of farmers market events in Melbourne. Kids can organise their own if they wish.</li>
+<li>Picnic day: Organised by the website to take kids to farms and pick'n'learn different fruits and vegetables. Charge at a relatively low fee.</li>
+</ul>
+<p>Successful participation in events earns kids Stars.</p>
+<h3 id="games">Games</h3>
+<p>A gaming section will greatly motivate kids to learn. For the purpose of project, two games can be introduced.</p>
+<h4 id="lucky-spin">Lucky spin</h4>
+<p>Kids are able to spin 5 times every day. The spinner has a vareity of fresh/unfresh food in it. After the spin, a result of fresh food earns kids stars, and vise versa.
+There will be a study card for each spin result.</p>
+<h4 id="quiz">Quiz</h4>
+<ul>
+<li>Given picture of fresh food, kids choose name of the food, or vise versa.</li>
+<li>Kids fill out their eating habits, and according to it, estimate their life condition and provide valuable feedback.</li>
+<li>Fresh food relating to other aspects. e.g. How much running needed to consume a piece of pizza.</li>
+</ul>
+<h3 id="educationclassroom">Education/Classroom</h3>
+<p>In the Classroom section, texts to teach kids to <strong>form a good eating habit and a better understanding of food</strong> will be included. Specifically,</p>
+<ul>
+<li>Online studying: There are online videos and workshops to extend kids' knowledge of green food and learn with fun.</li>
+<li>Habit forming: eat xxx how many times a week</li>
+<li>Introduction of different types of fresh food and benefits.</li>
+<li>Wrong food to eat and what harm it does.</li>
+</ul>
+<p>Can be done in video or paragraph format (not sure about comics). Quiz might come right after watching a video.
+Stars will be awarded for completing different readings.</p>
+<h3 id="community">Community</h3>
+<p>The web application will be <strong>community-based</strong> to allow more interaction.</p>
+<ul>
+<li>Add friends, complete challenge together</li>
+<li>Share ideas on fresh food benefits.</li>
+<li>Weekly challenge: Each week a kid's diet is evaluated based on fresh food consumption and the range of food he/she eats. Parents verify what the kids eat and approve of their "consumption request". At the end of each week, a leaderboard will show top 5 kids in terms of fresh food consumption and range. </li>
+</ul>
+<h3 id="others">Others</h3>
+<p>Some useful links to be used later:</p>
+<ul>
+<li>Lucky spin: https://codepen.io/realdreamer/pen/Jnwui</li>
+<li>Health standard: https://www.betterhealth.vic.gov.au/health/healthyliving/food-variety-and-a-healthy-diet</li>
+</ul>
+</body></html>

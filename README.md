@@ -1,11 +1,11 @@
-* # INFO30005-Freedom Dive
+  # INFO30005-Freedom Dive
 
   ## Overview
 
   - Name: Hello Food
   - Type: Web based application
   - Category: Educational website
-  - Proposed purpose: A website that helps kids in Melbourne to raise their awareness of the benefits of fresh food.
+  - Proposed purpose: A website that helps kids in Australia to raise their awareness of the benefits of fresh food.
   - Techniques
     - Front-end
     - Backend
@@ -55,10 +55,6 @@
 
   Health - *None*
 
-  Students in **Victoria** may use the following websites:
-
-  <<TODO>>
-
   ## 
 
   'Hello Food' aims to be a platform that is tailored to the health and physical education of students and should supplement a state curriculum like the other shown established platforms.
@@ -93,17 +89,18 @@
 
   #### Account
 
-  Upon registration, several fields (email, display name, password, confirm password) are mandatory, while other fields (avatar, bio, age, school etc.) are optional. All profile information, except display name which can only be set once during registration, can be customised in [profile](#Profile) page if user wish to do so after registration.
+  Upon registration, several fields (email, display name, password, confirm password) are mandatory, while other fields (avatar, bio, age, school etc.) are optional. All profile information, except display name which can only be set once during registration, can be customised in dashboard if user wish to do so after registration.
+  
+  Once logged in, students/teachers will be redirected to a dashboard. The dashboard is used for kids to complete courses, view their progress, participate in events/competitions etc. It will also be used by teachers to track student progress, manage student accounts, set up leaderboard etc. Dashboard for Student and Teacher will be slightly different.
 
   #### User profile
 
   There are several fields metioned previously in [Account](#Account) section. Extra user profile details will be stored in database. These are listed below:
 
   - Role, integer value, either one of
-    - 0 - Platform Manager: complete access control
-    - 1 - Community Manager: Role 2, **plus** the ability to approve the request to create a community and manage communities
-    - 2 - Parent Account: Role 3, **plus** the ability to manage and control their children's account
-    - 3 - Kid Account: Normal user
+    - 0 - Platform manager: has complete access control of the website. For statistical usage.
+    - 1 - Student: normal user
+    - 2 - Teacher: normal user, **plus** the ability to access status of students in his/her classroom
   - [Stars](#Stars), integer value
   - Bio, string value, up to 50 characters
   - Creation Timestamp
@@ -112,55 +109,31 @@
 
   ```JSON
   {
-      "role": 3,
-      "stars": 0,
+      "role": 1,
+      "stars": 10,
+      "level": 3,
       "bio": "(some bio added by the user, can be empty)",
       "time": "(creation time)",
-      "lock": false,
-      "remove": "calculate the day that the user wants to totally remove their account"
+      "lock": false
   }
   ```
 
   #### Stars
 
-  Stars will be introduced as the scoring, or reputation system. Kids earn stars to level up, and stars can be used in many ways.
+  Stars will be introduced as the reward system. Kids earn stars to level up.
 
   - How to obtain stars:
     - Play games, e.g. lucky spin, fresh food identification
-    - Join community and make contributions
+    - Complete challenges
     - Participate in events
-    - Watch and learn
+    - Watch and learn in Education section, and complete quizzes
   - Circumstances under which a user can lose star:
     - Reported by others for misbehaviour
-    - Faulty report
-  - How to use stars:
-    - Leaderboard for Star available
-    - Enjoy some benefits of discount when making purchases  on website
+    - Unhealthy diet
 
   #### Avatar
 
   Default avatars are available but kids can choose their own avatars.
-
-  ### Operations
-
-  - Sign-up / Sign-in / Sign-out
-  - Donate
-  - Delete account
-
-  ### Profile
-
-  User panel includes the following fields.
-
-  - Profile
-    - Avatar
-    - Username
-    - Bio
-  - Status
-    - Stars
-    - Account age
-  - Activity
-    - Events
-    - Posts
 
   ## Sections
 
@@ -187,24 +160,25 @@
   - Evaluate current eating habits of children, and suggest changes in a positive manner
   - Fresh food relating to other aspects. e.g. How much running needed to consume a piece of pizza.
 
-  ### Education/Classroom
+  ### Education
+  
+  As mentioned in build proposal, this is a key feature of our website. In the Education section, kids will be taught to form a good eating habit and a better understanding of food. Specifically,
 
-  In the classroom section, texts to teach kids to **form a good eating habit and a better understanding of food** will be included. Specifically,
+  - Online studying: There are online videos to extend kids' knowledge of fresh food and learn with fun.
+  - Articles: There will be numerous articles on:
+    - Habit forming: eat certain food how many times a week will benefit
+    - Introduction of different types of fresh food and their benefits.
+    - Wrong food to eat and what harm it does.
 
-  - Online studying: There are online videos and workshops to extend kids' knowledge of green food and learn with fun.
-  - Habit forming: eat xxx how many times a week
-  - Introduction of different types of fresh food and benefits.
-  - Wrong food to eat and what harm it does.
-
-  Can be done in video or paragraph format. Quiz might come right after watching a video. Stars will be awarded for completing different readings.
+  Quizzes will pop up after watching videos or reading articles.
 
   ### Community
 
-  The web application will be **community-based** to allow more interaction.
+  There will be a small community for each classroom a teacher manages. This allows for more interaction among kids, or between kids and teachers.
 
-  - Add friends, complete challenge together
-  - Share ideas on fresh food benefits.
-  - Weekly challenge: Each week a kid's diet is evaluated based on fresh food consumption and the range of food he/she eats. Parents verify what the kids eat and approve of their "consumption request". At the end of each week, a leaderboard will show top 3 kids in terms of fresh food consumption and range. 
+  - Share ideas/fun facts on food
+  - Weekly challenge: Each week a kid's diet is evaluated based on fresh food consumption and the range of food he/she eats. Teachers set up a leaderboard. At the end of each week/month, a leaderboard will show top 3 healthiest kids so teachers can reward or congratulate them.
+
 
   ### Others
 

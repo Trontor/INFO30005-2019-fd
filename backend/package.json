@@ -4,7 +4,8 @@
 	"description": "An educational platform to raise awareness of health and nutrition amongst the youth in Australia.",
 	"main": "index.js",
 	"scripts": {
-		"start": "nodemon app.js",
+		"start": "node app.js",
+		"nodemon": "nodemon app.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -18,6 +19,7 @@
 	},
 	"homepage": "https://github.com/Trontor/INFO30005-2019-fd#readme",
 	"dependencies": {
-		"express": "^4.16.4"
+		"express": "^4.16.4",
+		"mongodb": "^3.2.2"
 	}
 }

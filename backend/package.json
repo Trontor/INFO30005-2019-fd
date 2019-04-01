@@ -1,0 +1,23 @@
+{
+	"name": "hello-food",
+	"version": "1.0.0",
+	"description": "An educational platform to raise awareness of health and nutrition amongst the youth in Australia.",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Trontor/INFO30005-2019-fd.git"
+	},
+	"author": "Rohyl Joshi, Kevin Xu, Miley Zhang, Yat Yeung",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Trontor/INFO30005-2019-fd/issues"
+	},
+	"homepage": "https://github.com/Trontor/INFO30005-2019-fd#readme",
+	"dependencies": {
+		"express": "^4.16.4"
+	}
+}

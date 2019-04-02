@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
 const keys = require("../../config/keys");
+const validateRegisterInput = require("../../validation/register");
 const router = express.Router();
 
 // Load User model
@@ -18,6 +19,12 @@ router.get("/test", (req, res) => res.json({ msg: "Users works" }));
 // @desc    Register a new user
 // @access  Public
 router.post("/register", (req, res) => {
+  // Check for payload errors (server-side input validation)
+  const { errors, isValid } = validateRegisterInput(req.body);
+  // The registration input fields is invalid
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
   // First, let's check if the email exists
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {

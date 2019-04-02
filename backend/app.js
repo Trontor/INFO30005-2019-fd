@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const passport = require("passport");
 
 // Routes
 const users = require("./routes/api/users");
@@ -14,6 +15,9 @@ const db = require("./config/keys").mongoURI;
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Passport Config
+require("./config/passport.js")(passport);
 
 // If deployed, use assigned port or default to 3000
 const PORT = process.env.port || 3000;

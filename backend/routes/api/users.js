@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
 const keys = require("../../config/keys");
+const validateLoginInput = require("../../validation/login");
 const validateRegisterInput = require("../../validation/register");
 const router = express.Router();
 
@@ -64,12 +65,14 @@ router.post("/register", (req, res) => {
 router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-
+  // Check for payload errors (server-side input validation)
+  const { errors, isValid } = validateLoginInput(req.body);
   // Find the user by email
   User.findOne({ email }).then(user => {
     if (!user) {
       // No user found!
-      return res.status(404).json({ email: "User not found" });
+      errors.email = "User not found";
+      return res.status(404).json(errors);
     }
     // User found successfully
     // NOTE: Password in the database is salted and hashed, so we use bcrypt to compare
@@ -87,7 +90,8 @@ router.post("/login", (req, res) => {
           }
         );
       } else {
-        return res.status(400).json({ password: "Password incorrect :(" });
+        errors.password = "Password incorrect :(";
+        return res.status(400).json(errors);
       }
     });
   });

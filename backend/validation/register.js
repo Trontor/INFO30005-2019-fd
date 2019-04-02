@@ -5,16 +5,18 @@ module.exports = function validateRegisterInput(data) {
   let errors = {};
 
   data.name = !isEmpty(data.name) ? data.name : "";
-  data.email = !isEmpty(data.name) ? data.name : "";
-  data.password = !isEmpty(data.name) ? data.name : "";
-  data.confirmPassword = !isEmpty(data.name) ? data.name : "";
+  data.email = !isEmpty(data.email) ? data.email : "";
+  data.password = !isEmpty(data.password) ? data.password : "";
+  data.confirmPassword = !isEmpty(data.confirmPassword)
+    ? data.confirmPassword
+    : "";
 
   // Validate Name
-  if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
-    errors.name = "Name must be between 2 and 30 characters";
-  }
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";
+  }
+  if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
+    errors.name = "Name must be between 2 and 30 characters";
   }
   // Validate Email
   if (Validator.isEmpty(data.email)) {
@@ -32,9 +34,9 @@ module.exports = function validateRegisterInput(data) {
   }
   // Validate Confirm Password
   if (Validator.isEmpty(data.confirmPassword)) {
-    errors.password = "Confirm Password field is required";
+    errors.confirmPassword = "Confirm Password field is required";
   }
-  if (Validator.equals(data.password, data.confirmPassword)) {
+  if (!Validator.equals(data.password, data.confirmPassword)) {
     errors.confirmPassword = "Passwords do not match";
   }
   return { errors, isValid: isEmpty(errors) };

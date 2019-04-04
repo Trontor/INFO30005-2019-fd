@@ -19,8 +19,8 @@ app.use(bodyParser.json());
 // Passport Config
 require("./config/passport.js")(passport);
 
-// If deployed, use assigned port or default to 3000
-const PORT = process.env.port || 3000;
+// If deployed, use assigned port or default to 5000
+const PORT = process.env.port || 5000;
 // Connect to mongoose
 mongoose
   .connect(db, { useNewUrlParser: true })

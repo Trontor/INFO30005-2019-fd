@@ -1,0 +1,9 @@
+article = {
+    _id: ObjectId,
+    title: String,
+    datePosted: Date,
+    author: String,
+    featuredImage: String,
+    content: String,
+    starAward: int
+}

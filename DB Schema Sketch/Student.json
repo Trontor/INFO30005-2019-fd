@@ -1,0 +1,29 @@
+student: {
+    _id: ObjectId,
+    username: String,
+    name: String,
+    email: String,
+    password: String,
+    avatar: String,
+    yearLevel: int,
+    school: String,
+    bio: String,
+    star: int,
+    currentLv: int,
+    teacherID: ObjectId,
+    progress: {
+        completed: {
+            videoCount: int,
+            articleCount: int
+        },
+        uncompleted: {
+            videoCount: int,
+            articleCount: int
+        },
+        locked: {
+            videoCount: int,
+            articleCount: int
+        },
+    },
+    registrationDate: Date
+}

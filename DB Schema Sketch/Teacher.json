@@ -1,0 +1,16 @@
+teacher: {
+    _id: ObjectId,
+    username: String,
+    name: String,
+    email: String,
+    password: String,
+    avatar: String,
+    school: String,
+    manage: [
+        {
+            studentID: ObjectId,
+            challengeScore: int
+        }
+    ],
+    registrationDate: Date
+}

@@ -22,17 +22,16 @@ require("./config/passport.js")(passport);
 
 // If deployed, use assigned port or default to 5000
 const PORT = process.env.PORT || 5000;
+
 // Connect to mongoose
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.log(err));
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get("/", (req, res) => res.send("Hello"));
-
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
+  console.log("Setting default route to client/build.");
   // Set static folder
   app.use(express.static("client/build"));
   app.get("*", (req, res) =>

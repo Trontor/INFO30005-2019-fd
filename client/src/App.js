@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import Navigation from "./components/Layout/Navigation";
-import Footer from "./components/Layout/Footer";
-import Landing from "./components/Layout/Landing";
+import Navigation from "./components/layout/Navigation";
+import Footer from "./components/layout/Footer";
+import Landing from "./components/layout/Landing";
 
 class App extends Component {
   render() {

@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const path = require("path");
 
 // Routes
 const users = require("./routes/api/users");
@@ -29,6 +30,15 @@ mongoose
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get("/", (req, res) => res.send("Hello"));
+
+// Serve static assets in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+  );
+}
 
 // Link routes
 app.use("/api/users", users);

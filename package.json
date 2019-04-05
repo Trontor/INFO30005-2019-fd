@@ -4,7 +4,8 @@
   "description": "An educational platform to raise awareness of health and nutrition amongst the youth in Australia.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "server": "nodemon app.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client-install": "npm i --prefix client",
     "client": "npm start --prefix client",

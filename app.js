@@ -29,6 +29,10 @@ mongoose
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.log(err));
 
+// Link routes
+app.use("/api/users", users);
+app.use("/api/profile", profile);
+
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
   console.log("Setting default route to client/build.");
@@ -38,10 +42,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   );
 }
-
-// Link routes
-app.use("/api/users", users);
-app.use("/api/profile", profile);
 
 app.listen(PORT, () =>
   console.log(`Freedom Dive Hello Food API is listening on port ${PORT}!`)

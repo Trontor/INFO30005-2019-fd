@@ -1,6 +1,6 @@
 #mainNav {
   background-color: transparent;
-  padding: 7px 9px 8px 9px;
+  padding: 10px 9spx 12px 9px;
   /* navbar link */
 }
 
@@ -10,6 +10,8 @@
 }
 
 #mainNav .navbar-brand {
+  position: fixed;
+  left: 27px;
   color: color(navbarb-s-fc);
   font-size: 21px;
   padding-bottom: 0px;
@@ -46,19 +48,25 @@
 }
 
 #topInterface {
-  padding: 40px 10px;
+  padding: 49px 20px;
   background: orange;
 }
 
-#topInterface .info {
-  padding: 40px 10px;
-}
-
-#topInterface .info img {
+#topInterface img {
   height: 44px;
 }
 
-#topInterface .info #avatar img {
+#topInterface .avatar {
+  padding: 14px 10px;
+  margin-top: 10px;
+}
+
+#topInterface .avatar img {
   height: 120px;
+  border: white solid 0.2rem;
+}
+
+.nav-tabs {
+  text-align: center;
 }
 /*# sourceMappingURL=dashboard.css.map */

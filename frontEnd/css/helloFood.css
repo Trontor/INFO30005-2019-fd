@@ -1,0 +1,430 @@
+/* Variables */
+/* Function */
+html,
+body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#mainNav {
+  background-color: #212529;
+  padding: 7px 9px 8px 9px;
+  /* navbar link */
+}
+
+#mainNav .logo {
+  height: 40px;
+  margin-top: -11px;
+}
+
+#mainNav .navbar-brand {
+  color: orange;
+  font-size: 21px;
+  padding-bottom: 0px;
+  font-family: "Kaushan Script", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media (min-width: 992px) {
+  #mainNav .navbar-brand {
+    font-size: 1.77em;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+    padding: 10px;
+  }
+}
+
+#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+  color: #f19483;
+}
+
+@media (min-width: 992px) {
+  #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+    color: #f19483;
+  }
+}
+
+#mainNav .navbar-toggler {
+  font-size: 12px;
+  right: 0;
+  padding: 9px;
+  text-transform: uppercase;
+  color: white;
+  border: 0;
+  background-color: #feba3d;
+}
+
+#mainNav .nav-link {
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: #feba3d;
+}
+
+@media (min-width: 992px) {
+  #mainNav .nav-link {
+    padding: 1.1em 1em !important;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fafff1;
+  }
+}
+
+#mainNav .nav-link.active, #mainNav .nav-link:hover {
+  color: #f19483;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+  }
+  #mainNav .ls {
+    font-family: "Gloria Hallelujah", cursive;
+    color: #f4c320;
+  }
+  #mainNav .logInbtn {
+    margin-left: 1rem;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #212529;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    font-size: 1.25em;
+    padding: 12px 0;
+  }
+}
+
+header {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+header .intro-heading {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+
+header .intro-text {
+  font-size: 27px;
+}
+
+header .btn {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  font-size: 18px;
+  padding: 20px 40px;
+  background-color: #fed136;
+  border-color: #fed136;
+  margin-top: 30px;
+  border-radius: 12px;
+}
+
+header .btn:active, header .btn:focus, header .btn:hover {
+  background-color: #f7af44 !important;
+  border-color: #fec810 !important;
+  color: white;
+}
+
+header .btn:active, header .btn:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header header {
+    background: url("../image/Background2.jpg") black no-repeat center center scroll;
+  }
+  header header video {
+    display: none;
+  }
+}
+
+header a {
+  border-radius: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin: 50px auto 0 auto;
+  padding: 15px;
+}
+
+@media (min-width: 992px) {
+  header a {
+    display: inline-block;
+    padding: 15px 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    /* grid-template-areas: "primary card"; */
+  }
+}
+
+main section#about {
+  border-top: 0.7rem solid #f4c320;
+  background: url("../image/about/5.png") black repeat center center scroll;
+  text-align: center;
+  padding: 7rem 0rem 3rem 0rem;
+}
+
+main section#about img {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+main section#about .discription-text {
+  padding: 2rem;
+}
+
+main section#mission {
+  background-color: #17a2b8;
+  text-align: center;
+  padding: 5.9rem 0rem 3rem 0rem;
+}
+
+main section#mission img {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+main section#mission .discription-text {
+  padding: 2rem;
+  color: white;
+}
+
+main section#mission .discription-text h2 {
+  color: #fee13d;
+}
+
+@media (min-width: 992px) {
+  main section#mission .discription-text {
+    padding: 0 2 0 0rem;
+    border-right: 0.4rem solid #fecb3d;
+  }
+}
+
+main section#team {
+  position: relative;
+  top: 0;
+  left: 0;
+  /* Map */
+}
+
+main section#team .map {
+  height: 75%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+@media (min-width: 992px) {
+  main section#team .map {
+    height: 17rem;
+  }
+}
+
+main section#team img {
+  position: absolute;
+  left: 4%;
+  bottom: 0px;
+  width: 20%;
+  overflow: hidden;
+}
+
+main section#team #teamPart {
+  background: url("../image/team/twinkle-twinkle.png") #bec23f repeat center center scroll;
+  padding: 4.2rem 7.4rem;
+}
+
+main section#team #teamPart h1 {
+  color: #3e4015;
+  margin-bottom: 2.77rem;
+  font-size: 70px;
+  font-family: "Libre Barcode 39 Text", cursive;
+}
+
+main section#team #teamPart h4 {
+  color: #3e4015;
+}
+
+main section#team #teamPart p {
+  color: #7d7f29;
+}
+
+main section#team #teamPart .team-icon {
+  background: url("../image/team/poke.gif") white center;
+  background-size: cover;
+  color: #f4c320;
+  height: 7rem;
+  width: 7rem;
+  display: block;
+  line-height: 7.5rem;
+  font-size: 2.25rem;
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+#logIn .modal-login {
+  margin: 12rem auto 0 auto;
+  color: #f7af44;
+  width: 350px;
+}
+
+@media (max-width: 579px) {
+  #logIn .modal-login {
+    width: 90%;
+  }
+}
+
+#logIn .modal-login .modal-content {
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 2rem;
+  background: url("../image/tmp/n3.png") #1d2a33 no-repeat;
+  background-size: contain;
+  background-position-y: 13.2rem;
+}
+
+#logIn .modal-login .modal-header {
+  border-bottom: none;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#logIn .modal-login h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 -15px;
+  color: white;
+  text-shadow: 3px 3px 13px #969696;
+}
+
+#logIn .modal-login .form-control:focus {
+  border-color: #70c5c0;
+}
+
+#logIn .modal-login .form-control,
+#logIn .modal-login .modal-login .btn {
+  min-height: 40px;
+  border-radius: 3px;
+}
+
+#logIn .modal-login .close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+#logIn .modal-login .modal-footer {
+  background: #ecf0f1;
+  border-color: #dee4e7;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 -20px -20px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: "Patrick Hand", cursive;
+}
+
+#logIn .modal-login .modal-footer a {
+  color: #031025;
+}
+
+#logIn .modal-login .avatar {
+  position: absolute;
+  margin: 0px auto;
+  left: 7px;
+  right: 0;
+  top: -74px;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  z-index: 9;
+  background: url("../image/logo/iconCircleHF.png") aliceblue center center scroll;
+  background-size: 222px;
+  padding: 15px;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-position: 44% 44%;
+}
+
+#logIn .modal-login .modal-dialog {
+  margin-top: 80px;
+}
+
+#logIn .modal-login .btn {
+  font-family: "Satisfy", cursive;
+  color: #031025;
+  border-radius: 4px;
+  background: #fed136;
+  text-decoration: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  line-height: normal;
+  border: none;
+  opacity: 0.979;
+}
+
+#logIn .modal-login .btn:hover, #logIn .modal-login .btn:focus {
+  background: #45aba6;
+  outline: none;
+}
+
+#logIn .modal-login .trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+}
+/*# sourceMappingURL=helloFood.css.map */

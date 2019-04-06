@@ -9,7 +9,6 @@ student: {
     school: String,
     bio: String,
     star: int,
-    currentLv: int,
     teacherID: ObjectId,
     progress: {
         completed: {

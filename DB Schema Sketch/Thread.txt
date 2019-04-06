@@ -1,8 +1,9 @@
 // not allowed to reply, so each post is about a student's fun fact to share.
-community = {
+thread = {
     _id: ObjectId,
     date: Date,
     author: String,
     title: String,
-    content: String
+    content: String,
+    reply: xxx
 }

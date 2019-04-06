@@ -6,7 +6,6 @@ const path = require("path");
 
 // Routes
 const users = require("./routes/api/users");
-const profile = require("./routes/api/profile");
 
 const app = express();
 
@@ -31,7 +30,6 @@ mongoose
 
 // Link routes
 app.use("/api/users", users);
-app.use("/api/profile", profile);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {

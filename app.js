@@ -12,6 +12,12 @@ const app = express();
 // MongoDB config
 const db = require("./config/keys").mongoURI;
 
+// Connect to mongoose
+mongoose
+  .connect(db, { useNewUrlParser: true })
+  .then(() => console.log("MongoDB Connected!"))
+  .catch(err => console.log(err));
+
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -21,12 +27,6 @@ require("./config/passport.js")(passport);
 
 // If deployed, use assigned port or default to 5000
 const PORT = process.env.PORT || 5000;
-
-// Connect to mongoose
-mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("MongoDB Connected!"))
-  .catch(err => console.log(err));
 
 // Link routes
 app.use("/api/users", users);

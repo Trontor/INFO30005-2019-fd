@@ -13,6 +13,18 @@ class Navigation extends Component {
   }
   componentDidMount() {
     window.addEventListener("scroll", this.navbarCollapse);
+    // *** Need modify Later
+    $('a[href*="#"]').on("click", function(e) {
+      e.preventDefault();
+
+      $("html, body").animate(
+        {
+          scrollTop: $($(this).attr("href")).offset().top
+        },
+        300,
+        "linear"
+      );
+    });
   }
   componentWillUnmount() {
     window.removeEventListener("scroll", this.navbarCollapse);

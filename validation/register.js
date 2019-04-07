@@ -14,29 +14,25 @@ module.exports = function validateRegisterInput(data) {
   // Validate Name
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";
-  }
-  if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
+  } else if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
     errors.name = "Name must be between 2 and 30 characters";
   }
   // Validate Email
   if (Validator.isEmpty(data.email)) {
     errors.email = "Email field is required";
-  }
-  if (!Validator.isEmail(data.email)) {
+  } else if (!Validator.isEmail(data.email)) {
     errors.email = "Email is invalid";
   }
   // Validate Password
   if (Validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
-  }
-  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
+  } else if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
     errors.password = "Password must be at least 6 characters";
   }
   // Validate Confirm Password
   if (Validator.isEmpty(data.confirmPassword)) {
     errors.confirmPassword = "Confirm Password field is required";
-  }
-  if (!Validator.equals(data.password, data.confirmPassword)) {
+  } else if (!Validator.equals(data.password, data.confirmPassword)) {
     errors.confirmPassword = "Passwords do not match";
   }
   return { errors, isValid: isEmpty(errors) };

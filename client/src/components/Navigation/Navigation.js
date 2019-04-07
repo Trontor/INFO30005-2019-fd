@@ -11,6 +11,7 @@ class Navigation extends Component {
       $("#mainNav").removeClass("navbar-shrink");
     }
   }
+
   componentDidMount() {
     window.addEventListener("scroll", this.navbarCollapse);
     // *** Need modify Later
@@ -26,9 +27,11 @@ class Navigation extends Component {
       );
     });
   }
+
   componentWillUnmount() {
     window.removeEventListener("scroll", this.navbarCollapse);
   }
+
   render() {
     return (
       <nav
@@ -89,7 +92,11 @@ class Navigation extends Component {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link ls" href="#signUp">
+                <a
+                  className="nav-link ls logInbtn"
+                  href="#register"
+                  data-toggle="modal"
+                >
                   Sign up
                 </a>
               </li>

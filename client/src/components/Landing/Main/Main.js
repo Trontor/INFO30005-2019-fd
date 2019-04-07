@@ -99,22 +99,6 @@ const Main = () => {
             </div>
           </div>
         </div>
-
-        <div className="map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12610.919637141424!2d144.961174!3d-37.796369!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeacb63e2b725ff6d!2sUniversity+of+Melbourne!5e0!3m2!1sen!2sau!4v1554343861702!5m2!1sen!2sau"
-            width="100%"
-            height="100%"
-            frameborder="0"
-            scrolling="no"
-            marginheight="0"
-            marginwidth="0"
-            style={{ border: 0 }}
-            allowfullscreen
-          />
-        </div>
-
-        <img src="image/team/cat2.gif" alt="" />
       </section>
     </main>
   );

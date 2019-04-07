@@ -1,0 +1,195 @@
+@import "../../variables.scss";
+
+main {
+  @include desktop {
+    display: grid;
+    // grid-template-columns: 50% auto;
+    /* grid-template-areas: "primary card"; */
+  }
+
+  img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  section#about {
+    border-top: 0.7rem solid color(primary);
+    background: url("../../../images/about/5.png") black repeat center center
+      scroll;
+    text-align: center;
+    padding: 7rem 0rem 3rem 0rem;
+
+    .discription-text {
+      padding: 2rem;
+
+      @include desktop {
+        padding: 0 0 0 2rem;
+        border-left: 0.5rem solid #64a19d;
+      }
+    }
+  }
+
+  section#mission {
+    background-color: #17a2b8;
+    text-align: center;
+    padding: 4rem 0rem 3rem 0rem;
+
+    .discription-text {
+      padding: 2rem;
+      color: white;
+
+      h2 {
+        color: #fee13d;
+      }
+
+      @include desktop {
+        padding: 0 2 0 0rem;
+        border-right: 0.4rem solid #fecb3d;
+      }
+    }
+  }
+
+  section#team {
+    background: url("../../../images/team/twinkle-twinkle.png") #bec23f repeat
+      center center scroll;
+    padding: 2rem 7.4rem;
+
+    h1 {
+      color: #3e4015;
+      margin-bottom: 2.7rem;
+      font-size: 47px;
+      // text-shadow: 2px 2px 4px gray;
+      font-family: "Libre Barcode 39 Text", cursive;
+    }
+
+    h4 {
+      color: #3e4015;
+    }
+
+    p {
+      color: #7d7f29;
+    }
+    .team-icon {
+      background: url("../../../images/team/poke.gif") white center;
+      background-size: cover;
+      color: color(primary);
+      height: 7rem;
+      width: 7rem;
+      display: block;
+      line-height: 7.5rem;
+      font-size: 2.25rem;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0.2, 0.1);
+    }
+  }
+}
+
+#logIn {
+  // .modal-content {
+  //     background-color: #434e5a;
+  //     opacity: 10;
+  //     padding: 0 18px;
+  //     border-radius: 10px;
+  // }
+
+  // .user-img{
+  //     margin-top:-10px;
+
+  //     img{
+  //         height: 120px;
+  //     }
+  // }
+  .modal-login {
+    color: #e82426;
+    width: 350px;
+
+    .modal-content {
+      padding: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .modal-header {
+      border-bottom: none;
+      position: relative;
+      justify-content: center;
+    }
+
+    h4 {
+      text-align: center;
+      font-size: 26px;
+      margin: 30px 0 -15px;
+    }
+
+    .form-control:focus {
+      border-color: #70c5c0;
+    }
+
+    .form-control,
+    .modal-login .btn {
+      min-height: 40px;
+      border-radius: 3px;
+    }
+
+    .close {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+    }
+
+    .modal-footer {
+      background: #ecf0f1;
+      border-color: #dee4e7;
+      text-align: center;
+      justify-content: center;
+      margin: 0 -20px -20px;
+      border-radius: 5px;
+      font-size: 13px;
+
+      a {
+        color: #e82426;
+      }
+    }
+
+    .avatar {
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      top: -70px;
+      width: 95px;
+      height: 95px;
+
+      z-index: 9;
+      background: #808080;
+      padding: 15px;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .modal-dialog {
+      margin-top: 80px;
+    }
+
+    .btn {
+      color: #fff;
+      border-radius: 4px;
+      background: #e82426;
+      text-decoration: none;
+      transition: all 0.4s;
+      line-height: normal;
+      border: none;
+
+      &:hover,
+      &:focus {
+        background: #45aba6;
+        outline: none;
+      }
+    }
+    .trigger-btn {
+      display: inline-block;
+      margin: 100px auto;
+    }
+  }
+}

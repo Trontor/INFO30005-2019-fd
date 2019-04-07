@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const TeacherSchema = new mongoose.Schema( {
+const StudentSchema = new mongoose.Schema( {
     username: {
         type: string,
         required: true
@@ -55,4 +55,4 @@ const TeacherSchema = new mongoose.Schema( {
     }
 });
 
-mongoose.model('teachers', TeacherSchema);
+mongoose.model('students', StudentSchema);

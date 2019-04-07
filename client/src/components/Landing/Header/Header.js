@@ -16,7 +16,7 @@ const Header = () => {
           type="video/mp4"
         />
       </video>
-      <div className="container h-100">
+      <div className="container h-100" id="homeTop">
         <div className="d-flex h-100 text-center align-items-center">
           <div className="w-100 text-white">
             <div className="intro-heading text-uppercase display-3">

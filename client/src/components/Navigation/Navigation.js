@@ -14,6 +14,9 @@ class Navigation extends Component {
   componentDidMount() {
     window.addEventListener("scroll", this.navbarCollapse);
   }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.navbarCollapse);
+  }
   render() {
     return (
       <nav

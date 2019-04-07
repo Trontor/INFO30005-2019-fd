@@ -3,8 +3,7 @@ const passport = require("passport");
 const router = express.Router();
 
 // Load User model
-const User = require("../../models/User");
-const controller = require('../../controllers/userController');
+const controller = require("../../controllers/userController");
 
 // @route   GET api/users/test
 // @desc    Tests post route

@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <header>
       <div className="overlay" />
+        {/*
       <video
         playsinline="playsinline"
         autoplay="autoplay"
@@ -15,7 +16,7 @@ const Header = () => {
           src={require("../../../videos/Header/3.mov")}
           type="video/mp4"
         />
-      </video>
+      </video>*/}
       <div className="container h-100" id="homeTop">
         <div className="d-flex h-100 text-center align-items-center">
           <div className="w-100 text-white">

@@ -28,12 +28,7 @@ const TeacherSchema = new mongoose.Schema( {
         type: String,
         required: true
     },
-    manage: [
-        {
-            student: mongoose.Schema.Types.ObjectId,
-            challengeScore: Number
-        }
-    ]
+    manage: [mongoose.Schema.Types.ObjectId]
 });
 
-mongoose.model('teachers', TeacherSchema);
+module.exports = Teacher = mongoose.model('teachers', TeacherSchema);

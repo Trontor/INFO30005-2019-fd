@@ -41,18 +41,14 @@ const StudentSchema = new mongoose.Schema( {
     teacher: mongoose.Schema.Types.ObjectId,
     progress: {
         completed: {
-            videoCount: Number,
-            articleCount: Number
+            videoList: [mongoose.Schema.Types.ObjectId],
+            articleList: [mongoose.Schema.Types.ObjectId]
         },
         uncompleted: {
-            videoCount: Number,
-            articleCount: Number
-        },
-        locked: {
-            videoCount: Number,
-            articleCount: Number
+            videoList: [mongoose.Schema.Types.ObjectId],
+            articleList: [mongoose.Schema.Types.ObjectId]
         }
     }
 });
 
-mongoose.model('students', StudentSchema);
+module.exports = Student = mongoose.model('students', StudentSchema);

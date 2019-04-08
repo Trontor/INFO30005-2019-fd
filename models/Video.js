@@ -5,19 +5,10 @@ const VideoSchema = new mongoose.Schema( {
         type: String,
         required: true
     },
-    author: {
-        type: String,
-        required: true
-    },
-    datePosted: {
-        type: Date,
-        default: new Date()
-    },
     description: {
         type: String,
-        required: true
     },
-    content: {
+    contentURL: {
         type: String,
         required: true
     },
@@ -27,4 +18,4 @@ const VideoSchema = new mongoose.Schema( {
     }
 });
 
-mongoose.model('videos', VideoSchema);
+module.exports = Video = mongoose.model('videos', VideoSchema);

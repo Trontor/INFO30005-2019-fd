@@ -7,7 +7,7 @@ const controller = require("../../controllers/threadController");
 // @route   POST api/threads/create
 // @desc    Create a thread
 // @access  Public
-router.get("/create", controller.createThread);
+router.post("/create", controller.createThread);
 
 // @route   GET api/threads/:title
 // @desc    Find a thread by title
@@ -22,11 +22,11 @@ router.get("/:author", controller.findThreadsByAuthor);
 // @route   PATCH api/threads/:id/:author/:content
 // @desc    Update thread with reply
 // @access  Public
-router.get("/:id/:author/:content", controller.updateThread);
+router.patch("/:id", controller.updateThread);
 
 // @route   DELETE api/threads/:id
 // @desc    Delete thread by thread id
 // @access  Public
-router.get("/:id", controller.deleteThread);
+router.delete("/:id", controller.deleteThread);
 
 module.exports = router;

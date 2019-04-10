@@ -53,12 +53,16 @@ const updateThread = (req, res) => {
         "datePosted": new Date(),
         "content": req.body.content
     };
-    Thread.find({_id: req.body.id}, (err, threads) => {
+    Thread.findById(req.param.id, (err, thread) => {
         if (!err) {
-            threads.map(thread => {
-                thread.replies.push(reply);
+            thread.replies.push(reply);
+            thread.save((err) => {
+                if (err) {
+                    res.json({status: 'fail'});
+                } else {
+                    res.json({status: 'success'});
+                }
             });
-            res.json({status: 'success'});
         } else {
             res.status(400).send({
                 success: 'false',
@@ -69,7 +73,7 @@ const updateThread = (req, res) => {
 };
 
 const deleteThread = (req, res) => {
-    const id = req.body.id;
+    const id = req.param.id;
     if (!id) {
         res.status(400).send({
             success: 'false',

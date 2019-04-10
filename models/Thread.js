@@ -19,16 +19,9 @@ const ThreadSchema = new mongoose.Schema( {
     },
     replies: [
         {
-            index: Number,
             author: mongoose.Schema.Types.ObjectId,
-            datePosted: {
-                type: Date,
-                default: new Date()
-            },
-            content: {
-                type: String,
-                required: true
-            }
+            datePosted: Date,
+            content: String
         }
     ]
 });

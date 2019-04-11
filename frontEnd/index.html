@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--title-->
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
@@ -16,7 +17,7 @@
     <!--font-->
     <link rel="stylesheet" href="fontawesome-free-5.8.1-web/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Gochi+Hand|Patrick+Hand|Satisfy|Kaushan+Script|Libre+Barcode+39+Text|"
+        href="https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Gochi+Hand|Patrick+Hand|Satisfy|Kaushan+Script|Libre+Barcode+39+Text|Roboto+Mono|Signika"
         rel="stylesheet">
     <!--custom-->
 
@@ -69,19 +70,65 @@
 
     <header>
         <div class="overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="video/Header/3.mov" type="video/mp4">
-            <!-- <source id='video-to-change' type="video/mp4"/> -->
-        </video>
-        <div class="container h-100">
-            <div class="d-flex h-100 text-center align-items-center">
-                <div class="w-100 text-white">
-                    <div class="intro-heading text-uppercase display-3">Hello Food</div>
-                    <div class="intro-text mb-0">Sed iste natus doloremque, totam rem aperiam</div>
-                    <a class="btn text-uppercase" href="#logIn">Start here</a>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One - Set the background image for this slide in the line below -->
+                <div class="carousel-item active"
+                    style="background-image: url('https://source.unsplash.com/LAaSoL0LrYs/1920x1080')">
+                    <!-- <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4">First Slide</h2>
+                        <p class="lead">This is a description for the first slide.</p>
+                    </div> -->
+                    <div class="container h-100">
+                        <div class="d-flex h-100 text-center align-items-center">
+                            <div class="w-100 text-white">
+                                <div class="intro-heading text-uppercase display-3">Hello
+                                    Food</div>
+                                <div class="intro-text mb-0">Sed iste natus doloremque,
+                                    totam rem aperiam</div>
+                                <a class="btn text-uppercase" href="#logIn" data-toggle="modal">Start here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide Two - Set the background image for this slide in the line below -->
+                <div class="carousel-item"
+                    style="background-image: url('https://source.unsplash.com/bF2vsubyHcQ/1920x1080')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4">Second Slide</h2>
+                        <p class="lead">This is a description for the second slide.</p>
+                    </div>
+                </div>
+                <!-- Slide Three - Set the background image for this slide in the line below -->
+                <div class="carousel-item"
+                    style="background-image: url('https://source.unsplash.com/szFUQoyvrxM/1920x1080')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4">Third Slide</h2>
+                        <p class="lead">This is a description for the third slide.</p>
+                    </div>
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
+        <!-- <video playsinline="playsinline" autoplay="autoplay" muted="muted"
+                loop="loop">
+                <source src="video/Header/3.mov" type="video/mp4">
+            </video> -->
+
+
+
     </header>
 
     <main>
@@ -92,17 +139,25 @@
                         <img class="img-fluid mb-3 mb-lg-0" src="image/about/about.jpg" alt="about picture">
                     </div>
                     <div class="col-xl-8 col-lg-7">
-                        <div class="discription-text text-center text-lg-left">
+                        <div class="discription-text text-center
+                                text-lg-left">
                             <h4>About</h4>
                             <p class="about-dscription mb-0">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                "Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
                                 incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ut labore et dolore magna aliqua. Ut enim ad
+                                minim veniam, quis nostrud exercitation
                                 ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in
+                                reprehenderit
                                 in
-                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est
+                                laborum."
                             </p>
                         </div>
                     </div>
@@ -115,23 +170,32 @@
             <div class=container>
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
                     <div class="col-xl">
-                        <div class="discription-text text-center text-lg-left">
+                        <div class="discription-text text-center
+                                text-lg-left">
                             <h2>Mission</h2>
                             <p class="about-dscription mb-0">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                "Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
                                 incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ut labore et dolore magna aliqua. Ut enim ad
+                                minim veniam, quis nostrud exercitation
                                 ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in
+                                reprehenderit
                                 in
-                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est
+                                laborum."
                             </p>
                         </div>
 
                     </div>
                     <div class="col-xl">
-                        <img class="img-fluid mb-3 mb-lg-0" src="image/mission/mission2.jpg" alt="about picture">
+                        <img class="img-fluid mb-3 mb-lg-0" src="image/mission/mission2.jpg" alt="about
+                                picture">
 
                     </div>
                 </div>
@@ -145,7 +209,8 @@
                 <h1>Team</h1>
                 <div class="row">
                     <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="team-icon rounded-circle mx-auto mb-3 rounded-circle">
+                        <span class="team-icon rounded-circle mx-auto mb-3
+                                rounded-circle">
                         </span>
                         <h4>
                             <strong>Rohyl</strong>
@@ -154,7 +219,8 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="team-icon rounded-circle mx-auto mb-3 rounded-circle">
+                        <span class="team-icon rounded-circle mx-auto mb-3
+                                rounded-circle">
                         </span>
                         <h4>
                             <strong>Kevin</strong>
@@ -163,7 +229,8 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="team-icon rounded-circle mx-auto mb-3 rounded-circle">
+                        <span class="team-icon rounded-circle mx-auto mb-3
+                                rounded-circle">
                         </span>
                         <h4>
                             <strong>Miley</strong>
@@ -172,7 +239,8 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="team-icon rounded-circle mx-auto mb-3 rounded-circle">
+                        <span class="team-icon rounded-circle mx-auto mb-3
+                                rounded-circle">
                             <!-- <img src="image/team/poke.gif" class="team-icon rounded-circle mx-auto mb-3 rounded-circle"> -->
                         </span>
                         <h4>
@@ -184,17 +252,25 @@
             </div>
 
             <!-- Map -->
-            <div class="map">
+            <!-- <div class="map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12610.919637141424!2d144.961174!3d-37.796369!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeacb63e2b725ff6d!2sUniversity+of+Melbourne!5e0!3m2!1sen!2sau!4v1554343861702!5m2!1sen!2sau"
                     width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                    style="border:0" style="border:0" allowfullscreen></iframe>
+                    style="border:0" style="border:0" allowfullscreen></iframe> -->
             </div>
 
-            <img src="image/team/cat2.gif" alt="">
-
-
+            <!-- <img src="image/team/cat2.gif" alt=""> -->
         </section>
+
+
+        <footer class="text-center">
+            <div class="footer-copyright py-3">Copyright © 2019 &nbsp;
+                <a href="https://hello-food.herokuapp.com"> Hello Food</a>
+            </div>
+        </footer>
+
+        <!-- Footer -->
+
 
 
     </main>
@@ -224,7 +300,8 @@
                                 required="required">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+                            <button type="submit" class="btn btn-primary
+                                    btn-lg btn-block login-btn">Login</button>
                         </div>
                     </form>
                 </div>

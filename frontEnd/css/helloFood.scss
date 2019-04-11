@@ -159,6 +159,17 @@ header {
   width: 100%;
   overflow: hidden;
 
+
+  .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
   video {
     position: absolute;
     top: 50%;
@@ -228,6 +239,7 @@ header {
   }
 
   @media (pointer: coarse) and (hover: none) {
+
     header {
       background: url("../image/Background2.jpg") black no-repeat center center scroll;
     }
@@ -358,6 +370,17 @@ main {
         font-size: 2.25rem;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0.2, 0.1);
       }
+    }
+  }
+}
+
+footer{
+  background: #1c2331;
+  font-family: 'Signika', sans-serif;
+  .footer-copyright{
+    color: gray;
+    a{
+      color:white;
     }
   }
 }

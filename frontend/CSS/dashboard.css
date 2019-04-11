@@ -1,0 +1,32 @@
+
+
+.myheader {
+    background: url("../image/Background/dashboard-background.png") repeat black;
+    height:20rem;
+
+}
+
+.myheader img{
+    height:10rem;
+    width: 10rem;
+}
+
+.my-header-container {
+    height:10rem;
+    width: 10rem;
+    margin-top:4rem;
+    margin-left: 1rem;
+}
+
+.my-words-container {
+    height:10rem;
+    width: 10rem;
+    margin-top:4rem;
+    margin-left: 10px;
+}
+
+@media only screen (min-width: 768px){
+
+...
+
+}

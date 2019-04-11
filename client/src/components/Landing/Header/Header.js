@@ -24,7 +24,7 @@ const Header = () => {
               Hello Food
             </div>
             <div className="intro-text mb-0">
-              Sed iste natus doloremque, totam rem aperiam
+              Explore. Engage. Entertain.
             </div>
             <a className="btn text-uppercase" href="#logIn">
               Start here

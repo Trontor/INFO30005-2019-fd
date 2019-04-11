@@ -18,14 +18,12 @@ const Main = () => {
               <div className="discription-text text-center text-lg-left">
                 <h4>About</h4>
                 <p className="about-dscription mb-0">
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum."
+                  "Hello Food is developed by INFO30005 Group Freedom Dive. It is an educational
+                  website that aims to help kids in Australia to raise their awareness of the benefits
+                  of fresh food. We are aware that the Australian government have launched initiatives to
+                  educate parents on making smarter decisions towards their children's health. However, such
+                  solutions are usually in the form of text-heavy information-based websites. <strong>We build the
+                  website for children.</strong>"
                 </p>
               </div>
             </div>
@@ -40,14 +38,11 @@ const Main = () => {
               <div className="discription-text text-center text-lg-left">
                 <h2>Mission</h2>
                 <p className="about-dscription mb-0">
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum."
+                  "Our project directly targets children, typically those in primary school and
+                  early middle school. We plan to develop the online platform to nurture the nutritional
+                  and health awareness of children from an early age. After all, 'Hello Food' aims to be a
+                  platform that is tailored to the health and physical education of students and
+                  should supplement a state curriculum like the other shown established platforms."
                 </p>
               </div>
             </div>

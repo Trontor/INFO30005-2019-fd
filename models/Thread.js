@@ -1,29 +1,38 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const ThreadSchema = new mongoose.Schema( {
-    title: {
-        type: String,
+const ThreadSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  datePosted: {
+    type: Date,
+    default: new Date()
+  },
+  content: {
+    type: String,
+    required: true
+  },
+  authorID: {
+    type: mongoose.Types.ObjectId,
+    required: true
+  },
+  replies: [
+    {
+      authorID: {
+        type: mongoose.Types.ObjectId,
         required: true
-    },
-    datePosted: {
+      },
+      datePosted: {
         type: Date,
         default: new Date()
-    },
-    content: {
+      },
+      content: {
         type: String,
         required: true
-    },
-    author: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true
-    },
-    replies: [
-        {
-            author: mongoose.Schema.Types.ObjectId,
-            datePosted: Date,
-            content: String
-        }
-    ]
+      }
+    }
+  ]
 });
 
-module.exports = Thread = mongoose.model('threads', ThreadSchema);
+module.exports = Thread = mongoose.model("threads", ThreadSchema);

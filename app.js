@@ -5,7 +5,9 @@ const passport = require("passport");
 const path = require("path");
 
 // Routes
-const users = require("./routes/api/users");
+const studentRoute = require("./routes/api/student");
+const teacherRoute = require("./routes/api/teacher");
+const threadRoute = require("./routes/api/thread");
 
 const app = express();
 
@@ -29,7 +31,9 @@ require("./config/passport.js")(passport);
 const PORT = process.env.PORT || 5000;
 
 // Link routes
-app.use("/api/users", users);
+app.use("/api/student", studentRoute);
+app.use("/api/teacher", teacherRoute);
+app.use("/api/thread", threadRoute);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {

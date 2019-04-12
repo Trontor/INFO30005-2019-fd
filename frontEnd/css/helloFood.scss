@@ -385,114 +385,126 @@ footer{
   }
 }
 
-#logIn {
-  .modal-login {
-    margin: 12rem auto 0 auto;
-    color: #f7af44;
 
-    width: 350px;
+.logInPage{
+  height:auto;
+  width: auto;
+  background: url(../image/background/2.jpg) black repeat center bottom;
+  background-size: cover;
 
-    @include phone {
-      width: 90%;
-    }
 
-    .modal-content {
-      padding: 20px;
-      border-radius: 10px;
-      border: none;
-      margin-top: 2rem;
-      background: url("../image/tmp/n3.png") #1d2a33 no-repeat;
-      background-size: contain;
-      background-position-y: 13.2rem;
-    }
-
-    .modal-header {
-      border-bottom: none;
-      position: relative;
-      justify-content: center;
-    }
-
-    h4 {
-      text-align: center;
-      font-size: 26px;
-      margin: 30px 0 -15px;
-      color: white;
-      text-shadow: 3px 3px 13px rgba(150, 150, 150, 1);
-    }
-
-    .form-control:focus {
-      border-color: #70c5c0;
-    }
-
-    .form-control,
-    .modal-login .btn {
-      min-height: 40px;
-      border-radius: 3px;
-    }
-
-    .close {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-    }
-
-    .modal-footer {
-      background: #ecf0f1;
-      border-color: #dee4e7;
-      text-align: center;
-      justify-content: center;
-      margin: 0 -20px -20px;
-      border-radius: 5px;
-      font-size: 13px;
-      font-family: "Patrick Hand", cursive;
-
-      a {
+  #logIn {
+    .modal-login {
+      margin: 12rem auto 0 auto;
+      color: #f7af44;
+  
+      width: 350px;
+  
+      @include phone {
+        width: 90%;
+      }
+  
+      .modal-content {
+        padding: 20px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 2rem;
+        // background-color: #1d2a33;
+        background: url("../image/tmp/n3.png")  no-repeat;
+        background-size: contain;
+        background-position-y: 13.2rem;
+      }
+  
+      .modal-header {
+        border-bottom: none;
+        position: relative;
+        justify-content: center;
+      }
+  
+      h4 {
+        text-align: center;
+        font-size: 26px;
+        margin: 30px 0 -15px;
+        color: white;
+        text-shadow: 3px 3px 13px rgba(150, 150, 150, 1);
+      }
+  
+      .form-control:focus {
+        border-color: #70c5c0;
+      }
+  
+      .form-control,
+      .modal-login .btn {
+        min-height: 40px;
+        border-radius: 3px;
+      }
+  
+      .close {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+      }
+  
+      .modal-footer {
+        background: #ecf0f1;
+        border-color: #dee4e7;
+        text-align: center;
+        justify-content: center;
+        margin: 0 -20px -20px;
+        border-radius: 5px;
+        font-size: 13px;
+        font-family: "Patrick Hand", cursive;
+  
+        a {
+          color: #031025;
+        }
+      }
+  
+      .avatar {
+        position: absolute;
+        margin: 0px auto;
+        left: 7px;
+        right: 0;
+        top: -84px;
+        width: 114px;
+        height: 114px;
+        border-radius: 50%;
+        border: solid aliceblue 0.4rem;
+        z-index: 9;
+        background: url("../image/logo/iconCircleHF.png") aliceblue center center scroll;
+        background-size: 222px;
+        padding: 15px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        background-position: 44% 44%;
+        // border: rgb(161, 216, 248) solid 0.3rem;
+      }
+  
+      .modal-dialog {
+        margin-top: 80px;
+      }
+  
+      .btn {
+        font-family: "Satisfy", cursive;
         color: #031025;
+        border-radius: 4px;
+        background: #fed136;
+        text-decoration: none;
+        transition: all 0.4s;
+        line-height: normal;
+        border: none;
+        opacity: 0.979;
+  
+        &:hover,
+        &:focus {
+          background: #45aba6;
+          outline: none;
+        }
       }
-    }
-
-    .avatar {
-      position: absolute;
-      margin: 0px auto;
-      left: 7px;
-      right: 0;
-      top: -74px;
-      width: 104px;
-      height: 104px;
-      border-radius: 50%;
-      z-index: 9;
-      background: url("../image/logo/iconCircleHF.png") aliceblue center center scroll;
-      background-size: 222px;
-      padding: 15px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-      background-position: 44% 44%;
-      // border: rgb(161, 216, 248) solid 0.3rem;
-    }
-
-    .modal-dialog {
-      margin-top: 80px;
-    }
-
-    .btn {
-      font-family: "Satisfy", cursive;
-      color: #031025;
-      border-radius: 4px;
-      background: #fed136;
-      text-decoration: none;
-      transition: all 0.4s;
-      line-height: normal;
-      border: none;
-      opacity: 0.979;
-
-      &:hover,
-      &:focus {
-        background: #45aba6;
-        outline: none;
+      .trigger-btn {
+        display: inline-block;
+        margin: 100px auto;
       }
-    }
-    .trigger-btn {
-      display: inline-block;
-      margin: 100px auto;
     }
   }
 }
+

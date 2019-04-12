@@ -332,29 +332,36 @@ footer .footer-copyright a {
   color: white;
 }
 
-#logIn .modal-login {
+.logInPage {
+  height: auto;
+  width: auto;
+  background: url(../image/background/2.jpg) black repeat center bottom;
+  background-size: cover;
+}
+
+.logInPage #logIn .modal-login {
   margin: 12rem auto 0 auto;
   color: #f7af44;
   width: 350px;
 }
 
 @media (max-width: 579px) {
-  #logIn .modal-login {
+  .logInPage #logIn .modal-login {
     width: 90%;
   }
 }
 
-#logIn .modal-login .modal-content {
+.logInPage #logIn .modal-login .modal-content {
   padding: 20px;
   border-radius: 10px;
   border: none;
   margin-top: 2rem;
-  background: url("../image/tmp/n3.png") #1d2a33 no-repeat;
+  background: url("../image/tmp/n3.png") no-repeat;
   background-size: contain;
   background-position-y: 13.2rem;
 }
 
-#logIn .modal-login .modal-header {
+.logInPage #logIn .modal-login .modal-header {
   border-bottom: none;
   position: relative;
   -webkit-box-pack: center;
@@ -362,7 +369,7 @@ footer .footer-copyright a {
           justify-content: center;
 }
 
-#logIn .modal-login h4 {
+.logInPage #logIn .modal-login h4 {
   text-align: center;
   font-size: 26px;
   margin: 30px 0 -15px;
@@ -370,23 +377,23 @@ footer .footer-copyright a {
   text-shadow: 3px 3px 13px #969696;
 }
 
-#logIn .modal-login .form-control:focus {
+.logInPage #logIn .modal-login .form-control:focus {
   border-color: #70c5c0;
 }
 
-#logIn .modal-login .form-control,
-#logIn .modal-login .modal-login .btn {
+.logInPage #logIn .modal-login .form-control,
+.logInPage #logIn .modal-login .modal-login .btn {
   min-height: 40px;
   border-radius: 3px;
 }
 
-#logIn .modal-login .close {
+.logInPage #logIn .modal-login .close {
   position: absolute;
   top: -5px;
   right: -5px;
 }
 
-#logIn .modal-login .modal-footer {
+.logInPage #logIn .modal-login .modal-footer {
   background: #ecf0f1;
   border-color: #dee4e7;
   text-align: center;
@@ -399,19 +406,20 @@ footer .footer-copyright a {
   font-family: "Patrick Hand", cursive;
 }
 
-#logIn .modal-login .modal-footer a {
+.logInPage #logIn .modal-login .modal-footer a {
   color: #031025;
 }
 
-#logIn .modal-login .avatar {
+.logInPage #logIn .modal-login .avatar {
   position: absolute;
   margin: 0px auto;
   left: 7px;
   right: 0;
-  top: -74px;
-  width: 104px;
-  height: 104px;
+  top: -84px;
+  width: 114px;
+  height: 114px;
   border-radius: 50%;
+  border: solid aliceblue 0.4rem;
   z-index: 9;
   background: url("../image/logo/iconCircleHF.png") aliceblue center center scroll;
   background-size: 222px;
@@ -421,11 +429,11 @@ footer .footer-copyright a {
   background-position: 44% 44%;
 }
 
-#logIn .modal-login .modal-dialog {
+.logInPage #logIn .modal-login .modal-dialog {
   margin-top: 80px;
 }
 
-#logIn .modal-login .btn {
+.logInPage #logIn .modal-login .btn {
   font-family: "Satisfy", cursive;
   color: #031025;
   border-radius: 4px;
@@ -438,12 +446,12 @@ footer .footer-copyright a {
   opacity: 0.979;
 }
 
-#logIn .modal-login .btn:hover, #logIn .modal-login .btn:focus {
+.logInPage #logIn .modal-login .btn:hover, .logInPage #logIn .modal-login .btn:focus {
   background: #45aba6;
   outline: none;
 }
 
-#logIn .modal-login .trigger-btn {
+.logInPage #logIn .modal-login .trigger-btn {
   display: inline-block;
   margin: 100px auto;
 }

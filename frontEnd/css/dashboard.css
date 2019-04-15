@@ -69,4 +69,38 @@
 .nav-tabs {
   text-align: center;
 }
+
+i {
+  margin: 0 0.7rem;
+}
+
+@media (min-width: 992px) {
+  .courseCardBody {
+    width: 59%;
+    margin: auto;
+  }
+}
+
+.list-group {
+  list-style: decimal inside;
+}
+
+.list-group li {
+  counter-increment: step-counter;
+}
+
+.list-group li::before {
+  content: counter(step-counter);
+  margin: 0 5px 0 0;
+  font-size: 80%;
+  background-color: #00c8c8;
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.coursebtn {
+  float: right;
+}
 /*# sourceMappingURL=dashboard.css.map */

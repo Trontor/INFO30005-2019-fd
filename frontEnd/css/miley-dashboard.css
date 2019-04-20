@@ -1,0 +1,89 @@
+/* miley tab part */
+.card-body{
+    width: 25rem;
+    margin:0.5rem;
+    padding:0.5rem;
+    border: 5px;
+    background: #f2f2f2;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0)
+}
+
+.image-container img{
+    height:16rem;
+    position: relative;
+}
+
+.profile-info{
+    color: cornflowerblue;
+    margin-right: 16px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card img{
+    margin:1rem;
+    height: 16rem;
+}
+
+#progress {
+    margin-top:3rem;
+    margin-left:6rem;
+    border:0.25rem;
+    background:lightskyblue;
+    padding: 2rem;
+    position: center;
+    width: 40rem;
+    height: 30rem;
+
+ }
+
+
+#management-table{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.button-info{
+    margin-left: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 10rem;
+}
+
+#management-table {
+    margin-top: 2rem;
+    margin-left: 3rem;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+#management-table td, #management-table th {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+}
+
+#management-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#management-table tr:hover {background-color: #ddd;}
+
+#management-table th {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    text-align: center;
+    background-color: limegreen;
+    color: white;
+}
+

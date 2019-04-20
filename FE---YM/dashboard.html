@@ -200,7 +200,7 @@
 
                 <div class="tab-pane fade show active" id="nav-progress"
                     role="tabpanel" aria-labelledby="nav-progress-tab">
-                    <div class="progress-card">
+                    <div id="progress" class="card">
                         <h2>Progress Bar</h2>
                         <p><b><i class="fas fa-newspaper progress-bar-icon"></i>Articles</b></p>
                         <div class="progress">
@@ -221,7 +221,8 @@
                 <div class="tab-pane fade" id="nav-management"
                     role="tabpanel"
                     aria-labelledby="nav-management-tab">
-                    <table class="table" id="management-table">
+
+                    <table id="management-table">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -235,27 +236,27 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th scope="row">1</th>
+                            <td>1</td>
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
-                            <td>...</td>
+                            <td>2</td>
                             <td>...</td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
+                            <td scope="row">2</td>
                             <td>Jacob</td>
                             <td>Thornton</td>
                             <td>@fat</td>
-                            <td>...</td>
+                            <td>3</td>
                             <td>...</td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
+                            <td scope="row">3</td>
                             <td>Larry</td>
                             <td>the Bird</td>
                             <td>@twitter</td>
-                            <td>...</td>
+                            <td>1</td>
                             <td>...</td>
                         </tr>
                         </tbody>
@@ -271,9 +272,10 @@
                 <div class="tab-pane fade" id="nav-community"
                      role="tabpanel"
                      aria-labelledby="nav-community-tab">
-                    <div class="community-card">
-                        <button type="button" class="btn btn-primary" herf="#">+ Add Thread</button>
-                        <div class="thread-card">
+                    <div class="container">
+                        <button type="button" class="btn btn-primary button-info">+ Add Thread</button>
+                        <button type="button" class="btn btn-primary button-info">set up flag</button>
+                        <div class="thread-container">
                             <table class="table">
                                 <thead>
                                 <tr>
@@ -294,11 +296,11 @@
                                         <input type="checkbox" class="form-check-input">
                                         <label class="form-check-label" for="exampleCheck1"></label></div></th>
                                     <td>&nbsp</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>...</td>
-                                    <td>...</td>
+                                    <td>12/04/2019</td>
+                                    <td>How to upload?</td>
+                                    <td>Tom</td>
+                                    <td>published</td>
+                                    <td>4</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
@@ -306,11 +308,11 @@
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                         <label class="form-check-label" for="exampleCheck1"></label></div></th>
                                     <td>&nbsp</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>...</td>
-                                    <td>...</td>
+                                    <td>12/04/2019</td>
+                                    <td>How to upload?</td>
+                                    <td>Tom</td>
+                                    <td>published</td>
+                                    <td>4</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
@@ -318,11 +320,11 @@
                                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                             <label class="form-check-label" for="exampleCheck1"></label></div></th>
                                     <td>&nbsp</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    <td>...</td>
-                                    <td>...</td>
+                                    <td>12/04/2019</td>
+                                    <td>How to upload?</td>
+                                    <td>Tom</td>
+                                    <td>published</td>
+                                    <td>4</td>
                                 </tr>
                                 </tbody>
                             </table>

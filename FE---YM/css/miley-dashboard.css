@@ -36,7 +36,7 @@ button {
     height: 16rem;
 }
 
-.progress-card {
+#progress {
     margin-top:3rem;
     margin-left:6rem;
     border:0.25rem;
@@ -45,7 +45,8 @@ button {
     position: center;
     width: 40rem;
     height: 30rem;
-}
+
+ }
 
 
 #management-table{
@@ -53,3 +54,36 @@ button {
     border-collapse: collapse;
     width: 100%;
 }
+
+.button-info{
+    margin-left: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 10rem;
+}
+
+#management-table {
+    margin-top: 2rem;
+    margin-left: 3rem;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+#management-table td, #management-table th {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+}
+
+#management-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#management-table tr:hover {background-color: #ddd;}
+
+#management-table th {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    text-align: center;
+    background-color: limegreen;
+    color: white;
+}
+

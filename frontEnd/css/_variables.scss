@@ -1,0 +1,49 @@
+/* Variables */
+$colors: (
+  navbar-bc: #031025,
+  navbar-fc: #feba3d,
+  navbarb-s-fc: orange,
+  navbarb-l-fc: white,
+  navbaractive-fc: #f19483,
+  bottom-fc: white,
+  bottom-bc: white,
+  navbart-bc: #feba3d,
+  navbart-fc: white,
+  primary: #f4c320,
+  darkblue: #1d2a33
+);
+
+$padding: 15px;
+$border: 15px;
+
+$desktop: 992px;
+$phone: 579px;
+$tablet-p: 600px;
+$tablet-l: 900px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$phone}) {
+    @content;
+  }
+}
+@mixin tablet-portrait-up {
+  @media (min-width: #{$phone-p}) {
+    @content;
+  }
+}
+@mixin tablet-landscape-up {
+  @media (min-width: #{$phone-l}) {
+    @content;
+  }
+}
+
+/* Function */
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}

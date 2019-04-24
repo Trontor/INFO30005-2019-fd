@@ -1,0 +1,212 @@
+#mainNav {
+  background-color: transparent;
+  padding: 10px 9spx 12px 9px;
+  /* navbar link */
+}
+
+#mainNav .logo {
+  height: 40px;
+  margin-top: -11px;
+}
+
+#mainNav .navbar-brand {
+  position: fixed;
+  left: 27px;
+  color: color(navbarb-s-fc);
+  font-size: 21px;
+  padding-bottom: 0px;
+  font-family: "Kaushan Script", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+  color: color(navbaractive-fc);
+}
+
+#mainNav .nav-link {
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: color(navbar-fc);
+}
+
+#mainNav .nav-link.active, #mainNav .nav-link:hover {
+  color: color(navbaractive-fc);
+}
+
+#mainNav .logOutbtn {
+  margin-left: 1rem;
+}
+
+#mainNav.navbar-shrink {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #212529;
+}
+
+#mainNav.navbar-shrink .navbar-brand {
+  font-size: 1.25em;
+  padding: 12px 0;
+}
+
+#topInterface {
+  padding: 49px 20px;
+  background: orange;
+}
+
+#topInterface img {
+  height: 44px;
+}
+
+#topInterface .avatar {
+  padding: 14px 10px;
+  margin-top: 10px;
+}
+
+#topInterface .avatar img {
+  height: 120px;
+  border: white solid 0.2rem;
+}
+
+#nav-course .nav-tabs {
+  text-align: center;
+}
+
+#nav-course i {
+  margin: 0 0.7rem;
+}
+
+@media (min-width: 992px) {
+  #nav-course .courseCardBody {
+    width: 59%;
+    margin: auto;
+  }
+}
+
+#nav-course .list-group {
+  list-style: decimal inside;
+}
+
+#nav-course .list-group li {
+  counter-increment: step-counter;
+}
+
+#nav-course .list-group li::before {
+  content: counter(step-counter);
+  margin: 0 5px 0 0;
+  font-size: 80%;
+  background-color: #00c8c8;
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+#nav-course .coursebtn {
+  float: right;
+}
+
+@media (max-width: 1013px) {
+  #mainNav {
+    background-color: #212529;
+  }
+  #mainNav .navbar-brand {
+    color: orange;
+  }
+  #mainNav .nav-link {
+    color: #feba3d;
+  }
+}
+
+header.masthead {
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.5;
+}
+
+header.masthead .post-heading {
+  padding: 200px 0 150px;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead .post-heading {
+    padding: 200px 0;
+  }
+}
+
+header.masthead .post-heading h1 {
+  font-size: 35px;
+}
+
+header.masthead .post-heading .meta,
+header.masthead .post-heading .subheading {
+  line-height: 1.1;
+  display: block;
+}
+
+header.masthead .post-heading .subheading {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0 30px;
+}
+
+header.masthead .post-heading .meta {
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+header.masthead .post-heading .meta a {
+  color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead .post-heading h1 {
+    font-size: 55px;
+  }
+  header.masthead .post-heading .subheading {
+    font-size: 30px;
+  }
+}
+
+blockquote {
+  font-style: italic;
+  color: #868e96;
+}
+
+.section-heading {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 60px;
+}
+
+p {
+  line-height: 1.5;
+  margin: 30px 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+#next-btn {
+  margin-top: 0.2rem;
+  font-size: 20px;
+  float: right;
+  padding: 0.2rem 4rem;
+}
+/*# sourceMappingURL=article.css.map */

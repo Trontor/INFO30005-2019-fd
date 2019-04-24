@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--title-->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <title>Hello Food</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--font-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--add-->
+    <link rel="stylesheet" href="css/helloFood/helloFood.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Gochi+Hand|Patrick+Hand|Satisfy|Kaushan+Script|Libre+Barcode+39+Text|Roboto+Mono|Signika"
+        rel="stylesheet">
+    <!--custom-->
+
+</head>
+
+<body class="logInPage">
+        <!--navigation part # incomplete -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img class="logo" src="image/logo/MultiLogoResize.png" alt="Logo">
+                        <span> Hello Food </span>
+                    </a>
+                    <div class="row">
+                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link ls" href="#signUp">Sign up</a>
+                    </div>
+                </div>
+            </nav>
+
+    <div id="logIn">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar">
+                    </div>
+                    <h4 class="modal-title">Welcome back</h4>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+                </div>
+                <div class="modal-body">
+                    <form action="/examples/actions/confirmation.php" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Username"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary
+                                    btn-lg btn-block login-btn">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/jquery/jquery.min.js"></script>
+        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="js/swiper.min.js"></script>
+        <script src="js/popper.js/dist/popper.min.js"></script>
+    
+    
+        <!-- Custom scripts for this template -->
+        <script src="js/helloFood.js"></script>
+    
+    
+</body>
+</html>

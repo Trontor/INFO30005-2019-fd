@@ -24,10 +24,10 @@ router.post("/login", controller.studentLogin);
 // @desc    Returns the current student
 // @access  Private
 router.get(
-  "/current",
+  "/profile",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.json(req.student);
+    res.json(req.user);
   }
 );
 module.exports = router;

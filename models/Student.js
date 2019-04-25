@@ -38,10 +38,6 @@ const StudentSchema = new mongoose.Schema({
     completed: {
       videoListIDs: [mongoose.Schema.Types.ObjectId],
       articleListIDs: [mongoose.Schema.Types.ObjectId]
-    },
-    uncompleted: {
-      videoListIDs: [mongoose.Schema.Types.ObjectId],
-      articleListIDs: [mongoose.Schema.Types.ObjectId]
     }
   }
 });

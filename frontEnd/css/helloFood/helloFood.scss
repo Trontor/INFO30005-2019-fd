@@ -414,6 +414,17 @@ footer{
         background-size: contain;
         background-position-y: 13.2rem;
       }
+
+      .modal-content-2 {
+        padding: 20px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 2rem;
+        // background-color: #1d2a33;
+        background: url("../../image/tmp/n3.png")  no-repeat;
+        background-size: contain;
+        background-position-y: 13.2rem;
+      }
   
       .modal-header {
         border-bottom: none;
@@ -482,7 +493,11 @@ footer{
       .modal-dialog {
         margin-top: 80px;
       }
-  
+
+      .modal-dialog-2 {
+        margin-top: 60px;
+      }
+
       .btn {
         font-family: "Satisfy", cursive;
         color: #031025;

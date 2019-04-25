@@ -28,7 +28,7 @@ const TeacherSchema = new mongoose.Schema({
     type: Date,
     default: new Date()
   },
-  unlockedmodules: [],
+  unlockedTopics: [],
   manage: [mongoose.Schema.Types.ObjectId]
 });
 

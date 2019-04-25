@@ -1,5 +1,9 @@
 const Student = require("../models/Student");
 const Teacher = require("../models/Teacher");
+const Topic = require("../models/Topic");
+const Video = require("../models/Video");
+const Article = require("../models/Article");
+const Quiz = require("../models/Quiz");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -99,6 +103,99 @@ const testStudent = (req, res) => {
   res.json({ msg: "Students works" });
 };
 
+const studentProfile = (req, res) => {
+  // get all info as shown in schema
+  // change ObjectId to name
+  const user = req.user;
+  Teacher.findById(user.teacherID).then(teacher => {
+    if (!teacher) {
+      // There is no teacher to link the student to
+      return res.status(400).send("Error: Teacher doesn't exist.");
+    }
+    // progress: unlocked contents
+    let unlocked = [];
+    const topics = teacher.unlockedTopics;
+    for (let i = 0; i < topics.length; i++) {
+      Topic.findById(topics[i]).then(topic => {
+        if (!topic) {
+          return res.status(400).send("Error: Topic doesn't exist.");
+        }
+        let vidList = [], artiList = [], quizList = [];
+        for (let j = 0; j < topic.items.length; j++) {
+          if (topic[j].type === "Article") {
+            Article.findById(topic[j].itemID).then(article => {
+              artiList.push(article.title);
+            });
+          } else if (topic[j].type === "Video") {
+            Video.findById(topic[j].itemID).then(video => {
+              vidList.push(video.title);
+            });
+          } else {
+            Quiz.findById(topic[j].itemID).then(quiz => {
+              quizList.push(quiz.title);
+            });
+          }
+        }
+        unlocked.push({
+          topicName: topic.name,
+          videoNames: vidList,
+          articleNames: artiList,
+          quizNames: quizList
+        });
+      });
+    }
+    // progress: completed
+    let completed = [];
+    const compl = user.progress;
+    for (let i = 0; i < compl.length; i++) {
+      Topic.findById(compl[i].topic).then(topic => {
+        if (!topic) {
+          return res.status(400).send("Error: Topic doesn't exist.");
+        }
+        let vidList = [], artiList = [], quizList = [];
+        for (let j = 0; j < compl[i].videoListIDs.length; j++) {
+          Video.findById(compl[i].videoListIDs[j]).then(video => {
+            vidList.push(video.title);
+          });
+        }
+        for (let j = 0; j < compl[i].articleListIDs.length; j++) {
+          Article.findById(compl[i].articleListIDs[j]).then(article => {
+            artiList.push(article.title);
+          });
+        }
+        for (let j = 0; j < compl[i].quizListIDs.length; j++) {
+          Quiz.findById(compl[i].quizListIDs[j]).then(quiz => {
+            quizList.push(quiz.title);
+          });
+        }
+        completed.push({
+          topicName: topic.name,
+          videoNames: vidList,
+          articleNames: artiList,
+          quizNames: quizList
+        });
+      });
+    }
+
+    // return all
+    res.json({
+      name: user.name,
+      teacherHonor: teacher.honorific,
+      teacherName: teacher.name,
+      email: user.email,
+      password: user.password,
+      avatar: user.avatar,
+      year: user.yearLevel,
+      school: teacher.school,
+      bio: user.bio,
+      stars: user.stars,
+      unlockedTopics: unlocked,
+      progress: completed
+    })
+  });
+};
+
 module.exports.registerStudent = registerStudent;
 module.exports.studentLogin = studentLogin;
 module.exports.testStudent = testStudent;
+module.exports.studentProfile = studentProfile;

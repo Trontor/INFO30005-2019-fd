@@ -1,0 +1,82 @@
+article = {
+    _id: ObjectId,
+    title: String,
+    datePosted: Date,
+    author: String,
+    featuredImage: String,
+    content: String,
+    starAward: int
+}
+
+event: {
+    _id: ObjectId,
+    date: Date,
+    organiser: String,
+    featuredImage: String,
+    title: String,
+    description: String,
+    location: String,
+    coordinate: {
+        lat: float,
+        long: float
+    },
+    participators: [String],
+}
+
+student: {
+    _id: ObjectId,
+    username: String,
+    name: String,
+    email: String,
+    password: String,
+    avatar: String,
+    yearLevel: int,
+    school: String,
+    bio: String,
+    star: int,
+    teacherID: ObjectId,
+    progress: {
+        completed: {
+            videoCount: int,
+            articleCount: int
+        }
+    },
+    registrationDate: Date
+}
+
+teacher: {
+    _id: ObjectId,
+    username: String,
+    name: String,
+    email: String,
+    password: String,
+    avatar: String,
+    school: String,
+    manage: [
+        {
+            studentID: ObjectId,
+            challengeScore: int
+        }
+    ],
+    unlocked: [ObjectId]
+}
+
+// not allowed to reply, so each post is about a student's fun fact to share.
+thread = {
+    _id: ObjectId,
+    date: Date,
+    author: String,
+    title: String,
+    content: String,
+    reply: xxx
+}
+
+video = {
+    _id: ObjectId,
+    title: String,
+    uploadDate: Date,
+    author: String,
+    description: String,
+    content: String,
+    starAward: int
+}

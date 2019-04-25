@@ -1,9 +1,0 @@
-video = {
-    _id: ObjectId,
-    title: String,
-    uploadDate: Date,
-    author: String,
-    description: String,
-    content: String,
-    starAward: int
-}

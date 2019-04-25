@@ -21,13 +21,12 @@ router.post("/register", controller.registerStudent);
 router.post("/login", controller.studentLogin);
 
 // @route   GET api/student/login
-// @desc    Returns the current student
+// @desc    Returns the current student's profile
 // @access  Private
 router.get(
   "/profile",
   passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    res.json(req.user);
-  }
+  controller.studentProfile
 );
+
 module.exports = router;

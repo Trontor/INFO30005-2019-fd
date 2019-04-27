@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Navigation.scss";
 import $ from "jquery";
+import { withRouter } from "react-router-dom";
 
 class Navigation extends Component {
   navbarCollapse() {
@@ -36,7 +37,7 @@ class Navigation extends Component {
     return (
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-          <a class="navbar-brand" href="#homeTop">
+          <a class="navbar-brand" href="/">
             <img
               class="logo"
               src={require("../../images/logo/MultiLogoResize.png")}
@@ -58,26 +59,30 @@ class Navigation extends Component {
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#homeTop">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">
-                  About
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#mission">
-                  Mission
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">
-                  Team
-                </a>
-              </li>
+              {this.props.location.pathname === "/" ? (
+                <>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#homeTop">
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                      About
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#mission">
+                      Mission
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#team">
+                      Team
+                    </a>
+                  </li>
+                </>
+              ) : null}
               <li class="nav-item">
                 <a class="nav-link ls logInbtn" href="login">
                   Log in
@@ -96,4 +101,4 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+export default withRouter(Navigation);

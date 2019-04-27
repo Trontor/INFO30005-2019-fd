@@ -103,96 +103,117 @@ const testStudent = (req, res) => {
   res.json({ msg: "Students works" });
 };
 
+/**
+ * Returns a promise that resolves when all unlocked topics have been collated into an array
+ */
+getUnlockedTopics = (resolve, reject) => {};
+
 const studentProfile = (req, res) => {
   // get all info as shown in schema
   // change ObjectId to name
-  const user = req.user;
-  Teacher.findById(user.teacherID).then(teacher => {
-    if (!teacher) {
-      // There is no teacher to link the student to
-      return res.status(400).send("Error: Teacher doesn't exist.");
-    }
-    // progress: unlocked contents
-    let unlocked = [];
-    const topics = teacher.unlockedTopics;
-    for (let i = 0; i < topics.length; i++) {
-      Topic.findById(topics[i]).then(topic => {
-        if (!topic) {
-          return res.status(400).send("Error: Topic doesn't exist.");
-        }
-        let vidList = [], artiList = [], quizList = [];
-        for (let j = 0; j < topic.items.length; j++) {
-          if (topic[j].type === "Article") {
-            Article.findById(topic[j].itemID).then(article => {
-              artiList.push(article.title);
-            });
-          } else if (topic[j].type === "Video") {
-            Video.findById(topic[j].itemID).then(video => {
-              vidList.push(video.title);
-            });
-          } else {
-            Quiz.findById(topic[j].itemID).then(quiz => {
-              quizList.push(quiz.title);
-            });
+  const { teacherID, ...user } = req.user;
+  let topicList = [];
+  Teacher.findById(teacherID)
+    .then(teacher => {
+      if (!teacher) {
+        // The teacherID does not exist
+        return res.status(400).send({ teacher: "Teacher doesn't exist." });
+      }
+      teacher.unlockedTopics.forEach(topicID => {
+        Topic.findById(topicID).then(topic => {
+          if (!topic) {
+            // We don't want to send an error back for a missing topic, just skip over it
+            // TODO: Handle missing topics (probably on teacher log-in)
+            return;
           }
-        }
-        unlocked.push({
-          topicName: topic.name,
-          videoNames: vidList,
-          articleNames: artiList,
-          quizNames: quizList
+          topic.items.forEach(item => {
+            const { type, itemID } = item;
+            switch (type) {
+              case "Article":
+                Article.findById(itemID).then(item => {
+                  if (!item) {
+                    // We don't want to send an error back for a missing item, just skip over it
+                    // TODO: Handle missing items (probably on administrator log-in)
+                    return;
+                  }
+                  topicList.push({ type, title: item.title });
+                });
+                break;
+              case "Video":
+                Video.findById(itemID).then(item => {
+                  if (!item) {
+                    // We don't want to send an error back for a missing item, just skip over it
+                    // TODO: Handle missing items (probably on administrator log-in)
+                    return;
+                  }
+                  topicList.push({ type, title: item.title });
+                });
+                break;
+              case "Quiz":
+                Quiz.findById(itemID).then(item => {
+                  if (!item) {
+                    // We don't want to send an error back for a missing item, just skip over it
+                    // TODO: Handle missing items (probably on administrator log-in)
+                    return;
+                  }
+                  topicList.push({ type, title: item.title });
+                });
+                break;
+            }
+          });
         });
       });
-    }
-    // progress: completed
-    let completed = [];
-    const compl = user.progress;
-    for (let i = 0; i < compl.length; i++) {
-      Topic.findById(compl[i].topic).then(topic => {
-        if (!topic) {
-          return res.status(400).send("Error: Topic doesn't exist.");
-        }
-        let vidList = [], artiList = [], quizList = [];
-        for (let j = 0; j < compl[i].videoListIDs.length; j++) {
-          Video.findById(compl[i].videoListIDs[j]).then(video => {
-            vidList.push(video.title);
-          });
-        }
-        for (let j = 0; j < compl[i].articleListIDs.length; j++) {
-          Article.findById(compl[i].articleListIDs[j]).then(article => {
-            artiList.push(article.title);
-          });
-        }
-        for (let j = 0; j < compl[i].quizListIDs.length; j++) {
-          Quiz.findById(compl[i].quizListIDs[j]).then(quiz => {
-            quizList.push(quiz.title);
-          });
-        }
-        completed.push({
-          topicName: topic.name,
-          videoNames: vidList,
-          articleNames: artiList,
-          quizNames: quizList
-        });
-      });
-    }
-
-    // return all
-    res.json({
-      name: user.name,
-      teacherHonor: teacher.honorific,
-      teacherName: teacher.name,
-      email: user.email,
-      password: user.password,
-      avatar: user.avatar,
-      year: user.yearLevel,
-      school: teacher.school,
-      bio: user.bio,
-      stars: user.stars,
-      unlockedTopics: unlocked,
-      progress: completed
     })
-  });
+    .then(() =>
+      res.json({
+        // Teacher attributes
+        teacherHonor: teacher.honorific,
+        teacherName: teacher.name,
+        school: teacher.school,
+        // User attributes
+        name: user.name,
+        email: user.email,
+        avatar: user.avatar,
+        year: user.yearLevel,
+        stars: user.stars,
+        topicList,
+        progress: completed
+      })
+    );
+  // // progress: completed
+  let completed = [];
+  // const compl = user.progress;
+  // for (let i = 0; i < compl.length; i++) {
+  //   Topic.findById(compl[i].topic).then(topic => {
+  //     if (!topic) {
+  //       return res.status(400).send("Error: Topic doesn't exist.");
+  //     }
+  //     let vidList = [],
+  //       artiList = [],
+  //       quizList = [];
+  //     for (let j = 0; j < compl[i].videoListIDs.length; j++) {
+  //       Video.findById(compl[i].videoListIDs[j]).then(video => {
+  //         vidList.push(video.title);
+  //       });
+  //     }
+  //     for (let j = 0; j < compl[i].articleListIDs.length; j++) {
+  //       Article.findById(compl[i].articleListIDs[j]).then(article => {
+  //         artiList.push(article.title);
+  //       });
+  //     }
+  //     for (let j = 0; j < compl[i].quizListIDs.length; j++) {
+  //       Quiz.findById(compl[i].quizListIDs[j]).then(quiz => {
+  //         quizList.push(quiz.title);
+  //       });
+  //     }
+  //     completed.push({
+  //       topicName: topic.name,
+  //       videoNames: vidList,
+  //       articleNames: artiList,
+  //       quizNames: quizList
+  //     });
+  //   });
+  // }
 };
 
 module.exports.registerStudent = registerStudent;

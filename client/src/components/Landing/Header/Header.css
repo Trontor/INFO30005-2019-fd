@@ -1,0 +1,100 @@
+/* Variables */
+/* Function */
+header {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+header .intro-heading {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+
+header .intro-text {
+  font-size: 27px;
+}
+
+header .btn {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  font-size: 18px;
+  padding: 20px 40px;
+  background-color: #fed136;
+  border-color: #fed136;
+  margin-top: 30px;
+  border-radius: 12px;
+}
+
+header .btn:active, header .btn:focus, header .btn:hover {
+  background-color: #f7af44 !important;
+  border-color: #fec810 !important;
+  color: white;
+}
+
+header .btn:active, header .btn:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header header {
+    background: url("../../../images/Background2.jpg") black no-repeat center center scroll;
+  }
+  header header video {
+    display: none;
+  }
+}
+
+header a {
+  border-radius: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin: 50px auto 0 auto;
+  padding: 15px;
+}
+
+@media (min-width: 992px) {
+  header a {
+    display: inline-block;
+    padding: 15px 60px;
+  }
+}
+/*# sourceMappingURL=Header.css.map */

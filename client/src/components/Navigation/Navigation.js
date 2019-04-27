@@ -34,22 +34,18 @@ class Navigation extends Component {
 
   render() {
     return (
-      <nav
-        bg="light"
-        className="navbar navbar-expand-lg navbar-light fixed-top"
-        id="mainNav"
-      >
-        <div className="container">
-          <a className="navbar-brand" href="#homeTop">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand" href="#homeTop">
             <img
-              className="logo"
+              class="logo"
               src={require("../../images/logo/MultiLogoResize.png")}
               alt="Logo"
             />
             <span> Hello Food </span>
           </a>
           <button
-            className="navbar-toggler navbar-toggler-right"
+            class="navbar-toggler navbar-toggler-right"
             type="button"
             data-toggle="collapse"
             data-target="#navbarResponsive"
@@ -58,45 +54,37 @@ class Navigation extends Component {
             aria-label="Toggle navigation"
           >
             Menu
-            <i className="fas fa-bars" />
+            <i class="fas fa-bars" />
           </button>
-          <div className="collapse navbar-collapse" id="navbarResponsive">
-            <ul className="navbar-nav text-uppercase ml-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="#homeTop">
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#homeTop">
                   Home
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#about">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">
                   About
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#mission">
+              <li class="nav-item">
+                <a class="nav-link" href="#mission">
                   Mission
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#team">
+              <li class="nav-item">
+                <a class="nav-link" href="#team">
                   Team
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link ls logInbtn"
-                  href="#logIn"
-                  data-toggle="modal"
-                >
+              <li class="nav-item">
+                <a class="nav-link ls logInbtn" href="login">
                   Log in
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link ls logInbtn"
-                  href="#register"
-                  data-toggle="modal"
-                >
+              <li class="nav-item">
+                <a class="nav-link ls" href="register">
                   Sign up
                 </a>
               </li>

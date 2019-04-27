@@ -1,0 +1,525 @@
+/* Variables */
+$colors: (
+  navbar-bc: #031025,
+  navbar-fc: #feba3d,
+  navbarb-s-fc: orange,
+  navbarb-l-fc: white,
+  navbaractive-fc: #f19483,
+  bottom-fc: white,
+  bottom-bc: white,
+  navbart-bc: #feba3d,
+  navbart-fc: white,
+  primary: #f4c320,
+  darkblue:#1d2a33
+);
+
+$padding: 15px;
+$border: 15px;
+
+$desktop: 992px;
+$phone: 579px;
+$tablet-p: 600px;
+$tablet-l: 900px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$phone}) {
+    @content;
+  }
+}
+@mixin tablet-portrait-up {
+  @media (min-width: #{$phone-p}) {
+    @content;
+  }
+}
+@mixin tablet-landscape-up {
+  @media (min-width: #{$phone-l}) {
+    @content;
+  }
+}
+
+/* Function */
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#mainNav {
+  background-color: #212529;
+  padding: 7px 9px 8px 9px;
+
+  .logo {
+    height: 40px;
+    margin-top: -11px;
+  }
+
+  .navbar-brand {
+    color: color(navbarb-s-fc);
+    font-size: 21px;
+    padding-bottom: 0px;
+    font-family: "Kaushan Script", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    @include desktop {
+      font-size: 1.77em;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      color: color(navbarb-l-fc);
+      padding: 10px;
+    }
+
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      color: color(navbaractive-fc);
+
+      @include desktop {
+        color: #f19483;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 9px;
+    text-transform: uppercase;
+    color: color(navbart-fc);
+    border: 0;
+    background-color: color(navbart-bc);
+  }
+
+  /* navbar link */
+  .nav-link {
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: color(navbar-fc);
+
+    @include desktop {
+      padding: 1.1em 1em !important;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fafff1;
+    }
+
+    &.active,
+    &:hover {
+      color: color(navbaractive-fc);
+    }
+  }
+
+  @include desktop {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+
+    .ls {
+      font-family: "Gloria Hallelujah", cursive;
+      color: color(primary);
+    }
+
+    .logInbtn {
+      margin-left: 1rem;
+    }
+
+    &.navbar-shrink {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: #212529;
+
+      .navbar-brand {
+        font-size: 1.25em;
+        padding: 12px 0;
+      }
+    }
+  }
+}
+
+header {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+
+
+  .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.14;
+    z-index: 1;
+  }
+
+  .intro-heading {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 25px;
+  }
+
+  .intro-text {
+    font-size: 27px;
+  }
+
+  .btn {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    font-size: 18px;
+    padding: 20px 40px;
+    background-color: #fed136;
+    border-color: #fed136;
+    margin-top: 30px;
+    border-radius: 12px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: #f7af44 !important;
+      border-color: #fec810 !important;
+      color: white;
+    }
+
+    &:active,
+    &:focus {
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+      box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+    }
+  }
+
+  @media (pointer: coarse) and (hover: none) {
+
+    header {
+      background: url("../../image/Background2.jpg") black no-repeat center center scroll;
+    }
+    header video {
+      display: none;
+    }
+  }
+
+  a {
+    color: color(bottom-f);
+    border-radius: $border;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: color(bottom-b);
+    display: block;
+    text-align: center;
+    margin: 50px auto 0 auto;
+    padding: $padding;
+
+    @include desktop {
+      display: inline-block;
+      padding: $padding $padding * 4;
+    }
+  }
+}
+
+main {
+  @include desktop {
+    display: grid;
+    // grid-template-columns: 50% auto;
+    /* grid-template-areas: "primary card"; */
+  }
+
+  section#about {
+    border-top: 0.7rem solid color(primary);
+    background: url("../../image/about/5.png") black repeat center center scroll;
+    text-align: center;
+    padding: 7rem 0rem 3rem 0rem;
+
+    img {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .discription-text {
+      padding: 2rem;
+    }
+  }
+
+  section#mission {
+    background-color: #17a2b8;
+    text-align: center;
+    padding: 5.9rem 0rem 3rem 0rem;
+
+    img {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .discription-text {
+      padding: 2rem;
+      color: white;
+
+      h2 {
+        color: #fee13d;
+      }
+
+      @include desktop {
+        padding: 0 2 0 0rem;
+        border-right: 0.4rem solid #fecb3d;
+      }
+    }
+  }
+
+  section#team {
+    // padding-top: 2rem;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    /* Map */
+    .map {
+      height: 75%;
+      position: relative;
+      top: 0;
+      left: 0;
+
+      @include desktop {
+        height: 17rem;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 4%;
+      bottom: 0px;
+      width: 20%;
+      overflow: hidden;
+    }
+
+    #teamPart {
+      background: url("../../image/team/twinkle-twinkle.png") #bec23f repeat center center scroll;
+      padding: 4.2rem 7.4rem;
+
+      h1 {
+        color: #3e4015;
+
+        margin-bottom: 2.77rem;
+        font-size: 70px;
+        // text-shadow: 2px 2px 4px gray;
+        font-family: "Libre Barcode 39 Text", cursive;
+      }
+
+      h4 {
+        color: #3e4015;
+      }
+
+      p {
+        color: #7d7f29;
+      }
+      .team-icon {
+        background: url("../../image/team/poke.gif") white center;
+        background-size: cover;
+        color: color(primary);
+        height: 7rem;
+        width: 7rem;
+        display: block;
+        line-height: 7.5rem;
+        font-size: 2.25rem;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0.2, 0.1);
+      }
+    }
+  }
+}
+
+footer{
+  background: #1c2331;
+  font-family: 'Signika', sans-serif;
+  .footer-copyright{
+    color: gray;
+    a{
+      color:white;
+    }
+  }
+}
+
+
+.logInPage{
+  height:auto;
+  width: auto;
+  background: url(../../image/background/2.jpg) black repeat center bottom;
+  background-size: cover;
+
+
+  #logIn {
+    .modal-login {
+      margin: 12rem auto 0 auto;
+      color: #f7af44;
+  
+      width: 350px;
+  
+      @include phone {
+        width: 90%;
+      }
+  
+      .modal-content {
+        padding: 20px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 2rem;
+        // background-color: #1d2a33;
+        background: url("../../image/tmp/n3.png")  no-repeat;
+        background-size: contain;
+        background-position-y: 13.2rem;
+      }
+
+      .modal-content-2 {
+        padding: 20px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 2rem;
+        // background-color: #1d2a33;
+        background: url("../../image/tmp/n3.png")  no-repeat;
+        background-size: contain;
+        background-position-y: 13.2rem;
+      }
+  
+      .modal-header {
+        border-bottom: none;
+        position: relative;
+        justify-content: center;
+      }
+  
+      h4 {
+        text-align: center;
+        font-size: 26px;
+        margin: 30px 0 -15px;
+        color: white;
+        text-shadow: 3px 3px 13px rgba(150, 150, 150, 1);
+      }
+  
+      .form-control:focus {
+        border-color: #70c5c0;
+      }
+  
+      .form-control,
+      .modal-login .btn {
+        min-height: 40px;
+        border-radius: 3px;
+      }
+  
+      .close {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+      }
+  
+      .modal-footer {
+        background: #ecf0f1;
+        border-color: #dee4e7;
+        text-align: center;
+        justify-content: center;
+        margin: 0 -20px -20px;
+        border-radius: 5px;
+        font-size: 13px;
+        font-family: "Patrick Hand", cursive;
+  
+        a {
+          color: #031025;
+        }
+      }
+  
+      .avatar {
+        position: absolute;
+        margin: 0px auto;
+        left: 7px;
+        right: 0;
+        top: -84px;
+        width: 114px;
+        height: 114px;
+        border-radius: 50%;
+        border: solid aliceblue 0.4rem;
+        z-index: 9;
+        background: url("../../image/logo/iconCircleHF.png") aliceblue center center scroll;
+        background-size: 222px;
+        padding: 15px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        background-position: 44% 44%;
+        // border: rgb(161, 216, 248) solid 0.3rem;
+      }
+  
+      .modal-dialog {
+        margin-top: 80px;
+      }
+
+      .modal-dialog-2 {
+        margin-top: 60px;
+      }
+
+      .btn {
+        font-family: "Satisfy", cursive;
+        color: #031025;
+        border-radius: 4px;
+        background: #fed136;
+        text-decoration: none;
+        transition: all 0.4s;
+        line-height: normal;
+        border: none;
+        opacity: 0.979;
+  
+        &:hover,
+        &:focus {
+          background: #45aba6;
+          outline: none;
+        }
+      }
+      .trigger-btn {
+        display: inline-block;
+        margin: 100px auto;
+      }
+    }
+  }
+}
+

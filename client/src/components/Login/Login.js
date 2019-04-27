@@ -42,7 +42,7 @@ const Login = () => {
               </form>
             </div>
             <div class="modal-footer">
-              <a onClick="console.log('Please contact your teacher for help!'); return false">Forgot Password?</a>
+              <a href='' onClick={() => {alert('Please contact your teacher for help :)');}}>Forgot Password?</a>
             </div>
           </div>
         </div>

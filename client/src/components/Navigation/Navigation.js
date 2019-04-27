@@ -79,12 +79,12 @@ class Navigation extends Component {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link ls logInbtn" href="login.html">
+                <a class="nav-link ls logInbtn" href="login">
                   Log in
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link ls" href="#signUp">
+                <a class="nav-link ls" href="register">
                   Sign up
                 </a>
               </li>

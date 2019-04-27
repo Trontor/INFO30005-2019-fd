@@ -21,12 +21,14 @@ const Main = () => {
               >
                 <h4>About</h4>
                 <p class="about-dscription mb-0">
-                  "Hello Food is developed by INFO30005 Group Freedom Dive. It is an educational
-                  website that aims to help kids in Australia to raise their awareness of the benefits
-                  of fresh food. We are aware that the Australian government have launched initiatives to
-                  educate parents on making smarter decisions towards their children's health. However, such
-                  solutions are usually in the form of text-heavy information-based websites. <strong>We build the
-                  website for children.</strong>"
+                  "Hello Food is developed by INFO30005 Group Freedom Dive. It
+                  is an educational website that aims to help kids in Australia
+                  to raise their awareness of the benefits of fresh food. We are
+                  aware that the Australian government have launched initiatives
+                  to educate parents on making smarter decisions towards their
+                  children's health. However, such solutions are usually in the
+                  form of text-heavy information-based websites.{" "}
+                  <strong>We build the website for children.</strong>"
                 </p>
               </div>
             </div>
@@ -44,11 +46,13 @@ const Main = () => {
               >
                 <h2>Mission</h2>
                 <p class="about-dscription mb-0">
-                  "Our project directly targets children, typically those in primary school and
-                  early middle school. We plan to develop the online platform to nurture the nutritional
-                  and health awareness of children from an early age. After all, 'Hello Food' aims to be a
-                  platform that is tailored to the health and physical education of students and
-                  should supplement a state curriculum like the other shown established platforms."
+                  "Our project directly targets children, typically those in
+                  primary school and early middle school. We plan to develop the
+                  online platform to nurture the nutritional and health
+                  awareness of children from an early age. After all, 'Hello
+                  Food' aims to be a platform that is tailored to the health and
+                  physical education of students and should supplement a state
+                  curriculum like the other shown established platforms."
                 </p>
               </div>
             </div>
@@ -112,7 +116,6 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <img src={require("../../../images/team/cat2.gif")} alt="" />
       </section>
     </main>
   );

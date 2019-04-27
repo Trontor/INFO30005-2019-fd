@@ -12,7 +12,7 @@ const Register = () => {
               <h4 class="modal-title">Create an Account</h4>
             </div>
             <div class="modal-body">
-              <form action="/examples/actions/confirmation.php" method="post">
+              <form method="post">
                 <div class="form-group">
                   <input
                     type="text"

@@ -12,7 +12,7 @@ const Header = () => {
               Hello Food
             </div>
             <div className="intro-text mb-0">Explore. Engage. Entertain.</div>
-            <a className="btn text-uppercase" href="#logIn">
+            <a className="btn text-uppercase" href="login">
               Start here
             </a>
           </div>

@@ -11,7 +11,7 @@ const Login = () => {
               <h4 class="modal-title">Welcome back</h4>
             </div>
             <div class="modal-body">
-              <form action="/examples/actions/confirmation.php" method="post">
+              <form method="post">
                 <div class="form-group">
                   <input
                     type="text"
@@ -42,7 +42,7 @@ const Login = () => {
               </form>
             </div>
             <div class="modal-footer">
-              <a href="#">Forgot Password?</a>
+              <a onClick="console.log('Please contact your teacher for help!'); return false">Forgot Password?</a>
             </div>
           </div>
         </div>
@@ -50,5 +50,7 @@ const Login = () => {
     </div>
   );
 };
+
+
 
 export default Login;

@@ -16,7 +16,7 @@ const Main = () => {
             </div>
             <div class="col-lg-6">
               <div class="description-text text-left">
-                <h4>About</h4>
+                <h3>About</h3>
                 <p class="about-description mb-0">
                   Hello Food offers text-based lessons, instructional videos,
                   quizzes and a personalized learning dashboard that empower
@@ -35,18 +35,20 @@ const Main = () => {
       <section id="mission">
         <div class="container">
           <div class="row align-items-center no-gutters">
-            <div class="col-lg-5 col-xl-6">
+            <div class="col-lg-6 col-xl-6">
               <div class="description-text text-left">
                 <h2>Mission</h2>
                 <p class="about-dscription mb-0">
-                  Hello Food aims to cultivate a proper understanding of all
-                  things health and nutrition from an early age, in an effort to
+                  Hello Food aims to cultivate a proper understanding of
+                  health and nutrition from an early age, in an effort to
                   combat the national obesity epidemic, and to help students
-                  lead healthier lives.
+                  lead healthier lives.<hr />
+                  Light-hearted inter-class discussions and leaderboard will be enabled to allow
+                  continued tracking of individual improvement and impact over time.
                 </p>
               </div>
             </div>
-            <div class="col-lg-7 col-xl-6">
+            <div class="col-lg-6 col-xl-6">
               <img
                 class="img-fluid"
                 src={require("../../../images/mission/mission2.jpg")}
@@ -59,7 +61,7 @@ const Main = () => {
 
       <section id="team" class="text-center">
         <div id="teamPart" calss="container text-center">
-          <h1>Team</h1>
+          <h1><strong>Team</strong></h1>
           <div class="row">
             <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
               <span

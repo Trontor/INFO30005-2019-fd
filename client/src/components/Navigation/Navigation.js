@@ -82,14 +82,15 @@ class Navigation extends Component {
                     </a>
                   </li>
                 </>
-              ) :
+              ) : (
                 <>
                   <li className="nav-item">
                     <a className="nav-link" href="/">
                       Home
                     </a>
                   </li>
-                </>}
+                </>
+              )}
               <li class="nav-item">
                 <a class="nav-link ls logInbtn" href="login">
                   Log in

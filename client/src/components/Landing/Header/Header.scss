@@ -4,10 +4,11 @@ header {
   position: relative;
   background-color: black;
   height: 100vh;
+  vertical-align: -webkit-baseline-middle;
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
-  background: url("../../../images/landing/6.jpg");
+  background: url("../../../images/landing/landing-header-bg.png");
   background-size: 100%;
 
   video {
@@ -28,6 +29,12 @@ header {
   .container {
     position: relative;
     z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
   }
 
   .overlay {
@@ -37,19 +44,21 @@ header {
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.65;
     z-index: 1;
   }
 
   .intro-heading {
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 50px;
-    margin-bottom: 25px;
+    font-size: 46px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .intro-text {
-    font-size: 27px;
+    font-size: 23px;
+    font-weight: bold;
   }
 
   .btn {

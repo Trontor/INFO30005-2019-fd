@@ -5,13 +5,16 @@ const Header = () => {
   return (
     <header>
       <div className="overlay" />
-      <div className="container h-100" id="homeTop">
-        <div className="d-flex h-100 text-center align-items-center">
+      <div className="container" id="homeTop">
+        <div className="h-100 text-center align-items-center">
           <div className="w-100 text-white">
-            <div className="intro-heading text-uppercase display-3">
-              Hello Food
+            <div className="intro-heading">
+              Reimagine your school's health education
             </div>
-            <div className="intro-text mb-0">Explore. Engage. Entertain.</div>
+            <div className="intro-text mb-0">
+              A modern, curriculum-aligned, health and nutrition education
+              platform.
+            </div>
             <a className="btn text-uppercase" href="login">
               Start here
             </a>

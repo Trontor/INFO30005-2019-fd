@@ -23,6 +23,7 @@ const registerStudent = (req, res) => {
   const teacherID = "5cae9845f45af429f8e9eb17";
   Teacher.findById(teacherID).then(teacher => {
     console.log(teacher);
+    //test
     if (!teacher) {
       // There is no teacher to link the student to
       return res.status(400).json({ teacher: "Teacher doesn't exist." });

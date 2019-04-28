@@ -12,7 +12,6 @@ const validateLoginInput = require("../validation/login");
 const validateRegisterInput = require("../validation/register");
 
 const registerStudent = (req, res) => {
-  console.log("REGISTER STUDENT!");
   // Check for payload errors (server-side input validation)
   const { errors, isValid } = validateRegisterInput(req.body);
   // The registration input fields is invalid
@@ -65,6 +64,7 @@ const registerStudent = (req, res) => {
 };
 
 const studentLogin = (req, res) => {
+  console.log("LOGIN STUDENT!");
   const email = req.body.email;
   const password = req.body.password;
   // Check for payload errors (server-side input validation)

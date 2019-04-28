@@ -15,7 +15,7 @@ router.get("/test", controller.testStudent);
 // @access  Public
 router.post("/register", controller.registerStudent);
 
-// @route   GET api/student/login
+// @route   POST api/student/login
 // @desc    Login Student / Return JWT Token
 // @access  Public
 router.post("/login", controller.studentLogin);

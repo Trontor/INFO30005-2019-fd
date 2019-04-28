@@ -16,9 +16,9 @@ main {
     background: url("../../../images/about/5.png") black repeat center center
       scroll;
     text-align: center;
-    padding: 7rem 0rem 3rem 0rem;
+    padding: 2rem 0rem 1rem 0rem;
 
-    .discription-text {
+    .description-text {
       padding: 2rem;
 
       @include desktop {
@@ -31,9 +31,9 @@ main {
   section#mission {
     background-color: #17a2b8;
     text-align: center;
-    padding: 4rem 0rem 3rem 0rem;
+    padding: 2rem 0rem 2rem 0rem;
 
-    .discription-text {
+    .description-text {
       padding: 2rem;
       color: white;
 
@@ -56,9 +56,10 @@ main {
     h1 {
       color: #3e4015;
       margin-bottom: 2.7rem;
-      font-size: 47px;
+      font-size: 26px;
       // text-shadow: 2px 2px 4px gray;
-      font-family: "Libre Barcode 39 Text", cursive;
+      // font-family: "Libre Barcode 39 Text", cursive;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     h4 {

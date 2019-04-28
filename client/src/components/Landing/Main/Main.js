@@ -16,19 +16,18 @@ const Main = () => {
             </div>
             <div class="col-xl-8 col-lg-7">
               <div
-                class="discription-text text-center
+                class="description-text text-center
                                 text-lg-left"
               >
                 <h4>About</h4>
-                <p class="about-dscription mb-0">
-                  "Hello Food is developed by INFO30005 Group Freedom Dive. It
-                  is an educational website that aims to help kids in Australia
-                  to raise their awareness of the benefits of fresh food. We are
-                  aware that the Australian government have launched initiatives
-                  to educate parents on making smarter decisions towards their
-                  children's health. However, such solutions are usually in the
-                  form of text-heavy information-based websites.{" "}
-                  <strong>We build the website for children.</strong>"
+                <p class="about-description mb-0">
+                  Hello Food offers text-based lessons, instructional videos,
+                  quizzes and a personalized learning dashboard that empower
+                  students to learn about nutrition, health, and physical
+                  education. <hr />
+                  Teachers can register their students and track their
+                  individual progress. Curriculum-aligned courses are
+                  pre-populated and can be unlocked to students progressively.
                 </p>
               </div>
             </div>
@@ -38,27 +37,24 @@ const Main = () => {
 
       <section id="mission">
         <div class="container">
-          <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-            <div class="col-xl">
+          <div class="row align-items-center no-gutters mb-2 mb-lg-5">
+            <div class="col-xl-9">
               <div
-                class="discription-text text-center
+                class="description-text text-center
                                 text-lg-left"
               >
                 <h2>Mission</h2>
                 <p class="about-dscription mb-0">
-                  "Our project directly targets children, typically those in
-                  primary school and early middle school. We plan to develop the
-                  online platform to nurture the nutritional and health
-                  awareness of children from an early age. After all, 'Hello
-                  Food' aims to be a platform that is tailored to the health and
-                  physical education of students and should supplement a state
-                  curriculum like the other shown established platforms."
+                  Hello Food aims to cultivate a proper understanding of all
+                  things health and nutrition from an early age, in an effort to
+                  combat the national obesity epidemic, and to help students
+                  lead healthier lives.
                 </p>
               </div>
             </div>
-            <div class="col-xl">
+            <div class="col-xl-3">
               <img
-                class="img-fluid mb-3 mb-lg-0"
+                class="img-fluid"
                 src={require("../../../images/mission/mission2.jpg")}
                 alt="about"
               />

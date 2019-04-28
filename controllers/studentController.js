@@ -19,7 +19,9 @@ const registerStudent = (req, res) => {
     return res.status(400).json(errors);
   }
   // First, let's check if the linked ObjectID teacher exists
-  Teacher.findById(req.body.teacherID).then(teacher => {
+  // const teacherID = req.body.teacherID;
+  const teacherID = "5cae9845f45af429f8e9eb17";
+  Teacher.findById(teacherID).then(teacher => {
     console.log(teacher);
     if (!teacher) {
       // There is no teacher to link the student to

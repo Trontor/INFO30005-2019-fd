@@ -7,18 +7,15 @@ const Main = () => {
       <section id="about" class="text-center">
         <div class="container">
           <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-lg-6">
               <img
                 class="img-fluid mb-3 mb-lg-0"
                 src={require("../../../images/about/about.jpg")}
                 alt="about"
               />
             </div>
-            <div class="col-xl-8 col-lg-7">
-              <div
-                class="description-text text-center
-                                text-lg-left"
-              >
+            <div class="col-lg-6">
+              <div class="description-text text-left">
                 <h4>About</h4>
                 <p class="about-description mb-0">
                   Hello Food offers text-based lessons, instructional videos,
@@ -37,12 +34,9 @@ const Main = () => {
 
       <section id="mission">
         <div class="container">
-          <div class="row align-items-center no-gutters mb-2 mb-lg-5">
-            <div class="col-xl-9">
-              <div
-                class="description-text text-center
-                                text-lg-left"
-              >
+          <div class="row align-items-center no-gutters">
+            <div class="col-lg-5 col-xl-6">
+              <div class="description-text text-left">
                 <h2>Mission</h2>
                 <p class="about-dscription mb-0">
                   Hello Food aims to cultivate a proper understanding of all
@@ -52,7 +46,7 @@ const Main = () => {
                 </p>
               </div>
             </div>
-            <div class="col-xl-3">
+            <div class="col-lg-7 col-xl-6">
               <img
                 class="img-fluid"
                 src={require("../../../images/mission/mission2.jpg")}

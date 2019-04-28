@@ -20,7 +20,6 @@ main {
 
     .description-text {
       padding: 2rem;
-
       @include desktop {
         padding: 0 0 0 2rem;
         border-left: 0.5rem solid #64a19d;
@@ -31,7 +30,7 @@ main {
   section#mission {
     background-color: #17a2b8;
     text-align: center;
-    padding: 2rem 0rem 2rem 0rem;
+    padding: 5rem 0rem 5rem 0rem;
 
     .description-text {
       padding: 2rem;

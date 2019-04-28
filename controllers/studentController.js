@@ -64,7 +64,8 @@ const registerStudent = (req, res) => {
 };
 
 const studentLogin = (req, res) => {
-  console.log("LOGIN STUDENT!");
+  console.log("Attempting Log-In");
+  console.log(req.body);
   const email = req.body.email;
   const password = req.body.password;
   // Check for payload errors (server-side input validation)

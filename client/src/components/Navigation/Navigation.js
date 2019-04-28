@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Navigation.scss";
 import $ from "jquery";
 import { withRouter } from "react-router-dom";
+import classnames from "classnames";
 
 class Navigation extends Component {
   navbarCollapse() {
@@ -35,7 +36,15 @@ class Navigation extends Component {
 
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <nav
+        className={classnames(
+          "navbar navbar-expand-lg navbar-light fixed-top",
+          {
+            "nav-transparent": this.props.location.pathname === "/"
+          }
+        )}
+        id="mainNav"
+      >
         <div class="container">
           <a class="navbar-brand" href="/">
             <img

@@ -75,12 +75,15 @@ body {
   }
 
   @include desktop {
-    padding-top: 25px;
-    padding-bottom: 25px;
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: transparent;
+
+    &.nav-transparent {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      background-color: transparent;
+    }
 
     .ls {
       font-family: "Gloria Hallelujah", cursive;

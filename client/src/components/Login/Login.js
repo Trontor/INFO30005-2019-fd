@@ -42,7 +42,14 @@ const Login = () => {
               </form>
             </div>
             <div class="modal-footer">
-              <a href='' onClick={() => {alert('Please contact your teacher for help :)');}}>Forgot Password?</a>
+              <a
+                href=""
+                onClick={() => {
+                  alert("Please contact your teacher for help :)");
+                }}
+              >
+                Forgot Password?
+              </a>
             </div>
           </div>
         </div>
@@ -50,7 +57,5 @@ const Login = () => {
     </div>
   );
 };
-
-
 
 export default Login;

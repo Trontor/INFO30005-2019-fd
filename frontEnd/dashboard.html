@@ -21,6 +21,10 @@
         <link
             href="https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Gochi+Hand|Patrick+Hand|Satisfy|Kaushan+Script|Libre+Barcode+39+Text|"
             rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya|Asap|Cardo|Hind+Madurai|Kalam|Noto+Sans+KR|Palanquin|Playfair+Display|Rokkitt|Source+Serif+Pro|Tinos" rel="stylesheet">
+
+        <!--css file-->
+        <link rel="stylesheet" href="css/dashboard/dashboard-miley.css">
         <!-- unknown -->
         <link
             href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -138,7 +142,7 @@
 
                         <div class="profile-card col-xs-12 col-sm-6 col-md-6"
                             style="width: 25rem;">
-                            <div class="card-body">
+                            <div class="card" id="card-body">
                                 <div class="image-container">
                                     <img src="image/dashboard/user.png"
                                         style="width:100%">
@@ -164,7 +168,7 @@
                             </div>
                         </div>
 
-                        <div class="card" style="width: 25rem;">
+                        <div class="card" style="width: 25rem;" id="bio-card">
                             <img class="card-img-top"
                                 src="image/dashboard/BIO.jpg" alt="Card image
                                 cap" style="width: auto">
@@ -214,45 +218,54 @@
                 <div class="tab-pane fade" id="nav-management"
                     role="tabpanel"
                     aria-labelledby="nav-management-tab">
-                    <table class="table" id="management-table">
-                        <thead>
+                    <div class="management-container">
+                        <table class="table table-hovor" id="management-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Star</th>
+                                    <th scope="col">Article</th>
+                                    <th scope="col">Video</th>
+                                    <th scope="col">Quiz</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Star</th>
-                                <th scope="col">Progress</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
+                                <td>1</td>
                                 <td>Mark</td>
                                 <td>Otto</td>
                                 <td>@mdo</td>
-                                <td>...</td>
-                                <td>...</td>
+                                <td>2</td>
+                                <td>30%</td>
+                                <td>40%</td>
+                                <td>30%</td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
+                                <td scope="row">2</td>
                                 <td>Jacob</td>
                                 <td>Thornton</td>
                                 <td>@fat</td>
-                                <td>...</td>
-                                <td>...</td>
+                                <td>3</td>
+                                <td>30%</td>
+                                <td>40%</td>
+                                <td>30%</td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
+                                <td scope="row">3</td>
                                 <td>Larry</td>
                                 <td>the Bird</td>
                                 <td>@twitter</td>
-                                <td>...</td>
-                                <td>...</td>
+                                <td>1</td>
+                                <td>30%</td>
+                                <td>40%</td>
+                                <td>30%</td>
                             </tr>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
 
@@ -265,10 +278,10 @@
                     role="tabpanel"
                     aria-labelledby="nav-community-tab">
                     <div class="community-card">
-                        <button type="button" class="btn btn-primary" herf="#">+
+                        <button type="button" class="btn btn-primary" herf="#" id="community-button">+
                             Add Thread</button>
-                        <div class="thread-card">
-                            <table class="table">
+                        <div class="card">
+                            <table class="table table-hovor" id="community-table">
                                 <thead>
                                     <tr>
                                         <th scope="col"></th>
@@ -284,55 +297,53 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">
+                                        <td scope="row">
                                             <div class="form-check">
                                                 <input type="checkbox"
                                                     class="form-check-input">
                                                 <label class="form-check-label"
-                                                    for="exampleCheck1"></label></div></th>
+                                                    for="exampleCheck1"></label></div></td>
                                         <td>&nbsp</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>...</td>
-                                        <td>...</td>
+                                        <td>12/04/2019</a></td>
+                                        <td><a href="#">How to upload?</a></td>
+                                        <td>Tom</td>
+                                        <td>published</td>
+                                        <td><span class="post-number">4</span></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
+                                        <td scope="row">
+                                            <div class="form-check">
+                                                <input type="checkbox"
+                                                    class="form-check-input">
+                                                <label class="form-check-label"
+                                                    for="exampleCheck1"></label></div></td>
+                                        <td>&nbsp</td>
+                                        <td>12/04/2019</td>
+                                        <td><a href="#">How to upload?</a></td>
+                                        <td>Tom</td>
+                                        <td>published</td>
+                                        <td><span class="post-number">1</span></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">
                                             <div class="form-check">
                                                 <input type="checkbox"
                                                     class="form-check-input"
                                                     id="exampleCheck1">
                                                 <label class="form-check-label"
-                                                    for="exampleCheck1"></label></div></th>
+                                                    for="exampleCheck1"></label></div></td>
                                         <td>&nbsp</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="form-check">
-                                                <input type="checkbox"
-                                                    class="form-check-input"
-                                                    id="exampleCheck1">
-                                                <label class="form-check-label"
-                                                    for="exampleCheck1"></label></div></th>
-                                        <td>&nbsp</td>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td>...</td>
-                                        <td>...</td>
+                                        <td>12/04/2019</td>
+                                        <td><a href="#">How to upload?</a></td>
+                                        <td>Tom</td>
+                                        <td>published</td>
+                                        <td><span class="post-number">4</span></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-
                 <div class="tab-pane fade" id="nav-course"
                     role="tabpanel"
                     aria-labelledby="nav-course-tab">

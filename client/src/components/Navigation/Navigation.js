@@ -68,7 +68,7 @@ class Navigation extends Component {
       </>
     );
     const authLinks = (
-      <li class="nav-item">
+      <li className="nav-item">
         <img
           src={user.avatar}
           alt={user.name}

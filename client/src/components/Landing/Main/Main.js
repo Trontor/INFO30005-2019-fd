@@ -4,24 +4,27 @@ import "./Main.scss";
 const Main = () => {
   return (
     <main>
-      <section id="about" class="text-center">
-        <div class="container">
-          <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-            <div class="col-lg-6">
+      <section id="about" className="text-center">
+        <div className="container">
+          <div className="row align-items-center no-gutters mb-4 mb-lg-5">
+            <div className="col-lg-6">
               <img
-                class="img-fluid mb-3 mb-lg-0"
+                className="img-fluid mb-3 mb-lg-0"
                 src={require("../../../images/about/about.jpg")}
                 alt="about"
               />
             </div>
-            <div class="col-lg-6">
-              <div class="description-text text-left">
+            <div className="col-lg-6">
+              <div className="description-text text-left">
                 <h3>About</h3>
-                <p class="about-description mb-0">
+                <p className="about-description mb-0">
                   Hello Food offers text-based lessons, instructional videos,
                   quizzes and a personalized learning dashboard that empower
                   students to learn about nutrition, health, and physical
-                  education. <hr />
+                  education.
+                </p>
+                <hr />
+                <p className="about-description mb-0">
                   Teachers can register their students and track their
                   individual progress. Curriculum-aligned courses are
                   pre-populated and can be unlocked to students progressively.
@@ -33,24 +36,28 @@ const Main = () => {
       </section>
 
       <section id="mission">
-        <div class="container">
-          <div class="row align-items-center no-gutters">
-            <div class="col-lg-6 col-xl-6">
-              <div class="description-text text-left">
+        <div className="container">
+          <div className="row align-items-center no-gutters">
+            <div className="col-lg-6 col-xl-6">
+              <div className="description-text text-left">
                 <h2>Mission</h2>
-                <p class="about-dscription mb-0">
-                  Hello Food aims to cultivate a proper understanding of
-                  health and nutrition from an early age, in an effort to
-                  combat the national obesity epidemic, and to help students
-                  lead healthier lives.<hr />
-                  Light-hearted inter-class discussions and leaderboard will be enabled to allow
-                  continued tracking of individual improvement and impact over time.
+                <p className="about-dscription mb-0">
+                  Hello Food aims to cultivate a proper understanding of health
+                  and nutrition from an early age, in an effort to combat the
+                  national obesity epidemic, and to help students lead healthier
+                  lives.
+                </p>
+                <hr />{" "}
+                <p className="about-dscription mb-0">
+                  Light-hearted inter-class discussions and leaderboard will be
+                  enabled to allow continued tracking of individual improvement
+                  and impact over time.
                 </p>
               </div>
             </div>
-            <div class="col-lg-6 col-xl-6">
+            <div className="col-lg-6 col-xl-6">
               <img
-                class="img-fluid"
+                className="img-fluid"
                 src={require("../../../images/mission/mission2.jpg")}
                 alt="about"
               />
@@ -59,13 +66,15 @@ const Main = () => {
         </div>
       </section>
 
-      <section id="team" class="text-center">
+      <section id="team" className="text-center">
         <div id="teamPart" calss="container text-center">
-          <h1><strong>Team</strong></h1>
-          <div class="row">
-            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <h1>
+            <strong>Team</strong>
+          </h1>
+          <div className="row">
+            <div className="col-lg-3 col-md-6 mb-5 mb-lg-0">
               <span
-                class="team-icon rounded-circle mx-auto mb-3
+                className="team-icon rounded-circle mx-auto mb-3
                                 rounded-circle"
               />
               <h4>
@@ -74,9 +83,9 @@ const Main = () => {
               <p>Back-end, Javascript</p>
             </div>
 
-            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <div className="col-lg-3 col-md-6 mb-5 mb-lg-0">
               <span
-                class="team-icon rounded-circle mx-auto mb-3
+                className="team-icon rounded-circle mx-auto mb-3
                                 rounded-circle"
               />
               <h4>
@@ -85,9 +94,9 @@ const Main = () => {
               <p>Back-end, Database</p>
             </div>
 
-            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <div className="col-lg-3 col-md-6 mb-5 mb-lg-0">
               <span
-                class="team-icon rounded-circle mx-auto mb-3
+                className="team-icon rounded-circle mx-auto mb-3
                                 rounded-circle"
               />
               <h4>
@@ -96,9 +105,9 @@ const Main = () => {
               <p>Front-end, Design</p>
             </div>
 
-            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <div className="col-lg-3 col-md-6 mb-5 mb-lg-0">
               <span
-                class="team-icon rounded-circle mx-auto mb-3
+                className="team-icon rounded-circle mx-auto mb-3
                                 rounded-circle"
               />
               <h4>

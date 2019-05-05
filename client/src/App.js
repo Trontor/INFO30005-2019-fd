@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import setAuthToken from "./utils/setAuthToken";
@@ -7,7 +7,6 @@ import jwt_decode from "jwt-decode";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import Navigation from "./components/Navigation/Navigation";
-import Footer from "./components/layout/Footer";
 import Landing from "./components/Landing/Landing";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
@@ -33,6 +32,7 @@ if (localStorage.getItem("jwtToken")) {
     window.location.href = "/login";
   }
 }
+
 class App extends Component {
   render() {
     return (
@@ -40,7 +40,9 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navigation />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/" component={Landing} />

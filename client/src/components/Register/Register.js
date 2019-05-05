@@ -39,15 +39,15 @@ class Register extends Component {
     return (
       <div className="logInPage">
         <div id="logIn">
-          <div class="modal-dialog modal-login">
-            <div class="registerBg modal-content">
-              <div class="modal-header">
-                <div class="avatar" />
-                <h4 class="modal-title">Create an Account</h4>
+          <div className="modal-dialog modal-login">
+            <div className="registerBg modal-content">
+              <div className="modal-header">
+                <div className="avatar" />
+                <h4 className="modal-title">Create an Account</h4>
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
                 <form onSubmit={this.onSubmit}>
-                  <div class="form-group">
+                  <div className="form-group">
                     <input
                       type="text"
                       className={classnames("form-control", {
@@ -62,7 +62,7 @@ class Register extends Component {
                       <div className="invalid-feedback">{errors.name}</div>
                     )}
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     <input
                       type="text"
                       className={classnames("form-control", {
@@ -77,7 +77,7 @@ class Register extends Component {
                       <div className="invalid-feedback">{errors.email}</div>
                     )}
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     <input
                       type="password"
                       className={classnames("form-control", {
@@ -92,7 +92,7 @@ class Register extends Component {
                       <div className="invalid-feedback">{errors.password}</div>
                     )}
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     <input
                       type="password"
                       className={classnames("form-control", {
@@ -109,10 +109,10 @@ class Register extends Component {
                       </div>
                     )}
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     <button
                       type="submit"
-                      class="btn btn-primary btn-lg btn-block login-btn"
+                      className="btn btn-primary btn-lg btn-block login-btn"
                     >
                       Register
                     </button>

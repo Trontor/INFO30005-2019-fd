@@ -1,5 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import axios from "axios";
 import "./Login.scss";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -56,15 +56,15 @@ class Login extends Component {
     return (
       <div className="logInPage">
         <div id="logIn">
-          <div class=" modal-login">
-            <div class="modal-content">
-              <div class="modal-header">
-                <div class="avatar" />
-                <h4 class="modal-title">Welcome back</h4>
+          <div className=" modal-login">
+            <div className="modal-content">
+              <div className="modal-header">
+                <div className="avatar" />
+                <h4 className="modal-title">Welcome back</h4>
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
                 <form onSubmit={this.onSubmit}>
-                  <div class="form-group">
+                  <div className="form-group">
                     <input
                       type="text"
                       className={classnames("form-control", {
@@ -80,7 +80,7 @@ class Login extends Component {
                       <div className="invalid-feedback">{errors.email}</div>
                     )}
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     <input
                       type="password"
                       className={classnames("form-control", {
@@ -96,10 +96,10 @@ class Login extends Component {
                       <div className="invalid-feedback">{errors.password}</div>
                     )}
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     <button
                       type="submit"
-                      class="btn btn-primary
+                      className="btn btn-primary
                                     btn-lg btn-block login-btn"
                     >
                       Login
@@ -107,9 +107,8 @@ class Login extends Component {
                   </div>
                 </form>
               </div>
-              <div class="modal-footer">
+              <div className="modal-footer">
                 <a
-                  href=""
                   onClick={() => {
                     alert("Please contact your teacher for help :)");
                   }}

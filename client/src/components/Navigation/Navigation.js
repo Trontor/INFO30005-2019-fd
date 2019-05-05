@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
 import "./Navigation.scss";
 import $ from "jquery";
@@ -55,12 +56,12 @@ class Navigation extends Component {
             Home
           </Link>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <Link className="nav-link ls logInbtn" to="/login">
             Log in
           </Link>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <Link className="nav-link ls " to="/register">
             Sign up
           </Link>
@@ -92,17 +93,17 @@ class Navigation extends Component {
         )}
         id="mainNav"
       >
-        <div class="container">
-          <a class="navbar-brand" href="/">
+        <div className="container">
+          <a className="navbar-brand" href="/">
             <img
-              class="logo"
+              className="logo"
               src={require("../../images/logo/MultiLogoResize.png")}
               alt="Logo"
             />
             <span> Hello Food </span>
           </a>
           <button
-            class="navbar-toggler navbar-toggler-right"
+            className="navbar-toggler navbar-toggler-right"
             type="button"
             data-toggle="collapse"
             data-target="#navbarResponsive"
@@ -111,10 +112,10 @@ class Navigation extends Component {
             aria-label="Toggle navigation"
           >
             Menu
-            <i class="fas fa-bars" />
+            <i className="fas fa-bars" />
           </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav text-uppercase ml-auto">
+          <div className="collapse navbar-collapse" id="navbarResponsive">
+            <ul className="navbar-nav text-uppercase ml-auto">
               {this.props.location.pathname === "/" ? (
                 <>
                   <li className="nav-item">
@@ -122,18 +123,18 @@ class Navigation extends Component {
                       Home
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#about">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#about">
                       About
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#mission">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#mission">
                       Mission
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#team">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#team">
                       Team
                     </a>
                   </li>

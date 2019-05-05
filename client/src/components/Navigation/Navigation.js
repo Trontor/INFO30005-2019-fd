@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import "./Navigation.scss";
 import $ from "jquery";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import { logoutUser } from "../../actions/authActions";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import classnames from "classnames";
 
 class Navigation extends Component {
@@ -30,11 +33,55 @@ class Navigation extends Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps) {
+    }
+  }
+
   componentWillUnmount() {
     window.removeEventListener("scroll", this.navbarCollapse);
   }
 
+  onLogoutClick = e => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
   render() {
+    const { isAuthenticated, user } = this.props.auth;
+    const guestLinks = (
+      <>
+        <li className="nav-item">
+          <Link className="nav-link" to="/">
+            Home
+          </Link>
+        </li>
+        <li class="nav-item">
+          <Link className="nav-link ls logInbtn" to="/login">
+            Log in
+          </Link>
+        </li>
+        <li class="nav-item">
+          <Link className="nav-link ls " to="/register">
+            Sign up
+          </Link>
+        </li>
+      </>
+    );
+    const authLinks = (
+      <li class="nav-item">
+        <img
+          src={user.avatar}
+          alt={user.name}
+          className="rounded-circle"
+          style={{ width: "50px", marginRight: "15px" }}
+          title="You must have a Gravatar connected to your email to display ann image"
+        />
+        <a onClick={this.onLogoutClick} className="nav-link ls d-inline">
+          Log out
+        </a>
+      </li>
+    );
+
     return (
       <nav
         className={classnames(
@@ -91,25 +138,8 @@ class Navigation extends Component {
                     </a>
                   </li>
                 </>
-              ) : (
-                <>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/">
-                      Home
-                    </a>
-                  </li>
-                </>
-              )}
-              <li class="nav-item">
-                <a class="nav-link ls logInbtn" href="login">
-                  Log in
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link ls" href="register">
-                  Sign up
-                </a>
-              </li>
+              ) : null}
+              {isAuthenticated ? authLinks : guestLinks}
             </ul>
           </div>
         </div>
@@ -118,4 +148,16 @@ class Navigation extends Component {
   }
 }
 
-export default withRouter(Navigation);
+Navigation.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(withRouter(Navigation));

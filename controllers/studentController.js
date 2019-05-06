@@ -113,112 +113,69 @@ const testStudent = (req, res) => {
  */
 getUnlockedTopics = (resolve, reject) => {};
 
-const studentProfile = (req, res) => {
+const studentProfile = async (req, res) => {
   // get all info as shown in schema
   // change ObjectId to name
-  const { teacherID, ...user } = req.user;
+  const { teacherID, name, email, avatar, yearLevel, stars } = req.user;
   let topicList = [];
-  Teacher.findById(teacherID)
-    .then(teacher => {
-      if (!teacher) {
-        // The teacherID does not exist
-        return res.status(400).send({ teacher: "Teacher doesn't exist." });
-      }
-      teacher.unlockedTopics.forEach(topicID => {
-        Topic.findById(topicID).then(topic => {
-          if (!topic) {
-            // We don't want to send an error back for a missing topic, just skip over it
-            // TODO: Handle missing topics (probably on teacher log-in)
-            return;
+  const teacher = await Teacher.findById(teacherID);
+  if (!teacher) {
+    // The teacherID does not exist
+    return res.status(400).send({ teacher: "Teacher doesn't exist." });
+  }
+  for (const topicID of teacher.unlockedTopics) {
+    const topic = await Topic.findById(topicID);
+    if (!topic) {
+      // We don't want to send an error back for a missing topic, just skip over it
+      // TODO: Handle missing topics (probably on teacher log-in)
+      return;
+    }
+    for (const item of topic.items) {
+      const { type, itemID } = item;
+      let itemInfo = undefined;
+      switch (type) {
+        case "Article":
+          itemInfo = await Article.findById(itemID);
+          if (itemInfo) {
+            // We don't want to send an error back for a missing item, just skip over it
+            // TODO: Handle missing items (probably on administrator log-in)
+            topicList.push({ type, title: itemInfo.title });
           }
-          topic.items.forEach(item => {
-            const { type, itemID } = item;
-            switch (type) {
-              case "Article":
-                Article.findById(itemID).then(item => {
-                  if (!item) {
-                    // We don't want to send an error back for a missing item, just skip over it
-                    // TODO: Handle missing items (probably on administrator log-in)
-                    return;
-                  }
-                  topicList.push({ type, title: item.title });
-                });
-                break;
-              case "Video":
-                Video.findById(itemID).then(item => {
-                  if (!item) {
-                    // We don't want to send an error back for a missing item, just skip over it
-                    // TODO: Handle missing items (probably on administrator log-in)
-                    return;
-                  }
-                  topicList.push({ type, title: item.title });
-                });
-                break;
-              case "Quiz":
-                Quiz.findById(itemID).then(item => {
-                  if (!item) {
-                    // We don't want to send an error back for a missing item, just skip over it
-                    // TODO: Handle missing items (probably on administrator log-in)
-                    return;
-                  }
-                  topicList.push({ type, title: item.title });
-                });
-                break;
-            }
-          });
-        });
-      });
-    })
-    .then(() =>
-      res.json({
-        // Teacher attributes
-        teacherHonor: teacher.honorific,
-        teacherName: teacher.name,
-        school: teacher.school,
-        // User attributes
-        name: user.name,
-        email: user.email,
-        avatar: user.avatar,
-        year: user.yearLevel,
-        stars: user.stars,
-        topicList,
-        progress: completed
-      })
-    );
-  // // progress: completed
+          break;
+        case "Video":
+          itemInfo = await Video.findById(itemID);
+          if (itemInfo) {
+            // We don't want to send an error back for a missing item, just skip over it
+            // TODO: Handle missing items (probably on administrator log-in)
+            topicList.push({ type, title: itemInfo.title });
+          }
+          break;
+        case "Quiz":
+          itemInfo = await Quiz.findById(itemID);
+          if (itemInfo) {
+            // We don't want to send an error back for a missing item, just skip over it
+            // TODO: Handle missing items (probably on administrator log-in)
+            topicList.push({ type, title: itemInfo.title });
+          }
+          break;
+      }
+    }
+  }
+  res.json({
+    // Teacher attributes
+    teacherHonor: teacher.honorific,
+    teacherName: teacher.name,
+    school: teacher.school,
+    // User attributes
+    name,
+    email,
+    avatar,
+    yearLevel,
+    stars,
+    topicList
+    // progress: completed
+  });
   let completed = [];
-  // const compl = user.progress;
-  // for (let i = 0; i < compl.length; i++) {
-  //   Topic.findById(compl[i].topic).then(topic => {
-  //     if (!topic) {
-  //       return res.status(400).send("Error: Topic doesn't exist.");
-  //     }
-  //     let vidList = [],
-  //       artiList = [],
-  //       quizList = [];
-  //     for (let j = 0; j < compl[i].videoListIDs.length; j++) {
-  //       Video.findById(compl[i].videoListIDs[j]).then(video => {
-  //         vidList.push(video.title);
-  //       });
-  //     }
-  //     for (let j = 0; j < compl[i].articleListIDs.length; j++) {
-  //       Article.findById(compl[i].articleListIDs[j]).then(article => {
-  //         artiList.push(article.title);
-  //       });
-  //     }
-  //     for (let j = 0; j < compl[i].quizListIDs.length; j++) {
-  //       Quiz.findById(compl[i].quizListIDs[j]).then(quiz => {
-  //         quizList.push(quiz.title);
-  //       });
-  //     }
-  //     completed.push({
-  //       topicName: topic.name,
-  //       videoNames: vidList,
-  //       articleNames: artiList,
-  //       quizNames: quizList
-  //     });
-  //   });
-  // }
 };
 
 module.exports.registerStudent = registerStudent;

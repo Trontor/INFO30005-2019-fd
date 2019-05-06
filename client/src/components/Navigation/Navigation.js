@@ -77,7 +77,11 @@ class Navigation extends Component {
           style={{ width: "50px", marginRight: "15px" }}
           title="You must have a Gravatar connected to your email to display ann image"
         />
-        <a onClick={this.onLogoutClick} className="nav-link ls d-inline">
+        <a
+          onClick={this.onLogoutClick}
+          style={{ cursor: "pointer" }}
+          className="nav-link ls d-inline"
+        >
           Log out
         </a>
       </li>

@@ -27,14 +27,6 @@ class Login extends Component {
       password: this.state.password
     };
     this.props.loginUser(userData);
-    // axios
-    //   .post("/api/student/login", userData)
-    //   .then(res => {
-    //     this.props.history.push("/dashboard");
-    //   })
-    //   .catch(err => {
-    //     console.log("loginerror :(");
-    //   });
   };
 
   componentDidMount() {

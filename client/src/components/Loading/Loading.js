@@ -4,7 +4,7 @@ import "./Loading.css";
 const Loading = () => {
   return (
     <div id="loading-spinner-wrapper">
-      <div class="spinner-border text-secondary" role="status">
+      <div id="spinner" class="spinner-border text-warning" role="status">
         <span class="sr-only">Loading...</span>
       </div>
     </div>

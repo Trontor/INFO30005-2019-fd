@@ -53,7 +53,6 @@ const addReply = (req, res) => {
   Thread.findById(req.params.id, (err, thread) => {
     if (!err) {
       thread.replies.push(reply);
-      console.log(thread);
       thread.save(err => {
         if (err) {
           res

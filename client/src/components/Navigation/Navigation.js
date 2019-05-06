@@ -48,7 +48,7 @@ class Navigation extends Component {
     this.props.logoutUser();
   };
   render() {
-    const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
     const guestLinks = (
       <>
         <li className="nav-item">

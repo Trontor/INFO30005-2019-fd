@@ -2,7 +2,7 @@ import "../Login/Login.scss";
 import "./Register.scss";
 import React, { Component } from "react";
 import classnames from "classnames";
-import { registerUser } from "../../actions/authActions";
+import { registerUser } from "../../actions/registerActions";
 import { connect } from "react-redux";
 import Loading from "../Loading/Loading";
 
@@ -23,7 +23,6 @@ class Register extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.registerSuccess) {
-      console.log("re");
       this.props.history.push("/login");
     }
   }

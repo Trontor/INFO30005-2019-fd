@@ -1,0 +1,140 @@
+$color_1: cornflowerblue;
+$color_2: white;
+$color_3: #00ccff;
+$color_4: deepskyblue;
+$color_5: #ffffff;
+$font-family_1: 'Hind Madurai', sans-serif;
+$font-family_2: 'Rokkitt', serif;
+$font-family_3: 'Asap', sans-serif;
+$font-family_4: 'Noto Sans KR', sans-serif;
+$font-family_5: 'Tinos', serif;
+$background-color_1: #000;
+$background-color_2: #f2f2f2;
+$background-color_3: #e6ffff;
+$background-color_4: #0080ff;
+$background-color_5: mintcream;
+$background-color_6: #e6f5ff;
+$border-color_1: grey;
+
+/* management-tab part */
+/* community card part */
+#card-body {
+  width: 25rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 5px;
+  background: #f2f2f2;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0);
+}
+.profile-card {
+  .image-container {
+    img {
+      height: 16rem;
+      position: relative;
+    }
+  }
+  .profile-info {
+    color: $color_1;
+    margin-right: 16px;
+  }
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: $color_2;
+    background-color: $background-color_1;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+}
+#bio-card {
+  .card {
+    img {
+      margin: 1rem;
+      height: 16rem;
+    }
+  }
+}
+#management-table {
+  margin-left: 3rem;
+  font-family: $font-family_1;
+  border-collapse: collapse;
+  width: 90%;
+  text-align: center;
+  margin-top: 2rem;
+  td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+  }
+  th {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: $background-color_4;
+    color: $color_2;
+    font-family: $font-family_2;
+  }
+  tr {
+    &:nth-child(even) {
+      background-color: $background-color_2;
+    }
+    &:hover {
+      background-color: $background-color_3;
+    }
+  }
+}
+.community-card {
+  margin: 2rem;
+  border-style: solid;
+  border-color: $border-color_1;
+  background-color: $background-color_5;
+  padding: 2rem;
+  height: 90%;
+  #community-table {
+    text-align: center;
+    font-family: $font-family_3;
+    th {
+      font-family: $font-family_5;
+      font-size: 1.1rem;
+      background-color: $background-color_6;
+      color: $color_3;
+    }
+  }
+  button {
+    margin-bottom: 2rem;
+    width: 10rem;
+    font-family: $font-family_4;
+  }
+  a {
+    &:link {
+      color: $color_1;
+    }
+    &:visited {
+      color: $color_1;
+    }
+    &:hover {
+      color: $color_4;
+    }
+    &:active {
+      color: $color_4;
+    }
+  }
+  span.post-number {
+    background: #ff6666;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: $color_5;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.5em;
+    margin-right: 5px;
+    text-align: center;
+    width: 1.6em;
+    position: center;
+  }
+}

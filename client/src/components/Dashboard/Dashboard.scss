@@ -1,0 +1,17 @@
+#topInterface {
+  padding: 49px 20px;
+  background: orange;
+
+  img {
+    height: 44px;
+  }
+
+  .avatar {
+    img {
+      height: 120px;
+      border: white solid 0.2rem;
+    }
+    padding: 14px 10px;
+    margin-top: 10px;
+  }
+}

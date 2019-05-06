@@ -5,18 +5,18 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  profile: null,
+  data: null,
   loading: false
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_PROFILE:
-      return { ...state, profile: action.payload, loading: false };
+      return { ...state, data: action.payload, loading: false };
     case PROFILE_LOADING:
       return { ...state, loading: true };
     case CLEAR_CURRENT_PROFILE:
-      return { ...state, loading: false, profile: null };
+      return { ...state, data: null, loading: false };
     default:
       return state;
   }

@@ -60,6 +60,7 @@ class Login extends Component {
             <div className="modal-content">
               <div className="modal-header">
                 <div className="avatar" />
+                {/* {this.props.justRegistered && "registrationn success"} */}
                 <h4 className="modal-title">Welcome back</h4>
               </div>
               <div className="modal-body">
@@ -131,6 +132,7 @@ Login.propTypes = {
 };
 
 const mapStateToProps = state => ({
+  justRegistered: state.register.registerSuccess,
   auth: state.auth,
   errors: state.errors
 });

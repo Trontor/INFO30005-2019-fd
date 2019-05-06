@@ -2,7 +2,9 @@ import "../Login/Login.scss";
 import "./Register.scss";
 import React, { Component } from "react";
 import classnames from "classnames";
-import axios from "axios";
+import { registerUser } from "../../actions/authActions";
+import { connect } from "react-redux";
+import Loading from "../Loading/Loading";
 
 class Register extends Component {
   constructor() {
@@ -11,8 +13,7 @@ class Register extends Component {
       name: "",
       email: "",
       password: "",
-      password2: "",
-      errors: {}
+      password2: ""
     };
   }
 
@@ -20,6 +21,12 @@ class Register extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.registerSuccess) {
+      console.log("re");
+      this.props.history.push("/login");
+    }
+  }
   onSubmit = e => {
     e.preventDefault();
     const newUser = {
@@ -28,14 +35,22 @@ class Register extends Component {
       password: this.state.password,
       confirmPassword: this.state.confirmPassword
     };
-    axios
-      .post("/api/student/register", newUser)
-      .then(res => console.log(res.data))
-      .catch(err => this.setState({ errors: err.response.data }));
+    this.props.registerUser(newUser);
+    // axios
+    //   .post("/api/student/register", newUser)
+    //   .then(res => console.log(res.data))
+    //   .catch(err => this.setState({ errors: err.response.data }));
   };
 
   render() {
-    const { errors } = this.state;
+    const errors = this.props.errors;
+    if (this.props.loading) {
+      return (
+        <div className="logInPage">
+          <Loading />
+        </div>
+      );
+    }
     return (
       <div className="logInPage">
         <div id="logIn">
@@ -127,4 +142,13 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = state => ({
+  registerSuccess: state.register.registerSuccess,
+  errors: state.register.errors,
+  loading: state.register.loading
+});
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(Register);

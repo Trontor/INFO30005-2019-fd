@@ -52,11 +52,6 @@ class Navigation extends Component {
     const guestLinks = (
       <>
         <li className="nav-item">
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
-        </li>
-        <li className="nav-item">
           <Link className="nav-link ls logInbtn" to="/login">
             Log in
           </Link>
@@ -90,7 +85,9 @@ class Navigation extends Component {
     return (
       <nav
         className={classnames("navbar navbar-expand-lg navbar-light ", {
-          "nav-transparent fixed-top": this.props.location.pathname === "/"
+          "nav-transparent fixed-top":
+            this.props.location.pathname === "/login" ||
+            this.props.location.pathname === "/register"
         })}
         id="mainNav"
       >

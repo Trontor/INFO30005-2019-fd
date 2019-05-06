@@ -89,12 +89,9 @@ class Navigation extends Component {
 
     return (
       <nav
-        className={classnames(
-          "navbar navbar-expand-lg navbar-light fixed-top",
-          {
-            "nav-transparent": this.props.location.pathname === "/"
-          }
-        )}
+        className={classnames("navbar navbar-expand-lg navbar-light ", {
+          "nav-transparent fixed-top": this.props.location.pathname === "/"
+        })}
         id="mainNav"
       >
         <div className="container">

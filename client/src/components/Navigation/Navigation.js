@@ -65,13 +65,13 @@ class Navigation extends Component {
     );
     const authLinks = (
       <li className="nav-item">
-        <img
+        {/* <img
           src={user.avatar}
           alt={user.name}
           className="rounded-circle"
           style={{ width: "50px", marginRight: "15px" }}
           title="You must have a Gravatar connected to your email to display ann image"
-        />
+        /> */}
         <a
           onClick={this.onLogoutClick}
           style={{ cursor: "pointer" }}

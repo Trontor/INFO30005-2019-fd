@@ -12,6 +12,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
+import NewThread from "./components/Threads/NewThread";
 
 // Check for token
 if (localStorage.getItem("jwtToken")) {
@@ -42,6 +43,9 @@ class App extends Component {
             <Navigation />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/newThread" component={NewThread} />
             </Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

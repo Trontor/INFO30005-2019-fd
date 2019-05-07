@@ -4,13 +4,14 @@ const createThread = (req, res) => {
   const thread = new Thread({
     title: req.body.title,
     content: req.body.content,
-    author: req.body.author
+    topic: req.body.topic,
+    authorID: req.body.authorID
   });
   thread.save((err, newThread) => {
     if (!err) {
       res.send(newThread);
     } else {
-      res.sendStatus(400).json(err);
+      res.status(400).json(err);
     }
   });
 };

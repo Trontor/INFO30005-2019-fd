@@ -64,22 +64,22 @@ class Navigation extends Component {
       </>
     );
     const authLinks = (
-      <li className="nav-item">
-        {/* <img
-          src={user.avatar}
-          alt={user.name}
-          className="rounded-circle"
-          style={{ width: "50px", marginRight: "15px" }}
-          title="You must have a Gravatar connected to your email to display ann image"
-        /> */}
-        <a
-          onClick={this.onLogoutClick}
-          style={{ cursor: "pointer" }}
-          className="nav-link ls d-inline"
-        >
-          Log out
-        </a>
-      </li>
+      <>
+        <li className="nav-item">
+          <Link className="nav-link ls logInbtn" to="/dashboard">
+            Dashboard
+          </Link>
+        </li>
+        <li className="nav-item">
+          <a
+            onClick={this.onLogoutClick}
+            style={{ cursor: "pointer" }}
+            className="nav-link ls"
+          >
+            Log out
+          </a>
+        </li>
+      </>
     );
 
     return (

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 
 // Load Thread model
 const controller = require("../../controllers/threadController");
@@ -9,10 +10,14 @@ const controller = require("../../controllers/threadController");
 // @access  Public
 router.get("/test", (req, res) => res.send("test"));
 
-// @route   POST api/threads/create
+// @route   POST api/threads/
 // @desc    Create a thread
 // @access  Public
-router.post("/create", controller.createThread);
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  controller.createThread
+);
 
 // // @route   GET api/threads/:title
 // // @desc    Find a thread by title

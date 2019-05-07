@@ -19,6 +19,11 @@ router.post(
   controller.createThread
 );
 
+// @route GET api/threads/
+// @desc Find a thread by ID
+// @access Private
+router.get("/:id", controller.getThreadById);
+
 // // @route   GET api/threads/:title
 // // @desc    Find a thread by title
 // // @access  Public

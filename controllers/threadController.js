@@ -17,6 +17,15 @@ const createThread = (req, res) => {
   });
 };
 
+const getThreadById = (req, res) => {
+  Thread.findById(req.params.id, (err, thread) => {
+    if (err) {
+      return res.status(400).json(err);
+    }
+    res.send(thread);
+  });
+};
+
 const getThreads = async (req, res) => {
   const { err, users } = await Thread.find({ teacherID: req.user.teacherID });
   console.log("test");
@@ -92,6 +101,7 @@ const deleteThread = (req, res) => {
   });
 };
 
+module.exports.getThreadById = getThreadById;
 module.exports.createThread = createThread;
 module.exports.findThreadByTitle = findThreadByTitle;
 module.exports.findThreadsByAuthor = findThreadsByAuthor;

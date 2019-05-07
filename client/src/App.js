@@ -13,6 +13,7 @@ import Register from "./components/Register/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import NewThread from "./components/Threads/NewThread";
+import ViewThread from "./components/Threads/ViewThread/ViewThread";
 
 // Check for token
 if (localStorage.getItem("jwtToken")) {
@@ -46,6 +47,9 @@ class App extends Component {
             </Switch>
             <Switch>
               <PrivateRoute exact path="/newThread" component={NewThread} />
+            </Switch>
+            <Switch>
+              <Route path="/community/threads/:id" component={ViewThread} />
             </Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

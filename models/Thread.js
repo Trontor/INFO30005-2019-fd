@@ -17,6 +17,10 @@ const ThreadSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  teacherID: {
+    type: mongoose.Types.ObjectId,
+    required: true
+  },
   authorID: {
     type: mongoose.Types.ObjectId,
     required: true

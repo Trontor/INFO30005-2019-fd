@@ -64,8 +64,6 @@ const registerStudent = (req, res) => {
 };
 
 const studentLogin = (req, res) => {
-  console.log("Attempting Log-In");
-  console.log(req.body);
   const email = req.body.email;
   const password = req.body.password;
   // Check for payload errors (server-side input validation)
@@ -161,6 +159,21 @@ const studentProfile = async (req, res) => {
       }
     }
   }
+
+  const relevantThreads = await Thread.find({ teacherID: req.user.teacherID });
+  const userThreads = [];
+  for (const thread of relevantThreads) {
+    const postUser = await Student.findById(thread.authorID);
+    userThreads.push({
+      id: thread._id,
+      authorID: thread.authorID,
+      authorName: postUser.name,
+      date: thread.datePosted,
+      title: thread.title,
+      topic: thread.topic,
+      replies: thread.replies.length
+    });
+  }
   res.json({
     // Teacher attributes
     teacherHonor: teacher.honorific,
@@ -172,6 +185,7 @@ const studentProfile = async (req, res) => {
     avatar,
     yearLevel,
     stars,
+    threads: userThreads,
     topicList
     // progress: completed
   });

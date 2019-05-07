@@ -5,7 +5,8 @@ const createThread = (req, res) => {
     title: req.body.title,
     content: req.body.content,
     topic: req.body.topic,
-    authorID: req.body.authorID
+    authorID: req.body.authorID,
+    teacherID: req.user.teacherID
   });
   thread.save((err, newThread) => {
     if (!err) {
@@ -14,6 +15,11 @@ const createThread = (req, res) => {
       res.status(400).json(err);
     }
   });
+};
+
+const getThreads = async (req, res) => {
+  const { err, users } = await Thread.find({ teacherID: req.user.teacherID });
+  console.log("test");
 };
 
 const findThreadByTitle = (req, res) => {

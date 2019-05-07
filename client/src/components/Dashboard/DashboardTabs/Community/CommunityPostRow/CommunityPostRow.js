@@ -1,23 +1,36 @@
 import React from "react";
 
-const CommunityPostRow = () => {
+const CommunityPostRow = props => {
+  const isoDateToString = isoDate => {
+    const date = new Date(isoDate);
+    const year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let dt = date.getDate();
+
+    if (dt < 10) {
+      dt = "0" + dt;
+    }
+    if (month < 10) {
+      month = "0" + month;
+    }
+    return `${dt}/${month}/${year}`;
+  };
+  const threadLink = `/community/threads/${props.id}`;
   return (
     <tr>
-      <td>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" />
-          <label class="form-check-label" for="exampleCheck1" />
+      {/* <td>
+        <div className="form-check">
+          <input type="checkbox" className="form-check-input" />
+          <label className="form-check-label" />
         </div>
-      </td>
-      <td>John</td>
-      <td>12/04/2019</td>
+      </td> */}
+      <td>{isoDateToString(props.date)}</td>
       <td>
-        <a href="#">How to upload?</a>
+        <a href={threadLink}>{props.title}</a>
       </td>
-      <td>Tom</td>
-      <td>published</td>
+      <td>{props.author}</td>
       <td>
-        <span class="post-number">4</span>
+        <span className="reply-number">{props.replies}</span>
       </td>
     </tr>
   );

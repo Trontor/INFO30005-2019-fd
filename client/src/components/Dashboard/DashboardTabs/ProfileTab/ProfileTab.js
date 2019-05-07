@@ -3,7 +3,7 @@ import "./ProfileTab.scss";
 const ProfileTab = () => {
   return (
     <div
-      class="tab-pane fade"
+      className="tab-pane fade"
       id="nav-profile"
       role="tabpanel"
       aria-labelledby="nav-profile"

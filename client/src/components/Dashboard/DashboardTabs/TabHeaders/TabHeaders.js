@@ -4,12 +4,12 @@ const TabHeaders = () => {
   return (
     <nav>
       <div
-        class="nav nav-tabs justify-content-center"
+        className="nav nav-tabs justify-content-center"
         id="nav-tab"
         role="tablist"
       >
         <a
-          class="nav-item nav-link"
+          className="nav-item nav-link"
           id="nav-profile-tab"
           data-toggle="tab"
           href="#nav-profile"
@@ -20,7 +20,7 @@ const TabHeaders = () => {
           Profile
         </a>
         <a
-          class="nav-item nav-link active"
+          className="nav-item nav-link active"
           id="nav-community-tab"
           data-toggle="tab"
           href="#nav-community"
@@ -31,7 +31,7 @@ const TabHeaders = () => {
           Community
         </a>
         <a
-          class="nav-item nav-link"
+          className="nav-item nav-link"
           id="nav-progress-tab"
           data-toggle="tab"
           href="#nav-progress"
@@ -42,7 +42,7 @@ const TabHeaders = () => {
           Progress
         </a>
         <a
-          class="nav-item nav-link"
+          className="nav-item nav-link"
           id="nav-course-tab"
           data-toggle="tab"
           href="#nav-course"
@@ -53,7 +53,7 @@ const TabHeaders = () => {
           Course
         </a>
         <a
-          class="nav-item nav-link"
+          className="nav-item nav-link"
           id="nav-event-tab"
           data-toggle="tab"
           href="#nav-event"
@@ -64,7 +64,7 @@ const TabHeaders = () => {
           Event
         </a>
         <a
-          class="nav-item nav-link"
+          className="nav-item nav-link"
           id="nav-management-tab"
           data-toggle="tab"
           href="#nav-management"

@@ -4,13 +4,13 @@ import TabHeaders from "./TabHeaders/TabHeaders";
 import ProfileTab from "./ProfileTab/ProfileTab";
 import CommunityTab from "./Community/CommunityTab";
 
-const DashboardTabs = () => {
+const DashboardTabs = props => {
   return (
     <section id="tabContainer">
       <TabHeaders />
-      <div class="tab-content" id="nav-tabContent">
+      <div className="tab-content" id="nav-tabContent">
         <ProfileTab />
-        <CommunityTab />
+        <CommunityTab threads={props.threads} />
       </div>
     </section>
   );

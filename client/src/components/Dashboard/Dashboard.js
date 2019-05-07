@@ -17,23 +17,24 @@ class Dashboard extends Component {
       return <Loading />;
     }
     const profile = this.props.profile.data;
+    // console.log(profile);
     return (
       <>
         <section id="topInterface">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="well well-sm">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4 avatar">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-12 col-sm-6 col-md-6">
+                <div className="well well-sm">
+                  <div className="row">
+                    <div className="col-sm-6 col-md-4 avatar">
                       <img src={profile.avatar} alt="Avatar" />
                     </div>
-                    <div class="col-sm-6 col-md-8">
+                    <div className="col-sm-6 col-md-8">
                       <h4>{profile.name}</h4>
                       <small>{profile.school}</small>
                       <p>{profile.email}</p>
-                      <p class="d-inline"> Lv.1</p>
-                      <p class="d-inline">
+                      <p className="d-inline"> Lv.1</p>
+                      <p className="d-inline">
                         <img alt="Stars" src={starImg} />
                         x2
                       </p>
@@ -44,7 +45,7 @@ class Dashboard extends Component {
             </div>
           </div>
         </section>
-        <DashboardTabs />
+        <DashboardTabs threads={profile.threads} />
       </>
     );
   }

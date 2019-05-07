@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { submitPost } from "../../actions/threadActions";
+import classnames from "classnames";
 import Loading from "../../components/Loading/Loading";
 
 class NewThread extends Component {
   state = {
-    subject: "",
+    title: "",
     topic: "Food",
     message: "",
     errors: {}
@@ -20,7 +21,7 @@ class NewThread extends Component {
     //a
     event.preventDefault();
     const postData = {
-      title: this.state.subject,
+      title: this.state.title,
       topic: this.state.topic,
       content: this.state.message,
       authorID: this.props.userID
@@ -41,30 +42,37 @@ class NewThread extends Component {
     if (this.props.loading) {
       return <Loading />;
     }
+    const errors = this.props.errors;
     return (
       <div className="py-5 col-md-6 offset-md-3">
         <h1>New Community Post</h1>
         <form>
-          <div class="form-group">
-            <label for="subject">Subject</label>
+          <div className="form-group">
+            <label htmlFor="title">Subject</label>
             <input
-              class="form-control"
-              id="subject"
-              name="subject"
-              aria-describedby="subjectHelp"
+              className={classnames("form-control", {
+                "is-invalid": errors.title
+              })}
+              id="title"
+              name="title"
+              aria-describedby="titleHelp"
               placeholder="Enter title"
+              defaultValue={this.state.title}
               onChange={this.handleChange}
             />
-            <small id="subjectHelp" class="form-text text-muted">
+            {errors.title && (
+              <div className="invalid-feedback">{errors.title.kind}</div>
+            )}
+            <small id="titleHelp" className="form-text text-muted">
               What is your post about?
             </small>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Topic</label>
             <select
               id="topic"
               name="topic"
-              class="form-control"
+              className="form-control"
               onChange={this.handleChange}
             >
               <option>Food</option>
@@ -72,18 +80,27 @@ class NewThread extends Component {
               <option>General Health</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Message</label>
+          <div className="form-group">
+            <label>Message</label>
             <textarea
-              class="form-control"
+              className={classnames("form-control", {
+                "is-invalid": errors.content
+              })}
               id="message"
+              defaultValue={this.state.message}
               name="message"
               placeholder="Hi! I'd like to know more about..."
               rows="9"
               onChange={this.handleChange}
             />
+            {errors.content && (
+              <div className="invalid-feedback">{errors.content.kind}</div>
+            )}
           </div>
-          <button onClick={this.handleSubmitForm} lass="my-2 btn btn-primary">
+          <button
+            onClick={this.handleSubmitForm}
+            className="my-2 btn btn-primary"
+          >
             Submit
           </button>
         </form>

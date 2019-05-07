@@ -1,4 +1,5 @@
 const Thread = require("../models/Thread");
+const Student = require("../models/Student");
 
 const createThread = (req, res) => {
   const thread = new Thread({
@@ -17,12 +18,32 @@ const createThread = (req, res) => {
   });
 };
 
-const getThreadById = (req, res) => {
-  Thread.findById(req.params.id, (err, thread) => {
+const getThreadById = async (req, res) => {
+  Thread.findById(req.params.id, async (err, thread) => {
     if (err) {
       return res.status(400).json(err);
     }
-    res.send(thread);
+    const replies = [];
+    for (const reply of thread.replies) {
+      const author = await Student.findOne(reply.authorID);
+      replies.push({
+        name: author.name,
+        avatar: author.avatar,
+        date: reply.datePosted,
+        content: reply.content
+      });
+    }
+
+    const parentAuthor = await Student.findById(thread.authorID);
+    const responseThread = {
+      name: parentAuthor.name,
+      date: thread.datePosted,
+      content: thread.content,
+      avatar: parentAuthor.avatar,
+      replies
+    };
+
+    res.send(responseThread);
   });
 };
 

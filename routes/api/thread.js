@@ -19,10 +19,23 @@ router.post(
   controller.createThread
 );
 
-// @route GET api/threads/
+// @route GET api/threads/:id
 // @desc Find a thread by ID
 // @access Private
-router.get("/:id", controller.getThreadById);
+router.get(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  controller.getThreadById
+);
+
+// @route POST api/threads/:id
+// @desc Add a reply to a thread by ID
+// @access Private
+router.post(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  controller.addReply
+);
 
 // // @route   GET api/threads/:title
 // // @desc    Find a thread by title

@@ -46,6 +46,7 @@ class Navigation extends Component {
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
+    window.location.href = "/login";
   };
   render() {
     const { isAuthenticated } = this.props.auth;

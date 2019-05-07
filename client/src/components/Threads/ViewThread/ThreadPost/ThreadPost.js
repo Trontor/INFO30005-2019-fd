@@ -22,12 +22,15 @@ const ThreadPost = props => {
       .replace(",", " ");
   };
   return (
-    <div id={props.parent ? "threadParent" : "threadReply"} class="card">
+    <div
+      id={props.parent ? "threadParent" : "threadReply"}
+      class="thread-post card"
+    >
       <div className="card-body">
         <div className="row">
-          <div className="col-12 col-md-auto">
-            <div className="postUserInfo">
-              <img src={props.imgSrc} />
+          <div className="col-12 col-md-auto text-center">
+            <div className="postUserInfo d-xs-inline">
+              <img alt={props.name + " avatar"} src={props.imgSrc} />
               <div className="name">{props.name}</div>
               <div className="date">{dateFormat(props.date)}</div>
             </div>

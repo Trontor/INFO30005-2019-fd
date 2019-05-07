@@ -1,0 +1,22 @@
+#threadParent {
+  margin: 30px 0;
+}
+.postUserInfo {
+  width: 150px;
+  text-align: center;
+}
+.postUserInfo img {
+  width: 50px;
+}
+.postUserInfo .name {
+  padding: 8px 0;
+  font-weight: bold;
+}
+.postUserInfo .date {
+  font-size: 12px;
+}
+
+#threadParent {
+  border-radius: 0px;
+  border-color: orange;
+}

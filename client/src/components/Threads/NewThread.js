@@ -109,6 +109,12 @@ class NewThread extends Component {
   }
 }
 
+NewThread.propTypes = {
+  userID: PropTypes.string.isRequired,
+  submitted: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
+  errors: PropTypes.object.isRequired
+};
 const mapStateToProps = state => ({
   userID: state.auth.user.id,
   submitted: state.submitThread.submitSuccess,

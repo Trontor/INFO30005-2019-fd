@@ -20,13 +20,16 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  onSubmit = e => {
-    e.preventDefault();
+  processLogin = () => {
     const userData = {
       email: this.state.email,
       password: this.state.password
     };
     this.props.loginUser(userData);
+  };
+  onSubmit = e => {
+    e.preventDefault();
+    this.processLogin();
   };
 
   componentDidMount() {
@@ -100,14 +103,11 @@ class Login extends Component {
                   </div>
                 </form>
               </div>
-              <div className="modal-footer">
-                <a
-                  onClick={() => {
-                    alert("Please contact your teacher for help :)");
-                  }}
-                >
-                  Forgot Password?
-                </a>
+              <div className="row text-center bg-info text-light p-2">
+                <div className="col-12">Developer Quick Login</div>
+                <div className="col-4">Jane Doe</div>
+                <div className="col-4">Jevin Koshi</div>
+                <div className="col-4">test</div>
               </div>
             </div>
           </div>

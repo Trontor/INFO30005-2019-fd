@@ -36,6 +36,7 @@ const ThreadPost = props => {
             </div>
           </div>
           <div className="col-12 col-md">
+            {props.title && <div id="postTitle">{props.title}</div>}
             <div style={{ whiteSpace: "pre-wrap" }}>{props.content}</div>
           </div>
         </div>

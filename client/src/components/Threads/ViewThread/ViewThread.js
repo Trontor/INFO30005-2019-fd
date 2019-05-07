@@ -45,7 +45,7 @@ class ViewThread extends Component {
       return <Loading />;
     }
     console.log(this.state.data);
-    const { name, date, avatar, content, replies } = this.state.data;
+    const { title, name, date, avatar, content, replies } = this.state.data;
     return (
       <div
         id="threadContainer"
@@ -54,6 +54,7 @@ class ViewThread extends Component {
         <div className="hr-sect">Original Post</div>
         <ThreadPost
           parent
+          title={title}
           imgSrc={avatar}
           content={content}
           name={name}

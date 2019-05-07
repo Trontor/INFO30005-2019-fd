@@ -36,6 +36,7 @@ const getThreadById = async (req, res) => {
 
     const parentAuthor = await Student.findById(thread.authorID);
     const responseThread = {
+      title: thread.title,
       name: parentAuthor.name,
       date: thread.datePosted,
       content: thread.content,

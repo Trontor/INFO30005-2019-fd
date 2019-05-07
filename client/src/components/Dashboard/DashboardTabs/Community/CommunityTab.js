@@ -19,7 +19,7 @@ class CommunityTab extends Component {
         >
           +Add Thread
         </button>
-        <div className="card  table-responsive">
+        <div className="card table-responsive">
           <table className="table table-hovor" id="community-table">
             <thead>
               <tr>
@@ -46,7 +46,7 @@ class CommunityTab extends Component {
     );
     return (
       <div
-        className="col-md-6 offset-md-3 col-12 offset-0 p-0 tab-pane active"
+        className="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-12 p-0 tab-pane active"
         id="nav-community"
         role="tabpanel"
         aria-labelledby="nav-community"

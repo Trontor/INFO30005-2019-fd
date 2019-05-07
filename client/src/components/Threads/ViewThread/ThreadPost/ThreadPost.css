@@ -19,6 +19,12 @@
   border-radius: 0px;
   min-height: 200px;
 }
+
+#postTitle {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
 #threadParent {
   border-color: orange;
 }

@@ -1,0 +1,53 @@
+body, html {
+    height: 100%;
+}
+
+#quizPg {
+    background: url("../../image/miley-bg/bg3.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 3rem;
+    font-family: 'Spectral', serif;
+}
+
+#quiz-header {
+    margin-top: 9rem;
+    margin-left: 3rem;
+    font-family: 'Ovo', serif;
+    color:#ff944d;
+}
+
+#quiz-header h1 {
+    font-size: 3.6rem;
+}
+
+#quiz-body {
+    margin-top: 1rem;
+}
+
+#quiz-body button {
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 600px){
+    #quiz-header {
+        margin-left: 13rem;
+    }
+
+}
+
+@media screen and (min-width: 800px){
+    #quiz-header {
+        margin-left: 16rem;
+    }
+
+}
+
+@media screen and (min-width: 1000px){
+    #quiz-header {
+        margin-left: 20rem;
+    }
+
+}

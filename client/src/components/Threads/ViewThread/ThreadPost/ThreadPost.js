@@ -2,12 +2,6 @@ import React from "react";
 import "./ThreadPost.css";
 
 const ThreadPost = props => {
-  const checkZero = data => {
-    if (data.length === 1) {
-      data = "0" + data;
-    }
-    return data;
-  };
   const dateFormat = isoDate => {
     var date = new Date(isoDate);
     return date

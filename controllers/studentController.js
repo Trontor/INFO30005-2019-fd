@@ -114,15 +114,24 @@ getUnlockedTopics = (resolve, reject) => {};
 const studentProfile = async (req, res) => {
   // get all info as shown in schema
   // change ObjectId to name
-  const { teacherID, name, email, avatar, yearLevel, stars } = req.user;
-  let topicList = [];
+  const {
+    teacherID,
+    name,
+    email,
+    avatar,
+    yearLevel,
+    stars,
+    completed
+  } = req.user;
   const teacher = await Teacher.findById(teacherID);
   if (!teacher) {
     // The teacherID does not exist
     return res.status(400).send({ teacher: "Teacher doesn't exist." });
   }
+  let topics = [];
   for (const topicID of teacher.unlockedTopics) {
     const topic = await Topic.findById(topicID);
+    let items = [];
     if (!topic) {
       // We don't want to send an error back for a missing topic, just skip over it
       // TODO: Handle missing topics (probably on teacher log-in)
@@ -137,7 +146,11 @@ const studentProfile = async (req, res) => {
           if (itemInfo) {
             // We don't want to send an error back for a missing item, just skip over it
             // TODO: Handle missing items (probably on administrator log-in)
-            topicList.push({ type, title: itemInfo.title });
+            items.push({
+              type,
+              title: itemInfo.title,
+              itemID: itemInfo._id
+            });
           }
           break;
         case "Video":
@@ -145,7 +158,11 @@ const studentProfile = async (req, res) => {
           if (itemInfo) {
             // We don't want to send an error back for a missing item, just skip over it
             // TODO: Handle missing items (probably on administrator log-in)
-            topicList.push({ type, title: itemInfo.title });
+            items.push({
+              type,
+              title: itemInfo.title,
+              itemID: itemInfo._id
+            });
           }
           break;
         case "Quiz":
@@ -153,13 +170,20 @@ const studentProfile = async (req, res) => {
           if (itemInfo) {
             // We don't want to send an error back for a missing item, just skip over it
             // TODO: Handle missing items (probably on administrator log-in)
-            topicList.push({ type, title: itemInfo.title });
+            items.push({
+              type,
+              title: itemInfo.title,
+              itemID: itemInfo._id
+            });
           }
           break;
       }
     }
+    topics.push({
+      name: topic.name,
+      items
+    });
   }
-
   const relevantThreads = await Thread.find({ teacherID: req.user.teacherID });
   const userThreads = [];
   for (const thread of relevantThreads) {
@@ -186,10 +210,10 @@ const studentProfile = async (req, res) => {
     yearLevel,
     stars,
     threads: userThreads,
-    topicList
+    topics,
+    completed
     // progress: completed
   });
-  let completed = [];
 };
 
 module.exports.registerStudent = registerStudent;

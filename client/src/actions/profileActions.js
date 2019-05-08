@@ -13,6 +13,7 @@ export const getCurrentProfile = () => dispatch => {
     })
     .catch(err => {
       console.log("Error retrieving profile :(");
+      console.log(err);
     });
 };
 

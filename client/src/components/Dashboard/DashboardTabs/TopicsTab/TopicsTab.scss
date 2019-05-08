@@ -1,0 +1,41 @@
+.topic-percentage {
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+  color: gray;
+  font-size: 14px;
+  padding: 0.375rem 0.75rem;
+}
+
+#nav-topics {
+  .nav-tabs {
+    text-align: center;
+  }
+
+  i {
+    margin: 0 0.7rem;
+  }
+
+  .list-group {
+    list-style: decimal inside;
+
+    li {
+      counter-increment: step-counter;
+    }
+
+    li::before {
+      content: counter(step-counter);
+      margin: 0 5px 0 0;
+      font-size: 80%;
+      background-color: rgb(0, 200, 200);
+      color: white;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+  }
+
+  .coursebtn {
+    float: right;
+  }
+}

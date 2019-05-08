@@ -34,14 +34,14 @@ const StudentSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  progress: [
-    {
-      topic: mongoose.Schema.Types.ObjectId,
-      videoListIDs: [mongoose.Schema.Types.ObjectId],
-      articleListIDs: [mongoose.Schema.Types.ObjectId],
-      quizListIDs: [mongoose.Schema.Types.ObjectId]
-    }
-  ]
+  completed: [mongoose.Schema.Types.ObjectId]
+  //   {
+  //     // topic: mongoose.Schema.Types.ObjectId,
+  //     // videoListIDs: [mongoose.Schema.Types.ObjectId],
+  //     // articleListIDs: [mongoose.Schema.Types.ObjectId],
+  //     // quizListIDs: [mongoose.Schema.Types.ObjectId]
+  //   }
+  // ]
 });
 
 module.exports = Student = mongoose.model("students", StudentSchema);

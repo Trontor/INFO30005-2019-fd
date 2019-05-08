@@ -14,6 +14,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import NewThread from "./components/Threads/NewThread";
 import ViewThread from "./components/Threads/ViewThread/ViewThread";
+import Video from "./components/Course/Video/Video";
 
 // Check for token
 if (localStorage.getItem("jwtToken")) {
@@ -47,6 +48,9 @@ class App extends Component {
             </Switch>
             <Switch>
               <PrivateRoute exact path="/newThread" component={NewThread} />
+            </Switch>
+            <Switch>
+              <PrivateRoute path="/course/videos/:id" component={Video} />
             </Switch>
             <Switch>
               <PrivateRoute

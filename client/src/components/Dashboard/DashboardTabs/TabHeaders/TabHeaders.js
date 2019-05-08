@@ -20,7 +20,7 @@ const TabHeaders = () => {
           Profile
         </a>
         <a
-          className="nav-item nav-link active"
+          className="nav-item nav-link "
           id="nav-community-tab"
           data-toggle="tab"
           href="#nav-community"
@@ -31,48 +31,15 @@ const TabHeaders = () => {
           Community
         </a>
         <a
-          className="nav-item nav-link"
-          id="nav-progress-tab"
+          className="nav-item nav-link active"
+          id="nav-topics-tab"
           data-toggle="tab"
-          href="#nav-progress"
+          href="#nav-topics"
           role="tab"
-          aria-controls="nav-progress"
-          aria-selected="false"
+          aria-controls="nav-topics"
+          aria-selected="true"
         >
-          Progress
-        </a>
-        <a
-          className="nav-item nav-link"
-          id="nav-course-tab"
-          data-toggle="tab"
-          href="#nav-course"
-          role="tab"
-          aria-controls="nav-course"
-          aria-selected="false"
-        >
-          Course
-        </a>
-        <a
-          className="nav-item nav-link"
-          id="nav-event-tab"
-          data-toggle="tab"
-          href="#nav-event"
-          role="tab"
-          aria-controls="nav-event"
-          aria-selected="false"
-        >
-          Event
-        </a>
-        <a
-          className="nav-item nav-link"
-          id="nav-management-tab"
-          data-toggle="tab"
-          href="#nav-management"
-          role="tab"
-          aria-controls="nav-management"
-          aria-selected="false"
-        >
-          Management
+          Topics
         </a>
       </div>
     </nav>

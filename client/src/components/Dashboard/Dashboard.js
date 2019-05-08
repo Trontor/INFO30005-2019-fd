@@ -17,6 +17,7 @@ class Dashboard extends Component {
       return <Loading />;
     }
     const profile = this.props.profile.data;
+    console.log("completed: " + profile.completed.length);
     // console.log(profile);
     return (
       <>
@@ -45,7 +46,11 @@ class Dashboard extends Component {
             </div>
           </div>
         </section>
-        <DashboardTabs threads={profile.threads} />
+        <DashboardTabs
+          threads={profile.threads}
+          topics={profile.topics}
+          completedItems={profile.completed}
+        />
       </>
     );
   }

@@ -26,7 +26,7 @@ class Dashboard extends Component {
               <div className="col-xs-12 col-sm-6 col-md-6">
                 <div className="well well-sm">
                   <div className="row">
-                    <div className="col-sm-6 col-md-4 avatar">
+                    <div className="col-sm-6 col-md-4 avatar text-center">
                       <img src={profile.avatar} alt="Avatar" />
                     </div>
                     <div className="col-sm-6 col-md-8">

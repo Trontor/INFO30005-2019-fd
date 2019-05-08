@@ -49,7 +49,10 @@ class App extends Component {
               <PrivateRoute exact path="/newThread" component={NewThread} />
             </Switch>
             <Switch>
-              <Route path="/community/threads/:id" component={ViewThread} />
+              <PrivateRoute
+                path="/community/threads/:id"
+                component={ViewThread}
+              />
             </Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

@@ -1,0 +1,189 @@
+/*  add thread page */
+#addThreadPg {
+    background: url("../../image/miley-bg/bg4.jpg");
+    background-size: cover;
+    hight: auto;
+    width: auto;
+    background-repeat: no-repeat;
+    padding-top: 3rem;
+}
+
+#thread-header {
+    margin-top:3rem;
+    margin-left:4rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.6rem;
+}
+
+#thread-header span {
+    color: #66b3ff;
+}
+
+#thread-body {
+    background: #fffaf0;
+    border: solid;
+    border-color: #ffcc99;
+    border-radius: 20px;
+    border-width: 8px;
+    margin: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-family: 'Arapey', serif;
+    position: center;
+}
+
+#thread-body span {
+    color: #ff4d4d;
+}
+
+#forum-description {
+    margin:0.1rem;
+    padding: 0.5rem;
+}
+
+#forum-description h5 {
+    font-family: 'Unna', serif;
+    font-weight:bold;
+}
+#message-body-subject {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#message-body-content {
+    padding-top: 1.5rem;
+    padding-left: 0;
+}
+#message-submit {
+    padding: 1.5rem;
+    margin:1.5rem;
+}
+
+#message-body h5 {
+    font-family: 'Unna', serif;
+    font-weight:bold;
+}
+#message-submit button {
+    margin: 0.25rem;
+}
+
+@media screen and (min-width: 800px){
+    #addThreadPg {
+        padding: 4rem;
+    }
+    #thread-body {
+        margin-left: 4rem;
+        width: 80%;
+    }
+    #thread-header {
+        margin-left: 4rem;
+    }
+}
+
+@media screen and (min-width: 580px){
+    #addThreadPg {
+        padding: 2rem;
+    }
+    #thread-body {
+        margin-left: 2rem;
+        width: 80%;
+    }
+    #thread-header {
+        margin-left: 3rem;
+    }
+}
+
+
+@media screen and (min-width: 1100px){
+    #addThreadPg {
+        padding: 3rem;
+        padding-left: 5rem;
+    }
+    #thread-body {
+        margin-left: 5rem;
+    }
+    #thread-header {
+        margin-left: 8rem;
+    }
+}
+
+
+
+/* thread-content page */
+#thread-content-bg {
+    background: url("../../image/miley-bg/bg5.jpg");
+    background-size: cover;
+    hight: auto;
+    width: auto;
+    background-repeat: no-repeat;
+    padding-bottom: 5rem;
+}
+/* thread post part */
+#thread-content-header {
+    margin-top: 4rem;
+    font-family: 'Rokkitt', serif;
+    color: teal;
+}
+
+#thread-post {
+    width:98%;
+    border:solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: grey;
+    margin:0.2rem;
+    margin-left: 0.5rem;
+    padding: 3rem;
+    display: inline-block;
+    background: rgb(224,224,224);
+    font-family: 'Karla', sans-serif;
+}
+
+#thread-post .thread-gravatar img{
+    height: 68px;
+    width: 68px;
+}
+
+#post-body h4
+{
+    margin-top: 1rem;
+}
+
+#post-body #post-content {
+    margin-top: 1.6rem;
+    margin-left: 0;
+}
+#post-content button {
+    margin-top: 1rem;
+}
+
+
+/* thread response part */
+#thread-response {
+    width:98%;
+    border:solid;
+    border-radius: 10px;
+    border-width: 1.5px;
+    border-color: grey;
+    margin:0.2rem;
+    margin-left: 0.5rem;
+    padding: 3rem;
+    display: inline-block;
+    margin-bottom: 15rem;
+    font-family: 'Karla', sans-serif;
+}
+
+#response-body h4
+{
+    margin-top: 1rem;
+}
+
+#response-body #response-content {
+    margin-top: 1.6rem;
+    margin-left: 0;
+}
+
+#thread-response .thread-gravatar img{
+    height: 68px;
+    width: 68px;
+}

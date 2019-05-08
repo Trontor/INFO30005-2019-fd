@@ -6,6 +6,14 @@
   background-size: cover;
   // background: white;
   #logIn {
+    #devLogin {
+      font-size: 20px;
+      padding-bottom: 5px;
+      border-bottom: 0.5px solid gray;
+    }
+    #dev-panel > div {
+      cursor: pointer;
+    }
     .modal-login {
       // margin: 12rem auto 0 auto;
       color: #f7af44;

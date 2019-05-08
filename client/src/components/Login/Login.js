@@ -27,6 +27,9 @@ class Login extends Component {
     };
     this.props.loginUser(userData);
   };
+  fakeLogin = (username, pw) => {
+    this.setState({ email: username, password: pw }, this.processLogin);
+  };
   onSubmit = e => {
     e.preventDefault();
     this.processLogin();
@@ -103,11 +106,37 @@ class Login extends Component {
                   </div>
                 </form>
               </div>
-              <div className="row text-center bg-info text-light p-2">
-                <div className="col-12">Developer Quick Login</div>
-                <div className="col-4">Jane Doe</div>
-                <div className="col-4">Jevin Koshi</div>
-                <div className="col-4">test</div>
+              <div
+                id="dev-panel"
+                className="row text-center bg-info text-light p-2"
+              >
+                <div id="devLogin" className="col-12">
+                  Developer Quick Login
+                </div>
+                <div
+                  className="col-4"
+                  onClick={() =>
+                    this.fakeLogin("janedoe@janedoe.com", "janedoe")
+                  }
+                >
+                  Jane Doe
+                </div>
+                <div
+                  className="col-4"
+                  onClick={() =>
+                    this.fakeLogin("jevin@student.unimelb.edu.au", "testok")
+                  }
+                >
+                  Jevin Koshi
+                </div>
+                <div
+                  className="col-4"
+                  onClick={() =>
+                    this.fakeLogin("elonmusk@tesla.com", "elonmusk")
+                  }
+                >
+                  Elon Musk
+                </div>
               </div>
             </div>
           </div>

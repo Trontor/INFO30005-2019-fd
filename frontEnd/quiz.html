@@ -1,85 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1,
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
             shrink-to-fit=no">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!--title-->
-        <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-        <title>Hello Food</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--title-->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <title>Hello Food</title>
 
-        <!--add-->
-        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="css/dashboard.css">
-        <link rel="stylesheet" href="css/swiper.min.css">
-        <link rel="stylesheet" href="css/miley-dashboard.css">
-        <!--font-->
-        <link rel="stylesheet"
-            href="fontawesome-free-5.8.1-web/css/all.min.css">
-        <link
-            href="https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Gochi+Hand|Patrick+Hand|Satisfy|Kaushan+Script|Libre+Barcode+39+Text|"
-            rel="stylesheet">
-        <link
+    <!--add-->
+    <link rel="stylesheet" href="css/article/article.css">
+    <link rel="stylesheet" href="css/quiz/quiz-m.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Arapey|Caveat|Courgette|Dancing+Script|Josefin+Slab|Lateef|Marck+Script|Pacifico|Unna" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arapey|Barlow+Semi+Condensed|Cambo|Forum|IM+Fell+Double+Pica|Josefin+Sans|Josefin+Slab|Nunito+Sans|Old+Standard+TT|Ovo|Rajdhani|Scheherazade|Spectral|Suranna|Tajawal|Unna" rel="stylesheet">
+    <!-- unknown -->
+    <link
             href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
             rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
             crossorigin="anonymous">
-        <!--custom-->
+    <!--custom-->
 
-    </head>
+</head>
+<body id="quizPg">
 
-    <body id="course-page">
-
-        <!-- navbar -->
-        <div class="container">
-            <nav class="navbar navbar-expand navbar-light fixed-top"
-                id="mainNav">
-                <div class="container">
-                    <a class="navbar-brand" href="#homeTop">
-                        <img class="logo" src="image/logo/MultiLogoResize.png"
-                            alt="Logo">
-                        <span> Hello Food </span>
-                    </a>
-                    <!--Menu-->
-                    <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            Menu
-                            <i class="fas fa-bars"></i>
-                        </button> -->
-                    <!--Exact each part-->
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav text-uppercase ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#homeTop">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link logInbtn" href="#">Log out</a>
-                            </li>
-                        </ul>
-                    </div>
+    <!-- navbar -->
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light fixed-top"
+             id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#homeTop">
+                    <img class="logo" src="image/logo/MultiLogoResize.png"
+                         alt="Logo">
+                    <span> Hello Food </span>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#homeTop">UserName</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link logInbtn" href="#">Log out</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
+    </div>
+        
+    <div id="quiz">
+        <div class="container col-sm-2 col-md-2 ml-center" id="quiz-header">
+            <h1><span>Quiz</span></h1>
+        </div>
 
+        <div class="container col-12 col-sm-10 col-md-8 col-lg-7 ml-center" id="quiz-body">
+            <div class="container" id = "question">
+                Which group of people is the Nutrition Information Panel most important for?
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <label class="form-check-label" for="exampleRadios1">
+                    Teenager
+                </label>
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                    People who want to lose weight
+                </label>
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios3">
+                    Female
+                </label>
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios3">
+                    People who have poor memory
+                </label>
+            </div>
+            <br>
+            <div class="quiz-button">
+                <button type="button" class="btn btn-success">Submit</button>
+            </div>
         </div>
 
 
-        
+    </div>
+    <!-- Bootstrap core JavaScript
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/popper.js/dist/popper.min.js"></script>
 
-    
-        <!-- Bootstrap core JavaScript -->
-        <script src="js/bootstrap/bootstrap.min.js"></script>
-        <script src="js/jquery/jquery.min.js"></script>
-        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-        <script src="js/swiper.min.js"></script>
-        <script src="js/popper.js/dist/popper.min.js"></script>
-    
-    
-        <!-- Custom scripts for this template -->
-        <script src="js/helloFood.js"></script>
 
-    </body>
+    <script src="js/helloFood.js"></script>
+    -->
+</body>
 
 </html>

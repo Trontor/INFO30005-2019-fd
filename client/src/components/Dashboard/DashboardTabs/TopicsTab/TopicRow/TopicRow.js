@@ -9,11 +9,15 @@ const TopicRow = props => {
         props.history.push(`/course/videos/` + id);
         break;
       case "Article":
+        props.history.push(`/course/articles/` + id);
         break;
       case "Quiz":
+        props.history.push(`/course/quiz/` + id);
+        break;
+      default:
+        console.log("Couldn't navigate to unknown type: " + type);
         break;
     }
-    console.log("URL to " + type + " " + id);
   };
   const { name, items } = props.topic;
   return (

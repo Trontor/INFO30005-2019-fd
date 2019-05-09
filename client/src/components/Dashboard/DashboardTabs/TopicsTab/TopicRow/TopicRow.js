@@ -60,7 +60,13 @@ const TopicRow = props => {
               })}
             >
               <span>
-                <i className="far fa-newspaper fa-lg" />
+                <i
+                  className={classnames({
+                    "far fa-newspaper fa-lg": item.type === "Article",
+                    "far fa-play-circle fa-lg": item.type === "Video",
+                    "far fa-edit fa-lg": item.type === "Quiz"
+                  })}
+                />
                 {item.title}
                 <button
                   type="button"

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Video.css";
 import Loading from "../../Loading/Loading";
-
+import { withRouter } from "react-router-dom";
 class Video extends Component {
   state = {
     data: undefined
@@ -13,15 +13,23 @@ class Video extends Component {
       this.setState({ data: res.data });
     });
   }
+  completeVideo = () => {
+    axios
+      .post("../../api/student/items/complete/", { id: this.id })
+      .then(res => {
+        if (res.status === 200) {
+          this.props.history.push("/dashboard");
+        }
+      });
+  };
   render() {
     if (!this.state.data) {
       return <Loading />;
     }
     const { title, description, contentURL } = this.state.data;
     const vidSrc = contentURL.replace("watch?v=", "embed/");
-    console.log(vidSrc);
     return (
-      <div className="row">
+      <div className="row m-0">
         <div className="embed-responsive embed-responsive-16by9 video-course ">
           <iframe
             title={this.state.data.title}
@@ -40,6 +48,7 @@ class Video extends Component {
               type="button"
               style={{ width: "150px", height: "50px" }}
               className="btn btn-warning"
+              onClick={this.completeVideo}
             >
               Next
             </button>
@@ -50,4 +59,4 @@ class Video extends Component {
   }
 }
 
-export default Video;
+export default withRouter(Video);

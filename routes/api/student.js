@@ -15,6 +15,15 @@ router.get("/test", controller.testStudent);
 // @access  Public
 router.post("/register", controller.registerStudent);
 
+// @route   POST api/student/items/complete
+// @desc    Mark item as completed for student
+// @access  Private
+router.post(
+  "/items/complete",
+  passport.authenticate("jwt", { session: false }),
+  controller.completedItem
+);
+
 // @route   POST api/student/login
 // @desc    Login Student / Return JWT Token
 // @access  Public

@@ -216,6 +216,19 @@ const studentProfile = async (req, res) => {
   });
 };
 
+const completedItem = (req, res) => {
+  const completedID = req.body.id;
+  Student.findById(req.user.id, (err, student) => {
+    if (err) {
+      res.status(400).json(err);
+    }
+    student.completed.push(completedID);
+    student.save();
+    res.sendStatus(200);
+  });
+};
+
+module.exports.completedItem = completedItem;
 module.exports.registerStudent = registerStudent;
 module.exports.studentLogin = studentLogin;
 module.exports.testStudent = testStudent;

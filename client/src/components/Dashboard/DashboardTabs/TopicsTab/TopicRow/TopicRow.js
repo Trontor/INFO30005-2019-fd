@@ -1,18 +1,20 @@
 import classnames from "classnames";
 import React from "react";
+import { withRouter } from "react-router-dom";
 
-const navigateToItem = (type, id) => {
-  switch (type) {
-    case "Video":
-      break;
-    case "Article":
-      break;
-    case "Quiz":
-      break;
-  }
-  console.log("URL to " + type + " " + id);
-};
 const TopicRow = props => {
+  const navigateToItem = (type, id) => {
+    switch (type) {
+      case "Video":
+        props.history.push(`/course/videos/` + id);
+        break;
+      case "Article":
+        break;
+      case "Quiz":
+        break;
+    }
+    console.log("URL to " + type + " " + id);
+  };
   const { name, items } = props.topic;
   return (
     <div className="card">
@@ -27,7 +29,18 @@ const TopicRow = props => {
               aria-expanded="false"
               aria-controls="collapseA"
             >
-              <i class="far fa-check-circle" />x {name}
+              <i
+                className={classnames(
+                  "far",
+                  {
+                    "fa-check-circle": props.progress === 100
+                  },
+                  {
+                    "fa-circle": props.progress !== 100
+                  }
+                )}
+              />
+              {name}
             </button>
           </span>
           <span className="topic-percentage ml-auto">{props.progress}%</span>
@@ -47,7 +60,7 @@ const TopicRow = props => {
               })}
             >
               <span>
-                <i class="far fa-newspaper fa-lg" />
+                <i className="far fa-newspaper fa-lg" />
                 {item.title}
                 <button
                   type="button"
@@ -65,4 +78,4 @@ const TopicRow = props => {
   );
 };
 
-export default TopicRow;
+export default withRouter(TopicRow);

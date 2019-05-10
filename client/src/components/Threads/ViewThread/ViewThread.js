@@ -60,7 +60,7 @@ class ViewThread extends Component {
           name={name}
           date={date}
         />
-        <div class="hr-sect">Replies</div>
+        <div className="hr-sect">Replies</div>
         {replies.length === 0 && <div>No replies... yet</div>}
         {replies.map(reply => (
           <ThreadPost
@@ -71,7 +71,7 @@ class ViewThread extends Component {
           />
         ))}
 
-        <div class="hr-sect">Post a Reply</div>
+        <div className="hr-sect">Post a Reply</div>
         <form>
           <div className="form-group">
             <label>Message</label>

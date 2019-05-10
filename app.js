@@ -9,6 +9,7 @@ const studentRoute = require("./routes/api/student");
 const teacherRoute = require("./routes/api/teacher");
 const threadRoute = require("./routes/api/thread");
 const videoRoute = require("./routes/api/videos");
+const articleRoute = require("./routes/api/articles");
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use("/api/student", studentRoute);
 app.use("/api/teacher", teacherRoute);
 app.use("/api/videos", videoRoute);
 app.use("/api/thread", threadRoute);
+app.use("/api/article", articleRoute);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {

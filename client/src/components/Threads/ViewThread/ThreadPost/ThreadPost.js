@@ -18,7 +18,7 @@ const ThreadPost = props => {
   return (
     <div
       id={props.parent ? "threadParent" : "threadReply"}
-      class="thread-post card"
+      className="thread-post card"
     >
       <div className="card-body">
         <div className="row">

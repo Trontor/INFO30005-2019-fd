@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Loading from "../../Loading/Loading";
+import "./Article.scss";
 
 class Article extends Component {
   state = {
@@ -8,7 +9,8 @@ class Article extends Component {
   };
   componentWillMount() {
     this.id = this.props.match.params.id;
-    axios.get("../../api/articles/" + this.id).then(res => {
+    const URL = "../../api/article/" + this.id;
+    axios.get(URL).then(res => {
       this.setState({ data: res.data });
     });
   }
@@ -25,6 +27,7 @@ class Article extends Component {
     if (!this.state.data) {
       return <Loading />;
     }
+    console.log(this.state.data);
     return <div>test</div>;
   }
 }

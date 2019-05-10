@@ -14,7 +14,7 @@ const TopicsTab = props => {
         <div id="topics-container" className="w-100">
           <div id="accordion" className="accordion card-body">
             {/* Card for header */}
-            {props.topics.map(topic => {
+            {props.topics.map((topic, idx) => {
               let completed = 0;
               const total = topic.items.length;
               for (const item of topic.items) {
@@ -23,26 +23,30 @@ const TopicsTab = props => {
               }
 
               return (
-                <TopicRow topic={topic} progress={(completed / total) * 100} />
+                <TopicRow
+                  topic={topic}
+                  key={idx}
+                  progress={(completed / total) * 100}
+                />
               );
             })}
           </div>
         </div>
       </div>
-      {/* <div class="accordion card-body courseCardBody" id="accordionExample">
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
+      {/* <div className="accordion card-body courseCardBody" id="accordionExample">
+        <div className="card">
+          <div className="card-header" id="headingTwo">
+            <h5 className="mb-0">
               <span>
                 <button
-                  class="btn btn-link collapsed"
+                  className="btn btn-link collapsed"
                   type="button"
                   data-toggle="collapse"
                   data-target="#collapseTwo"
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  <i class="far fa-check-circle" />
+                  <i className="far fa-check-circle" />
                   Finished Course
                 </button>
               </span>
@@ -60,57 +64,57 @@ const TopicsTab = props => {
           </div>
           <div
             id="collapseTwo"
-            class="collapse"
+            className="collapse"
             aria-labelledby="headingTwo"
             data-parent="#accordionExample"
           >
-            <ol class="list-group">
-              <li class="list-group-item list-group-item-success">
+            <ol className="list-group">
+              <li className="list-group-item list-group-item-success">
                 <span>
-                  <i class="far fa-newspaper fa-lg" />
+                  <i className="far fa-newspaper fa-lg" />
                   Article title Fresh Food - Calories
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                     btn-sm"
                   >
                     Start
                   </button>
                 </span>
               </li>
-              <li class="list-group-item list-group-item-success">
+              <li className="list-group-item list-group-item-success">
                 <span>
-                  <i class="far fa-newspaper fa-lg" />
+                  <i className="far fa-newspaper fa-lg" />
                   Article title Fresh Food - Vegetable
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                         btn-sm"
                   >
                     Start
                   </button>
                 </span>
               </li>
-              <li class="list-group-item list-group-item-success">
+              <li className="list-group-item list-group-item-success">
                 <span>
-                  <i class="far fa-play-circle fa-lg" />
+                  <i className="far fa-play-circle fa-lg" />
                   Video title Fresh Food - Calories
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                     btn-sm"
                   >
                     Start
                   </button>
                 </span>
               </li>
-              <li class="list-group-item list-group-item-success">
+              <li className="list-group-item list-group-item-success">
                 <span>
-                  <i class="far fa-edit fa-lg" />
+                  <i className="far fa-edit fa-lg" />
                   Quiz
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                     btn-sm"
                   >
                     Start
@@ -120,18 +124,18 @@ const TopicsTab = props => {
             </ol>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
+        <div className="card">
+          <div className="card-header" id="headingOne">
+            <h5 className="mb-0">
               <button
-                class="btn btn-link"
+                className="btn btn-link"
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseOne"
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                <i class="far fa-circle" />
+                <i className="far fa-circle" />
                 Unfinished Course
               </button>
             </h5>
@@ -139,57 +143,57 @@ const TopicsTab = props => {
 
           <div
             id="collapseOne"
-            class="collapse show"
+            className="collapse show"
             aria-labelledby="headingOne"
             data-parent="#accordionExample"
           >
-            <ol class="list-group">
-              <li class="list-group-item list-group-item-success">
+            <ol className="list-group">
+              <li className="list-group-item list-group-item-success">
                 <span>
-                  <i class="far fa-newspaper fa-lg" />
+                  <i className="far fa-newspaper fa-lg" />
                   Article title Fresh Food - Calories
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                 btn-sm"
                   >
                     Start
                   </button>
                 </span>
               </li>
-              <li class="list-group-item ">
+              <li className="list-group-item ">
                 <span>
-                  <i class="far fa-newspaper fa-lg" />
+                  <i className="far fa-newspaper fa-lg" />
                   Article title Fresh Food - Vegetable
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                     btn-sm"
                   >
                     Start
                   </button>
                 </span>
               </li>
-              <li class="list-group-item">
+              <li className="list-group-item">
                 <span>
-                  <i class="far fa-play-circle fa-lg" />
+                  <i className="far fa-play-circle fa-lg" />
                   Video title Fresh Food - Calories
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                 btn-sm"
                   >
                     Start
                   </button>
                 </span>
               </li>
-              <li class="list-group-item">
+              <li className="list-group-item">
                 <span>
-                  <i class="far fa-edit fa-lg" />
+                  <i className="far fa-edit fa-lg" />
                   Quiz
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                 btn-sm"
                   >
                     Start
@@ -199,11 +203,11 @@ const TopicsTab = props => {
             </ol>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingThree">
-            <h5 class="mb-0">
+        <div className="card">
+          <div className="card-header" id="headingThree">
+            <h5 className="mb-0">
               <button
-                class="btn btn-link collapsed
+                className="btn btn-link collapsed
                                     disabled"
                 type="button"
                 data-toggle="collapse"
@@ -211,64 +215,64 @@ const TopicsTab = props => {
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
-                <i class="fas fa-lock" />
+                <i className="fas fa-lock" />
                 Locked Course
               </button>
             </h5>
           </div>
           <div
             id="collapseThree"
-            class="collapse"
+            className="collapse"
             aria-labelledby="headingThree"
             data-parent="#accordionExample"
           >
-            <ol class="list-group">
-              <li class="list-group-item">
+            <ol className="list-group">
+              <li className="list-group-item">
                 <span>
-                  <i class="far fa-newspaper fa-lg" />
+                  <i className="far fa-newspaper fa-lg" />
                   Article title Fresh Food - Calories
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                 btn-sm"
                   >
                     Start
                   </button>
                 </span>
               </li>
-              <li class="list-group-item ">
+              <li className="list-group-item ">
                 <span>
-                  <i class="far fa-newspaper fa-lg" />
+                  <i className="far fa-newspaper fa-lg" />
                   Article title Fresh Food - Vegetable
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                     btn-sm"
                   >
                     Start
                   </button>
                 </span>
               </li>
-              <li class="list-group-item">
+              <li className="list-group-item">
                 <span>
-                  <i class="far fa-play-circle fa-lg" />
+                  <i className="far fa-play-circle fa-lg" />
                   Video title Fresh Food - Calories
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                 btn-sm"
                   >
                     Start
                   </button>
                 </span>
               </li>
-              <li class="list-group-item">
+              <li className="list-group-item">
                 <span>
-                  <i class="far fa-edit fa-lg" />
+                  <i className="far fa-edit fa-lg" />
                   Quiz
                   <button
                     type="button"
-                    class="coursebtn btn btn-info
+                    className="coursebtn btn btn-info
                                                 btn-sm"
                   >
                     Start

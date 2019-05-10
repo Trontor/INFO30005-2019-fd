@@ -49,12 +49,14 @@ class App extends Component {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/newThread" component={NewThread} />
               <PrivateRoute path="/course/videos/:id" component={Video} />
-              <PrivateRoute path="/course/articles/:id" component={Article} />
               <PrivateRoute path="/course/quiz/:id" component={Quiz} />
               <PrivateRoute
                 path="/community/threads/:id"
                 component={ViewThread}
               />
+            </Switch>
+            <Switch>
+              <PrivateRoute path="/course/articles/:id" component={Article} />
             </Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

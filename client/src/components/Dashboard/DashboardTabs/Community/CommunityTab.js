@@ -29,8 +29,9 @@ class CommunityTab extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.props.threads.map(threadInfo => (
+              {this.props.threads.map((threadInfo, idx) => (
                 <CommunityPostRow
+                  key={idx}
                   id={threadInfo.id}
                   date={threadInfo.date}
                   title={threadInfo.title}

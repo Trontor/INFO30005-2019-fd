@@ -26,7 +26,7 @@ const TopicRow = props => {
         <h5 className="mb-0 d-flex align-items-center">
           <span>
             <button
-              class="btn btn-link collapsed"
+              className="btn btn-link collapsed"
               type="button"
               data-toggle="collapse"
               data-target="#collapseA"
@@ -56,10 +56,11 @@ const TopicRow = props => {
         aria-labelledby="collapse-header-A"
         data-parent="#accordion"
       >
-        <ol class="list-group">
-          {items.map(item => (
+        <ol className="list-group">
+          {items.map((item, idx) => (
             <li
-              class={classnames("list-group-item", {
+              key={idx}
+              className={classnames("list-group-item", {
                 "list-group-item-success": item.completed
               })}
             >

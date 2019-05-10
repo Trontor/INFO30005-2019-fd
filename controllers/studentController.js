@@ -222,7 +222,7 @@ const completedItem = (req, res) => {
     if (err) {
       res.status(400).json(err);
     }
-    if (student.completed.includes(completedID))
+    if (!student.completed.includes(completedID))
       student.completed.push(completedID);
     student.save();
     res.sendStatus(200);

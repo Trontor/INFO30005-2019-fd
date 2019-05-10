@@ -32,10 +32,14 @@ All of these models are accessed by the ***student*** controller in the function
 ### Relevant Views (React JS Client)
 
 - components/
-
+- Navigation
+    - Navigation.js
   - Login
     - Login.js
   - Register
     - Register.js
   - Dashboard
     - Dashboard.js
+
+## Functionality 2 - Community
+

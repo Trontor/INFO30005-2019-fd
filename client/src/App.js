@@ -15,6 +15,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import NewThread from "./components/Threads/NewThread";
 import ViewThread from "./components/Threads/ViewThread/ViewThread";
 import Video from "./components/Course/Video/Video";
+import Article from "./components/Course/Article/Article";
+import Quiz from "./components/Course/Quiz/Quiz";
 
 // Check for token
 if (localStorage.getItem("jwtToken")) {
@@ -41,18 +43,14 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
+          <div>
             <Navigation />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
-            <Switch>
               <PrivateRoute exact path="/newThread" component={NewThread} />
-            </Switch>
-            <Switch>
               <PrivateRoute path="/course/videos/:id" component={Video} />
-            </Switch>
-            <Switch>
+              <PrivateRoute path="/course/articles/:id" component={Article} />
+              <PrivateRoute path="/course/quiz/:id" component={Quiz} />
               <PrivateRoute
                 path="/community/threads/:id"
                 component={ViewThread}

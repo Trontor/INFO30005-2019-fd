@@ -7,6 +7,8 @@ header {
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
+  background: url("../../../images/landing/6.jpg");
+  background-size: 100%;
 }
 
 header video {

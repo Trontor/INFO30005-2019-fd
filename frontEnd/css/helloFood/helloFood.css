@@ -361,6 +361,16 @@ footer .footer-copyright a {
   background-position-y: 13.2rem;
 }
 
+.logInPage #logIn .modal-login .modal-content-2 {
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 2rem;
+  background: url("../../image/tmp/n3.png") no-repeat;
+  background-size: contain;
+  background-position-y: 13.2rem;
+}
+
 .logInPage #logIn .modal-login .modal-header {
   border-bottom: none;
   position: relative;
@@ -431,6 +441,10 @@ footer .footer-copyright a {
 
 .logInPage #logIn .modal-login .modal-dialog {
   margin-top: 80px;
+}
+
+.logInPage #logIn .modal-login .modal-dialog-2 {
+  margin-top: 60px;
 }
 
 .logInPage #logIn .modal-login .btn {

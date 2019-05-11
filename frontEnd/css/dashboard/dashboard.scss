@@ -85,7 +85,7 @@ $desktop: 992px;
 
 #topInterface {
   padding: 49px 20px;
-  background: orange;
+  background: url(../../image/tmp/10.jpg) repeat;
 
   img {
     height: 44px;
@@ -98,6 +98,15 @@ $desktop: 992px;
     }
     padding: 14px 10px;
     margin-top: 10px;
+  }
+  h4{
+    color:aliceblue;
+  }
+  small{
+    color: gray;
+  }
+  p{
+    color: rgb(188, 193, 197);
   }
 }
 
@@ -142,3 +151,7 @@ $desktop: 992px;
 
 
 }
+
+
+
+

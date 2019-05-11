@@ -49,7 +49,7 @@
 
 #topInterface {
   padding: 49px 20px;
-  background: orange;
+  background: url(../../image/tmp/10.jpg) repeat;
 }
 
 #topInterface img {
@@ -64,6 +64,18 @@
 #topInterface .avatar img {
   height: 120px;
   border: white solid 0.2rem;
+}
+
+#topInterface h4 {
+  color: aliceblue;
+}
+
+#topInterface small {
+  color: gray;
+}
+
+#topInterface p {
+  color: #bcc1c5;
 }
 
 #nav-course .nav-tabs {

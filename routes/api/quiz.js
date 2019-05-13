@@ -7,6 +7,6 @@ const controller = require("../../controllers/quizController");
 // @route   GET api/quiz/:id
 // @desc    Get all quiz information by id
 // @access  Public
-router.get("/:title", controller.findQuizByTitle);
+router.get("/:id", controller.getQuizByID);
 
 module.exports = router;

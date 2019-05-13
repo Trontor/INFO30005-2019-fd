@@ -167,6 +167,7 @@ const studentProfile = async (req, res) => {
           break;
         case "Quiz":
           itemInfo = await Quiz.findById(itemID);
+          const allQuizzes = await Quiz.findById("5cc254851c9d44000007559c");
           if (itemInfo) {
             // We don't want to send an error back for a missing item, just skip over it
             // TODO: Handle missing items (probably on administrator log-in)

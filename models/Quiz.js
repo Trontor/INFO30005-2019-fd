@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+mongoose.pluralize(null);
+
 const QuizSchema = new mongoose.Schema({
   title: {
     type: String,

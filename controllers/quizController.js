@@ -1,15 +1,11 @@
-const mongoose = require('mongoose');
 const Quiz = require("../models/Quiz");
 
-const findQuizByTitle = (req, res) => {
-    const quizTitle = req.params.title;
-    Quiz.find({title:quizTitle}, (err, quiz) => {
-        if (!err) {
-            res.json({ title: quizTitle, stars: quiz.starAward });
-        } else {
-            res.sendStatus(404).json({title: "Cannot find quiz."});
-        }
-    });
+const getQuizByID = (req, res) => {
+  Quiz.findById(req.params.id, (err, Quiz) => {
+    if (!err) {
+      res.json(Quiz);
+    }
+  });
 };
 
-module.exports.findQuizByTitle = findQuizByTitle;
+module.exports.getQuizByID = getQuizByID;

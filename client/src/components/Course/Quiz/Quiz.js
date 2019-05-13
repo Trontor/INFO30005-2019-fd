@@ -6,7 +6,8 @@ import "./Quiz.scss";
 class Quiz extends Component {
   state = {
     data: undefined,
-    selected: "A"
+    selected: "A",
+    correct: false
   };
   componentWillMount() {
     this.id = this.props.match.params.id;
@@ -30,7 +31,8 @@ class Quiz extends Component {
     if (!correct) {
       alert("That answer was incorrect :(\nTry again!");
     } else {
-      this.completeQuiz();
+      this.setState({ correct: true });
+      setTimeout(this.completeQuiz, 500);
     }
   };
   render() {
@@ -65,7 +67,7 @@ class Quiz extends Component {
     ];
     return (
       <div className="row">
-        <div className="col-4 offset-4 my-5 text-center">
+        <div className="col-lg-4 offset-lg-4 col-md-12 my-5 text-center">
           <h1>Quiz: {title}</h1>
           <h3 className="my-2">{content}</h3>
           <hr />
@@ -86,15 +88,19 @@ class Quiz extends Component {
               </div>
             ))}
           </div>
-          <button
-            type="button"
-            className="btn btn-success"
-            onClick={this.verifyAnswer}
-            herf="#"
-            id="add-thread"
-          >
-            Submit
-          </button>
+          {!this.state.correct ? (
+            <button
+              type="button"
+              className="btn btn-success"
+              onClick={this.verifyAnswer}
+              herf="#"
+              id="add-thread"
+            >
+              Submit
+            </button>
+          ) : (
+            <span id="quiz-correct">CORRECT </span>
+          )}
         </div>
       </div>
     );

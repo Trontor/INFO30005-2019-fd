@@ -45,13 +45,13 @@ class Register extends Component {
     const errors = this.props.errors;
     if (this.props.loading) {
       return (
-        <div className="logInPage">
+        <div className="registerPage">
           <Loading />
         </div>
       );
     }
     return (
-      <div className="logInPage">
+      <div className="registerPage">
         <div id="logIn">
           <div className="modal-dialog modal-login">
             <div className="registerBg modal-content">

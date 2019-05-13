@@ -25,7 +25,7 @@ const Main = () => {
                 </p>
                 <hr />
                 <p className="about-description mb-0">
-                  Teachers can register their students and track their
+                  Teachers can register students and track their
                   individual progress. Curriculum-aligned courses are
                   pre-populated and can be unlocked to students progressively.
                 </p>

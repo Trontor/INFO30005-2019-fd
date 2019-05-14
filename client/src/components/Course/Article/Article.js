@@ -27,8 +27,21 @@ class Article extends Component {
     if (!this.state.data) {
       return <Loading />;
     }
+    const {
+      title,
+      author,
+      datePosted,
+      featuredImage,
+      content,
+      starAward
+    } = this.state.data;
     console.log(this.state.data);
-    return <div>test</div>;
+    return (
+      <>
+        <h1>{title}</h1>
+        <p>{content}</p>
+      </>
+    );
   }
 }
 

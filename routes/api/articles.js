@@ -4,8 +4,8 @@ const router = express.Router();
 // Load Article model
 const controller = require("../../controllers/articleController");
 
-// @route   GET api/articles/:title
-// @desc    Find an article by title, get star award
+// @route   GET api/articles/:id
+// @desc    Find an article by id
 // @access  Public
 router.get("/:id", controller.getArticleByID);
 

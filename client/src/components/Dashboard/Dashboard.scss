@@ -1,18 +1,91 @@
 #topInterface {
-  padding: 49px 20px;
-  background: orange;
+  padding: 10px;
+  border: solid whitesmoke;
+  border-width: 2px 0;
 
-  img {
-    height: 44px;
+  #name {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(240, 149, 46);
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #email {
+    font-size: 12px;
+    color: rgb(165, 165, 165);
+    font-style: italic;
+  }
+  #teacher {
+    margin: 5px 0px;
+    font-size: 14px;
+    font-style: italic;
+    span {
+      margin-left: 5px;
+      font-style: normal;
+    }
+  }
+  #school {
+    margin: 5px 0px;
+    font-size: 14px;
+    font-style: italic;
+    span {
+      font-style: normal;
+      white-space: pre;
+      margin-left: 5px;
+    }
+  }
+
+  #completed-info {
+    margin: 5px 0;
+    * {
+      vertical-align: middle;
+    }
+    span {
+      margin-right: 5px;
+    }
+    img {
+      width: 24px;
+      height: 24px;
+    }
+    font-size: 16px;
+  }
+  #completed-stars {
+    * {
+      vertical-align: middle;
+    }
+    span {
+      margin-right: 5px;
+    }
+    img {
+      width: 24px;
+      height: 24px;
+    }
+    font-size: 16px;
+  }
+
+  #not-completed {
+    * {
+      vertical-align: middle;
+    }
+    span {
+      margin-right: 5px;
+    }
+    img {
+      width: 24px;
+      height: 24px;
+    }
+    font-size: 16px;
+    font-weight: bold;
   }
 
   .avatar {
-    img {
-      height: 120px;
-      width: 120px;
-      border: white solid 0.2rem;
-    }
-    // padding: 14px 10px;
-    // margin-top: 10px;
+    max-width: 100px;
+    max-height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    border: white solid 0.2rem;
   }
 }

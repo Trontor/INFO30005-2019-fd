@@ -1,19 +1,19 @@
 #tabContainer {
   .nav-link {
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     color: #212529;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 55px 20px 55px;
   }
   .nav-link:not(.active):hover {
     background-color: rgba(255, 166, 0, 0.1);
   }
   .nav-tabs .nav-item.show .nav-link,
   .nav-link.active {
-    background-color: rgb(255, 174, 0);
+    background-color: #ffc34d;
     border-color: transparent #f3f3f3;
     border-bottom: 3px solid !important;
     font-size: 16px;

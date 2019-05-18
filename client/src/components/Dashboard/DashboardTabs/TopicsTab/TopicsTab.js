@@ -26,6 +26,7 @@ const TopicsTab = props => {
                 <TopicRow
                   topic={topic}
                   key={idx}
+                  index={idx}
                   progress={((completed / total) * 100).toFixed(2)}
                 />
               );

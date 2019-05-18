@@ -19,19 +19,20 @@ const TopicRow = props => {
         break;
     }
   };
+  const idx = props.index;
   const { name, items } = props.topic;
   return (
     <div className="card">
-      <div id="collapse-header-A" className="card-header">
+      <div id={"collapse-header-" + idx} className="card-header">
         <h5 className="mb-0 d-flex align-items-center">
           <span>
             <button
               className="btn btn-link collapsed"
               type="button"
               data-toggle="collapse"
-              data-target="#collapseA"
+              data-target={"#collapse" + idx}
               aria-expanded="false"
-              aria-controls="collapseA"
+              aria-controls={"collapse" + idx}
             >
               <i
                 className={classnames(
@@ -51,9 +52,9 @@ const TopicRow = props => {
         </h5>
       </div>
       <div
-        id="collapseA"
+        id={"collapse" + idx}
         className="collapse show"
-        aria-labelledby="collapse-header-A"
+        aria-labelledby={"collapse-header-" + idx}
         data-parent="#accordion"
       >
         <ol className="list-group">

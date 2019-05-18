@@ -2,7 +2,7 @@
 .logInPage {
   height: 100vh;
   width: auto;
-  background: url("../../images/Background2.jpg") black repeat center bottom;
+  background: url("../../images/login.png") black repeat center bottom;
   background-size: cover;
   // background: white;
   #logIn {
@@ -17,7 +17,6 @@
     .modal-login {
       // margin: 12rem auto 0 auto;
       color: #f7af44;
-      margin-top: 200px;
       // background-color: rgba(0, 0, 0, 0.1);
       margin: 0 auto;
       width: 350px;
@@ -30,7 +29,7 @@
         padding: 20px;
         border-radius: 10px;
         border: none;
-        padding-top: 200px;
+        padding-top: 250px;
         // background-color: #1d2a33;
         // background: url("../../images/tmp/n3.png") no-repeat;
         background-color: transparent;

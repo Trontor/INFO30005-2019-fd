@@ -1,8 +1,17 @@
 #topInterface {
-  padding: 50px;
+  padding: 40px 0 0 0;
   border: solid whitesmoke;
   border-width: 2px 0;
-
+  border-top: none;
+  background: orange;
+  .container {
+    background: white;
+    padding-top: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid #d3d1d1;
+    border-bottom: none;
+    border-top-left-radius: 20px;
+  }
   #name {
     font-size: 24px;
     font-weight: bold;

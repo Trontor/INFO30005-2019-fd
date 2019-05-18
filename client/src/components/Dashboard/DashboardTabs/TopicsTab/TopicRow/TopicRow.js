@@ -2,6 +2,7 @@ import classnames from "classnames";
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+const starImg = require("../../../../../images/dashboard/star.png");
 const TopicRow = props => {
   const navigateToItem = (type, id) => {
     switch (type) {
@@ -74,14 +75,18 @@ const TopicRow = props => {
                   })}
                 />
                 {item.title}
+              </span>
+              <div className="float-right">
+                <span className="star-award">{item.starAward}</span>
+                <img alt="Stars" className="star-img" src={starImg} />
                 <button
                   type="button"
-                  className="coursebtn btn btn-info btn-sm"
+                  className="btn btn-info btn-sm"
                   onClick={() => navigateToItem(item.type, item.itemID)}
                 >
                   Start
                 </button>
-              </span>
+              </div>
             </li>
           ))}
         </ol>

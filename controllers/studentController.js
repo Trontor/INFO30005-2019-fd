@@ -149,6 +149,7 @@ const studentProfile = async (req, res) => {
             items.push({
               type,
               title: itemInfo.title,
+              starAward: itemInfo.starAward,
               itemID: itemInfo._id
             });
           }
@@ -161,19 +162,20 @@ const studentProfile = async (req, res) => {
             items.push({
               type,
               title: itemInfo.title,
+              starAward: itemInfo.starAward,
               itemID: itemInfo._id
             });
           }
           break;
         case "Quiz":
           itemInfo = await Quiz.findById(itemID);
-          const allQuizzes = await Quiz.findById("5cc254851c9d44000007559c");
           if (itemInfo) {
             // We don't want to send an error back for a missing item, just skip over it
             // TODO: Handle missing items (probably on administrator log-in)
             items.push({
               type,
               title: itemInfo.title,
+              starAward: itemInfo.starAward,
               itemID: itemInfo._id
             });
           }
@@ -219,12 +221,20 @@ const studentProfile = async (req, res) => {
 
 const completedItem = (req, res) => {
   const completedID = req.body.id;
-  Student.findById(req.user.id, (err, student) => {
+  Student.findById(req.user.id, async (err, student) => {
     if (err) {
       res.status(400).json(err);
     }
     if (!student.completed.includes(completedID))
       student.completed.push(completedID);
+    let relevantItem = await Quiz.findById(completedID);
+    if (!relevantItem) {
+      relevantItem = await Article.findById(completedID);
+      if (!relevantItem) {
+        relevantItem = await Video.findById(completedID);
+      }
+    }
+    student.stars += relevantItem.starAward;
     student.save();
     res.sendStatus(200);
   });

@@ -1,6 +1,5 @@
 .topic-percentage {
   float: right;
-  display: inline-block;
   vertical-align: middle;
   color: gray;
   font-size: 14px;
@@ -14,6 +13,11 @@
 
   i {
     margin: 0 0.7rem;
+  }
+
+  .list-group-item {
+    padding: 20px;
+    border-radius: 0px;
   }
 
   .list-group {
@@ -34,8 +38,15 @@
       border-radius: 3px;
     }
   }
-
-  .coursebtn {
-    float: right;
+  .star-img {
+    margin-right: 20px;
+    width: 15px;
+    height: 15px;
+  }
+  .star-award {
+    vertical-align: middle;
+    display: inline;
+    font-size: 15px;
+    margin-right: 5px;
   }
 }

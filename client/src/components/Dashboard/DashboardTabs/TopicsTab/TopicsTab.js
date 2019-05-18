@@ -5,7 +5,7 @@ import TopicRow from "./TopicRow/TopicRow";
 const TopicsTab = props => {
   return (
     <div
-      className="tab-pane active col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-12 p-0 "
+      className="tab-pane active col-xl-6 offset-xl-3 col-lg-10 offset-lg-1  col-12 p-0 "
       id="nav-topics"
       role="tabpanel"
       aria-labelledby="nav-topics"

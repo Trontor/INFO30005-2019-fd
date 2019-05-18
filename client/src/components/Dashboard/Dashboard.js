@@ -39,7 +39,7 @@ class Dashboard extends Component {
                       alt="Avatar"
                     />
                   </div>
-                  <div className="col-12 col-lg-6 ">
+                  <div className="col-12 col-lg-2 center">
                     <div className="d-inline-block">
                       <div id="name">{profile.name}</div>
                       <div id="email">{profile.email}</div>
@@ -55,7 +55,7 @@ class Dashboard extends Component {
                       </div>
                     </div>
                   </div>
-                  <div className="col-12 col-lg-4 text-center">
+                  <div className="col-12 col-lg-8 text-right">
                     <div className="text-right d-inline-block">
                       <div id="completed-info">
                         <span>Completed {completedCount} items</span>

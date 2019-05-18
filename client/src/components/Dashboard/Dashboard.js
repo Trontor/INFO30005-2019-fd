@@ -39,14 +39,10 @@ class Dashboard extends Component {
                       alt="Avatar"
                     />
                   </div>
-                  <div className="col-12 col-lg-2 center">
+                  <div className="col-12 col-lg-6 center">
                     <div className="d-inline-block">
                       <div id="name">{profile.name}</div>
                       <div id="email">{profile.email}</div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-lg-4 text-center center">
-                    <div className="d-inline-block text-left">
                       <div id="teacher">
                         Teacher:{" "}
                         <span>

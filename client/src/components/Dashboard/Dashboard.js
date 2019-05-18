@@ -62,7 +62,7 @@ class Dashboard extends Component {
                         <img id="star-img" src={checkedImg} alt="Avatar" />
                       </div>
                       <div id="not-completed">
-                        <span> {itemsToComplete} items completed</span>
+                        <span> {itemsToComplete} items to complete</span>
                         <img src={todoImg} alt="Avatar" />
                       </div>
                       <div id="completed-stars">

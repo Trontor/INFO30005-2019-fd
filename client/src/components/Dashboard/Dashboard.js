@@ -39,7 +39,7 @@ class Dashboard extends Component {
                       alt="Avatar"
                     />
                   </div>
-                  <div className="col-12 col-lg-2 center">
+                  <div className="col-12 col-md-5 col-lg-4 text-lg-left text-center ">
                     <div className="d-inline-block">
                       <div id="name">{profile.name}</div>
                       <div id="email">{profile.email}</div>
@@ -55,14 +55,14 @@ class Dashboard extends Component {
                       </div>
                     </div>
                   </div>
-                  <div className="col-12 col-lg-8 text-right">
+                  <div className="col-12 col-md-5 col-lg-6 text-md-right text-center ">
                     <div className="text-right d-inline-block">
                       <div id="completed-info">
-                        <span>Completed {completedCount} items</span>
+                        <span>{completedCount} items completed</span>
                         <img id="star-img" src={checkedImg} alt="Avatar" />
                       </div>
                       <div id="not-completed">
-                        <span>Need to complete {itemsToComplete} items</span>
+                        <span> {itemsToComplete} items completed</span>
                         <img src={todoImg} alt="Avatar" />
                       </div>
                       <div id="completed-stars">

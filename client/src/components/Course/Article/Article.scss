@@ -1,57 +1,17 @@
-header.masthead {
+#article-bg {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightcyan;
+}
+
+
+#masthead {
   // TIP: Background images are set within the HTML using inline CSS!
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
   background: no-repeat center center;
-  background-color: #868e96;
-  background-attachment: scroll;
   position: relative;
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #212529;
-    opacity: 0.5;
-  }
-
-  .post-heading {
-    padding: 200px 0 150px;
-    color: white;
-    @media only screen and (min-width: 768px) {
-      padding: 200px 0;
-    }
-    h1 {
-      font-size: 35px;
-    }
-    .meta,
-    .subheading {
-      line-height: 1.1;
-      display: block;
-    }
-    .subheading {
-      font-size: 24px;
-      font-weight: 600;
-      margin: 10px 0 30px;
-    }
-    .meta {
-      font-size: 20px;
-      font-weight: 300;
-      font-style: italic;
-      a {
-        color: #fff;
-      }
-    }
-    @media only screen and (min-width: 768px) {
-      h1 {
-        font-size: 55px;
-      }
-      .subheading {
-        font-size: 30px;
-      }
-    }
-  }
 }
 
 blockquote {
@@ -75,9 +35,23 @@ p {
   }
 }
 
-#next-btn {
+#next-button {
   margin-top: 0.2rem;
   font-size: 20px;
   float: right;
   padding: 0.2rem 4rem;
+}
+
+#content {
+  text-align: center;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+#author {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  background: no-repeat center center;
+  position: relative;
 }

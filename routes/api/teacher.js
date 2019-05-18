@@ -30,4 +30,23 @@ router.get(
     res.json(req.teacher);
   }
 );
+
+// @route   GET api/teacher/:id/leaderboard
+// @desc    Returns the student leaderboard
+// @access  Private
+router.get(
+    "/:id/leaderboard",
+    passport.authenticate("jwt", { session: false }),
+    controller.getLeaderboard
+);
+
+// @route   POST api/teacher/:id/topics
+// @desc    Unlock a topic, body {id: topic_id}
+// @access  Private
+router.post(
+    "/:id/topics",
+    passport.authenticate("jwt", { session: false }),
+    controller.unlockTopics
+);
+
 module.exports = router;

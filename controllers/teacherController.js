@@ -1,4 +1,5 @@
 const Teacher = require("../models/Teacher");
+const Student = require("../models/Student");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -91,6 +92,43 @@ const testTeacher = (req, res) => {
   res.json({ msg: "Teachers works" });
 };
 
+const getLeaderboard = (req, res) => {
+  Teacher.findById(req.params.id, async (err, teacher) => {
+    if (!err) {
+      let students = [];
+      for (const student_id of teacher.manage) {
+        const student = await Student.findById(student_id);
+        students.push({
+          name: student.name,
+          star: student.starAward
+        });
+      }
+      students.sort(function(a, b) {
+        // descending order
+        return (b.star) - (a.star);
+      });
+      res.json({ success: "true", lead: students });
+    }
+  });
+};
+
+const unlockTopics = (req, res) => {
+  Teacher.findById(req.params.id, async (err, teacher) => {
+    if (!err) {
+      // get topic id from body
+      const topic_id = req.body.id;
+      for (const student_id of teacher.manage) {
+        const student = await Student.findById(student_id);
+        student.unlockedTopics.push(topic_id);
+        student.save();
+      }
+      res.sendStatus(200);
+    }
+  });
+};
+
 module.exports.registerTeacher = registerTeacher;
 module.exports.teacherLogin = teacherLogin;
 module.exports.testTeacher = testTeacher;
+module.exports.getLeaderboard = getLeaderboard;
+module.exports.unlockTopics = unlockTopics;

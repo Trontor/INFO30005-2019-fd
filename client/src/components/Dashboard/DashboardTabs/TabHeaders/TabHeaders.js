@@ -33,7 +33,7 @@ const TabHeaders = props => {
           aria-controls="nav-leaderboard"
           aria-selected="true"
         >
-          Leaderboard
+          {props.isTeacher ? "Manage" : "Leaderboard"}
         </a>
         {!props.isTeacher && (
           <a

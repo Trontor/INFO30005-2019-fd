@@ -39,10 +39,10 @@ const TopicRow = props => {
                 className={classnames(
                   "far",
                   {
-                    "fa-check-circle": props.progress === 100
+                    "fa-check-circle": props.progress === "100.00"
                   },
                   {
-                    "fa-circle": props.progress !== 100
+                    "fa-circle": props.progress !== "100.00"
                   }
                 )}
               />

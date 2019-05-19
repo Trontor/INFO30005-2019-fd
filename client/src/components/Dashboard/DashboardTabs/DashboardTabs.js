@@ -14,7 +14,7 @@ const DashboardTabs = props => {
       <div className="tab-content" id="nav-tabContent">
         {/* <ProfileTab /> */}
         <CommunityTab isTeacher={isTeacher} threads={props.threads} />
-        <LeaderboardTab isTeacher={isTeacher} />
+        <LeaderboardTab isTeacher={isTeacher} leaderboard={props.leaderboard} />
         {isTeacher ? null : (
           <TopicsTab
             topics={props.topics}

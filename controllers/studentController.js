@@ -10,6 +10,7 @@ const jwt = require("jsonwebtoken");
 const keys = require("../config/keys");
 const validateLoginInput = require("../validation/login");
 const validateRegisterInput = require("../validation/register");
+const { getLeaderboard } = require("./teacherController");
 
 const registerStudent = (req, res) => {
   // Check for payload errors (server-side input validation)
@@ -99,6 +100,18 @@ const studentLogin = (req, res) => {
         return res.status(400).json(errors);
       }
     });
+  });
+};
+
+const studentReset = async (req, res) => {
+  const student = await Student.findById(req.body.id);
+  student.stars = 0;
+  student.completed = [];
+  student.save((err, student) => {
+    if (err) {
+      res.send(err);
+    }
+    res.send("Success!");
   });
 };
 
@@ -192,6 +205,7 @@ const studentProfile = async (req, res) => {
       replies: thread.replies.length
     });
   }
+  const leaderboard = await getLeaderboard(teacherID);
   res.json({
     // Teacher attributes
     teacherHonor: teacher.honorific,
@@ -205,6 +219,7 @@ const studentProfile = async (req, res) => {
     stars,
     threads: userThreads,
     topics,
+    leaderboard,
     completed
     // progress: completed
   });
@@ -231,6 +246,7 @@ const completedItem = (req, res) => {
   });
 };
 
+module.exports.studentReset = studentReset;
 module.exports.completedItem = completedItem;
 module.exports.registerStudent = registerStudent;
 module.exports.studentLogin = studentLogin;

@@ -1,0 +1,27 @@
+#management-table {
+  margin-left: 3rem;
+  border-collapse: collapse;
+  width: 90%;
+  text-align: center;
+  margin-top: 2rem;
+  td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+  }
+  th {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: #0080ff;
+    color: white;
+  }
+  tr {
+    &:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    &:hover {
+      background-color: #e6ffff;
+    }
+  }
+}

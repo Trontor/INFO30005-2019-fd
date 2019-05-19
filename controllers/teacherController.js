@@ -51,8 +51,16 @@ const registerTeacher = (req, res) => {
 };
 
 const teacherProfile = async (req, res) => {
-  const { honorific, name, email, avatar, unlockedTopics, school } = req.user;
-  const relevantThreads = await Thread.find({ teacherID: req.user.id });
+  const {
+    id,
+    honorific,
+    name,
+    email,
+    avatar,
+    unlockedTopics,
+    school
+  } = req.user;
+  const relevantThreads = await Thread.find({ teacherID: id });
   const userThreads = [];
   for (const thread of relevantThreads) {
     const postUser = await Student.findById(thread.authorID);
@@ -66,6 +74,7 @@ const teacherProfile = async (req, res) => {
       replies: thread.replies.length
     });
   }
+  const leaderboard = await getLeaderboard(id);
   res.send({
     honorific,
     name,
@@ -73,7 +82,8 @@ const teacherProfile = async (req, res) => {
     avatar,
     unlockedTopics,
     school,
-    threads: userThreads
+    threads: userThreads,
+    leaderboard
   });
 };
 
@@ -123,24 +133,24 @@ const testTeacher = (req, res) => {
   res.json({ msg: "Teachers works" });
 };
 
-const getLeaderboard = (req, res) => {
-  Teacher.findById(req.params.id, async (err, teacher) => {
-    if (!err) {
-      let students = [];
-      for (const student_id of teacher.manage) {
-        const student = await Student.findById(student_id);
-        students.push({
-          name: student.name,
-          star: student.starAward
-        });
-      }
-      students.sort(function(a, b) {
-        // descending order
-        return b.star - a.star;
-      });
-      res.json({ success: "true", lead: students });
-    }
-  });
+const getLeaderboard = async teacherID => {
+  const teacher = await Teacher.findById(teacherID);
+  if (!teacher) {
+    return null;
+  }
+  let students = [];
+  const studentDocs = await Student.find({ teacherID });
+  for (const student of studentDocs) {
+    students.push({
+      id: student._id,
+      name: student.name,
+      stars: student.stars,
+      email: student.email,
+      completed: student.completed.length
+    });
+  }
+  students.sort((a, b) => b.stars - a.stars);
+  return students;
 };
 
 const unlockTopics = (req, res) => {

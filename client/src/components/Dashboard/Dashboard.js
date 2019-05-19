@@ -28,6 +28,7 @@ class Dashboard extends Component {
           isTeacher={isTeacher}
           threads={profile.threads}
           topics={profile.topics}
+          leaderboard={profile.leaderboard}
           completedItems={profile.completed}
         />
       </>

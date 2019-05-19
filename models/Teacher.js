@@ -28,8 +28,7 @@ const TeacherSchema = new mongoose.Schema({
     type: Date,
     default: new Date()
   },
-  unlockedTopics: [mongoose.Schema.Types.ObjectId],
-  manage: [mongoose.Schema.Types.ObjectId]
+  unlockedTopics: [mongoose.Schema.Types.ObjectId]
 });
 
 module.exports = Teacher = mongoose.model("teachers", TeacherSchema);

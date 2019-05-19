@@ -19,6 +19,15 @@ router.post(
   controller.completedItem
 );
 
+// @route   POST api/student/reset
+// @desc    Reset Student
+// @access  Public
+router.post(
+  "/reset",
+  passport.authenticate("jwt", { session: false }),
+  controller.studentReset
+);
+
 // @route   POST api/student/login
 // @desc    Login Student / Return JWT Token
 // @access  Public

@@ -25,6 +25,7 @@ class Article extends Component {
         }
       });
   };
+
   render() {
     if (!this.state.data) {
       return <Loading />;
@@ -49,7 +50,7 @@ class Article extends Component {
                 type="button"
                 style={{ width: "150px", height: "50px" }}
                 className="btn btn-warning"
-                onClick={this.completeVideo}
+                onClick={this.completeArticle}
               >
                 Next
               </button>

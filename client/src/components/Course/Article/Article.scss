@@ -1,17 +1,15 @@
-#article-bg {
-  margin-left: auto;
-  margin-right: auto;
+#article-header {
   background-color: lightcyan;
+  img {
+    max-height: 200px;
+    max-width: 100%;
+  }
 }
 
-
-#masthead {
-  // TIP: Background images are set within the HTML using inline CSS!
-  margin-top: 20px;
-  margin-bottom: 15px;
-  text-align: center;
-  background: no-repeat center center;
-  position: relative;
+#article-title {
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 blockquote {

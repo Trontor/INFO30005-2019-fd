@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Loading from "../../Loading/Loading";
 import "./Article.scss";
-import MDReactComponent from 'markdown-react-js';
-import Image from 'react-image-resizer';
+import MDReactComponent from "markdown-react-js";
 
 class Article extends Component {
   state = {
@@ -16,6 +15,7 @@ class Article extends Component {
       this.setState({ data: res.data });
     });
   }
+
   completeArticle = () => {
     axios
       .post("../../api/student/items/complete/", { id: this.id })
@@ -29,39 +29,31 @@ class Article extends Component {
     if (!this.state.data) {
       return <Loading />;
     }
-    const {
-      title,
-      author,
-      datePosted,
-      featuredImage,
-      content,
-      starAward
-    } = this.state.data;
+    const { title, image, content } = this.state.data;
     console.log(this.state.data);
     return (
       <>
-        <div id="article-bg">
-          <Image
-              src="https://puu.sh/DtVYh/0f6201b950.png"
-              height={200}
-              width={1300}
-          />
+        <div id="article-header" className="text-center">
+          <img alt="featured" src={image} />
         </div>
-        <h2 id="masthead">{title}</h2>
-        <h4 id="author">{author}</h4>
-        <div id="content">
-          <MDReactComponent text={content} />
-        </div>
-        <div id="next-button">
-          <div className="col-12 col-md-auto d-flex align-items-center">
-            <button
+        <div className="container">
+          <div className="row">
+            <div className="col-12 text-center">
+              <div id="article-title">{title}</div>
+            </div>
+            <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+              <MDReactComponent text={content} />
+            </div>
+            <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 text-right">
+              <button
                 type="button"
                 style={{ width: "150px", height: "50px" }}
                 className="btn btn-warning"
                 onClick={this.completeVideo}
-            >
-              Next
-            </button>
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </>

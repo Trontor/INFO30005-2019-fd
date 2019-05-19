@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./CommunityTab.scss";
 import CommunityPostRow from "./CommunityPostRow/CommunityPostRow";
 import { withRouter } from "react-router";
+import classNames from "classnames";
 
 class CommunityTab extends Component {
   render() {
@@ -46,7 +47,10 @@ class CommunityTab extends Component {
     );
     return (
       <div
-        className="col-xl-6 offset-xl-3 col-lg-10 offset-lg-1 col-12 p-0 tab-pane"
+        className={classNames(
+          "col-xl-6 offset-xl-3 col-lg-10 offset-lg-1 col-12 p-0 tab-pane",
+          { active: this.props.isTeacher }
+        )}
         id="nav-community"
         role="tabpanel"
         aria-labelledby="nav-community"

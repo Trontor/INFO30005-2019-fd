@@ -1,6 +1,8 @@
 import React from "react";
 import "./TabHeaders.scss";
-const TabHeaders = () => {
+import classNames from "classnames";
+
+const TabHeaders = props => {
   return (
     <nav>
       <div
@@ -9,7 +11,9 @@ const TabHeaders = () => {
         role="tablist"
       >
         <a
-          className="nav-item nav-link "
+          className={classNames("nav-item nav-link ", {
+            active: props.isTeacher
+          })}
           id="nav-community-tab"
           data-toggle="tab"
           href="#nav-community"
@@ -19,17 +23,31 @@ const TabHeaders = () => {
         >
           Community
         </a>
+
         <a
-          className="nav-item nav-link active"
-          id="nav-topics-tab"
+          className="nav-item nav-link"
+          id="nav-leaderboard-tab"
           data-toggle="tab"
-          href="#nav-topics"
+          href="#nav-leaderboard"
           role="tab"
-          aria-controls="nav-topics"
+          aria-controls="nav-leaderboard"
           aria-selected="true"
         >
-          Topics
+          Leaderboard
         </a>
+        {!props.isTeacher && (
+          <a
+            className="nav-item nav-link active"
+            id="nav-topics-tab"
+            data-toggle="tab"
+            href="#nav-topics"
+            role="tab"
+            aria-controls="nav-topics"
+            aria-selected="true"
+          >
+            Topics
+          </a>
+        )}
       </div>
     </nav>
   );

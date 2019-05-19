@@ -1,6 +1,19 @@
 import React from "react";
+import axios from "axios";
 
 const CommunityPostRow = props => {
+  const deleteThread = e => {
+    e.preventDefault();
+    const id = e.target.name;
+    axios
+      .delete(`api/thread/${id}`)
+      .then(() => {
+        document.location.reload();
+      })
+      .catch(err => {
+        alert("Error deleting thread!\n" + err);
+      });
+  };
   const isoDateToString = isoDate => {
     const date = new Date(isoDate);
     const year = date.getFullYear();
@@ -32,6 +45,13 @@ const CommunityPostRow = props => {
       <td>
         <span className="reply-number">{props.replies}</span>
       </td>
+      {props.canDelete && (
+        <td>
+          <button name={props.id} className="btn-danger" onClick={deleteThread}>
+            Delete
+          </button>
+        </td>
+      )}
     </tr>
   );
 };

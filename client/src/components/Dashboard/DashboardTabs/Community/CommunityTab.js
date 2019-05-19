@@ -6,20 +6,23 @@ import classNames from "classnames";
 
 class CommunityTab extends Component {
   render() {
+    const { isTeacher } = this.props;
     const regularTable = (
-      <div className="community-card">
-        <button
-          type="button"
-          className="btn btn-success"
-          onClick={() => {
-            this.props.history.push("/newThread");
-          }}
-          herf="#"
-          id="add-thread"
-        >
-          +Add Thread
-        </button>
-        <div className="card table-responsive">
+      <div className={classNames("community-card", { "py-5": isTeacher })}>
+        {!isTeacher && (
+          <button
+            type="button"
+            className="btn btn-success"
+            onClick={() => {
+              this.props.history.push("/newThread");
+            }}
+            herf="#"
+            id="add-thread"
+          >
+            +Add Thread
+          </button>
+        )}
+        <div className={classNames("card table-responsive")}>
           <table className="table table-hovor" id="community-table">
             <thead>
               <tr>
@@ -27,6 +30,7 @@ class CommunityTab extends Component {
                 <th scope="col">TITLE</th>
                 <th scope="col">AUTHOR</th>
                 <th scope="col">REPLIES</th>
+                {isTeacher && <th scope="col">MANAGE</th>}
               </tr>
             </thead>
             <tbody>
@@ -38,6 +42,7 @@ class CommunityTab extends Component {
                   title={threadInfo.title}
                   author={threadInfo.authorName}
                   replies={threadInfo.replies}
+                  canDelete={isTeacher}
                 />
               ))}
             </tbody>

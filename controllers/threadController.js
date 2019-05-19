@@ -110,7 +110,7 @@ const addReply = (req, res) => {
 };
 
 const deleteThread = (req, res) => {
-  Thread.findByIdAndRemove(req.params.id, (err, thread) => {
+  Thread.findOneAndDelete(req.params.id, (err, thread) => {
     if (err) {
       return res
         .status(400)

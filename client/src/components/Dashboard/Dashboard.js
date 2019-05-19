@@ -5,14 +5,11 @@ import PropTypes from "prop-types";
 import Loading from "../Loading/Loading";
 import "./Dashboard.scss";
 import DashboardTabs from "./DashboardTabs/DashboardTabs";
-
-const starImg = require("../../images/dashboard/star.png");
-const todoImg = require("../../images/dashboard/to-do-list.png");
-const checkedImg = require("../../images/dashboard/checked.png");
+import StudentHeader from "./StudentHeader/StudentHeader";
 
 class Dashboard extends Component {
   componentDidMount() {
-    this.props.getCurrentProfile();
+    this.props.getCurrentProfile(this.props.isTeacherAuthed);
   }
 
   render() {
@@ -20,63 +17,15 @@ class Dashboard extends Component {
       return <Loading />;
     }
     const profile = this.props.profile.data;
-    const completedCount = profile.completed.length;
-    const itemsToComplete =
-      profile.topics
-        .map(topic => topic.items.length)
-        .reduce((acc, val) => acc + val) - completedCount;
+    const isTeacher = this.props.isTeacherAuthed;
+    if (isTeacher) {
+    }
+
     return (
       <>
-        <section id="topInterface">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 col-md-10 offset-md-1">
-                <div className="row">
-                  <div className="col-12 col-lg-2 p-0 center">
-                    <img
-                      className="avatar w-md-100"
-                      src={profile.avatar}
-                      alt="Avatar"
-                    />
-                  </div>
-                  <div className="col-12 col-md-5 col-lg-4 text-lg-left text-center ">
-                    <div className="d-inline-block">
-                      <div id="name">{profile.name}</div>
-                      <div id="email">{profile.email}</div>
-                      <div id="teacher">
-                        Teacher:{" "}
-                        <span>
-                          {profile.teacherHonor} {profile.teacherName}
-                        </span>
-                      </div>
-                      <div id="school">
-                        School:
-                        <span>{"   " + profile.school}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-md-5 col-lg-6 text-md-right text-center ">
-                    <div className="text-right d-inline-block">
-                      <div id="completed-info">
-                        <span>{completedCount} items completed</span>
-                        <img id="star-img" src={checkedImg} alt="Avatar" />
-                      </div>
-                      <div id="not-completed">
-                        <span> {itemsToComplete} items to complete</span>
-                        <img src={todoImg} alt="Avatar" />
-                      </div>
-                      <div id="completed-stars">
-                        <span>{profile.stars}</span>
-                        <img src={starImg} alt="Avatar" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {isTeacher ? null : <StudentHeader profile={profile} />}
         <DashboardTabs
+          isTeacher={isTeacher}
           threads={profile.threads}
           topics={profile.topics}
           completedItems={profile.completed}
@@ -88,11 +37,13 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   profile: PropTypes.object.isRequired,
+  isTeacherAuthed: PropTypes.bool.isRequired,
   getCurrentProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  profile: state.profile
+  profile: state.profile,
+  isTeacherAuthed: state.auth.isTeacherAuthed
 });
 
 export default connect(

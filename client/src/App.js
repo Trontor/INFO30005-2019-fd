@@ -20,21 +20,26 @@ import Quiz from "./components/Course/Quiz/Quiz";
 
 // Check for token
 if (localStorage.getItem("jwtToken")) {
-  // Set auth token header auth
-  setAuthToken(localStorage.getItem("jwtToken"));
-  // Decode token and get user info and exp
-  const decoded = jwt_decode(localStorage.getItem("jwtToken"));
-  // Set user and isAuthenticated
-  store.dispatch(setCurrentUser(decoded));
+  try {
+    // Set auth token header auth
+    setAuthToken(localStorage.getItem("jwtToken"));
+    // Decode token and get user info and exp
+    const decoded = jwt_decode(localStorage.getItem("jwtToken"));
+    // Set user and isAuthenticated
+    store.dispatch(setCurrentUser(decoded));
 
-  // Check for expired token
-  const currentTime = Date.now() / 1000;
-  if (decoded.exp < currentTime) {
-    // Log out the user
-    store.dispatch(logoutUser);
-    // TODO: Clear current profile
-    // Redirect to login
-    window.location.href = "/login";
+    // Check for expired token
+    const currentTime = Date.now() / 1000;
+    if (decoded.exp < currentTime) {
+      // Log out the user
+      store.dispatch(logoutUser);
+      // TODO: Clear current profile
+      localStorage.removeItem("jwtToken");
+      // Redirect to login
+      window.location.href = "/login";
+    }
+  } catch (ex) {
+    localStorage.removeItem("jwtToken");
   }
 }
 

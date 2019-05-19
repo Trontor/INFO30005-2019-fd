@@ -5,11 +5,6 @@ const router = express.Router();
 // Load Student model
 const controller = require("../../controllers/studentController");
 
-// @route   GET api/student/test
-// @desc    Tests post route
-// @access  Public
-router.get("/test", controller.testStudent);
-
 // @route   POST api/student/register
 // @desc    Register a new student
 // @access  Public

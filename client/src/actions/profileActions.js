@@ -1,10 +1,12 @@
 import axios from "axios";
 import { PROFILE_LOADING, GET_PROFILE } from "./types";
 
-export const getCurrentProfile = () => dispatch => {
+export const getCurrentProfile = isTeacher => dispatch => {
   dispatch(setProfileLoading());
+
+  const endPoint = `api/${isTeacher ? "teacher" : "student"}/profile`;
   axios
-    .get("api/student/profile")
+    .get(endPoint)
     .then(res => {
       dispatch({
         type: GET_PROFILE,

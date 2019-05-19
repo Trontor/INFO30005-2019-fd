@@ -27,26 +27,35 @@ router.get(
   "/current",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.json(req.teacher);
+    res.json(req.user);
   }
+);
+
+// @route   GET api/teacher/profile
+// @desc    Returns the profile information nfor the current teacher
+// @access  Private
+router.get(
+  "/profile",
+  passport.authenticate("jwt", { session: false }),
+  controller.teacherProfile
 );
 
 // @route   GET api/teacher/:id/leaderboard
 // @desc    Returns the student leaderboard
 // @access  Private
 router.get(
-    "/:id/leaderboard",
-    passport.authenticate("jwt", { session: false }),
-    controller.getLeaderboard
+  "/:id/leaderboard",
+  passport.authenticate("jwt", { session: false }),
+  controller.getLeaderboard
 );
 
 // @route   POST api/teacher/:id/topics
 // @desc    Unlock a topic, body {id: topic_id}
 // @access  Private
 router.post(
-    "/:id/topics",
-    passport.authenticate("jwt", { session: false }),
-    controller.unlockTopics
+  "/:id/topics",
+  passport.authenticate("jwt", { session: false }),
+  controller.unlockTopics
 );
 
 module.exports = router;

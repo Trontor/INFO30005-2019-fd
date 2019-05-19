@@ -9,17 +9,6 @@ const TabHeaders = () => {
         role="tablist"
       >
         <a
-          className="nav-item nav-link"
-          id="nav-profile-tab"
-          data-toggle="tab"
-          href="#nav-profile"
-          role="tab"
-          aria-controls="nav-profile"
-          aria-selected="false"
-        >
-          Profile
-        </a>
-        <a
           className="nav-item nav-link "
           id="nav-community-tab"
           data-toggle="tab"

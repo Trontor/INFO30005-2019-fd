@@ -1,5 +1,6 @@
 const Teacher = require("../models/Teacher");
 const Student = require("../models/Student");
+const Thread = require("../models/Thread");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -49,6 +50,33 @@ const registerTeacher = (req, res) => {
   });
 };
 
+const teacherProfile = async (req, res) => {
+  const { honorific, name, email, avatar, unlockedTopics, school } = req.user;
+  const relevantThreads = await Thread.find({ teacherID: req.user.id });
+  const userThreads = [];
+  for (const thread of relevantThreads) {
+    const postUser = await Student.findById(thread.authorID);
+    userThreads.push({
+      id: thread._id,
+      authorID: thread.authorID,
+      authorName: postUser.name,
+      date: thread.datePosted,
+      title: thread.title,
+      topic: thread.topic,
+      replies: thread.replies.length
+    });
+  }
+  res.send({
+    honorific,
+    name,
+    email,
+    avatar,
+    unlockedTopics,
+    school,
+    threads: userThreads
+  });
+};
+
 const teacherLogin = (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -66,12 +94,14 @@ const teacherLogin = (req, res) => {
     bcrypt.compare(password, teacher.password).then(isMatch => {
       if (isMatch) {
         // Payload for JWT Signing
-        // const payload = {
-        //   id: teacher.id,
-        //   name: teacher.name,
-        //   avatar: teacher.avatar
-        // };
-        const payload = teacher;
+        const payload = {
+          id: teacher.id,
+          honorific: teacher.honorific,
+          name: teacher.name,
+          avatar: teacher.avatar,
+          school: teacher.school,
+          unlockedTopics: teacher.unlockedTopics
+        };
         // Sign token
         jwt.sign(
           payload,
@@ -106,7 +136,7 @@ const getLeaderboard = (req, res) => {
       }
       students.sort(function(a, b) {
         // descending order
-        return (b.star) - (a.star);
+        return b.star - a.star;
       });
       res.json({ success: "true", lead: students });
     }
@@ -128,6 +158,7 @@ const unlockTopics = (req, res) => {
   });
 };
 
+module.exports.teacherProfile = teacherProfile;
 module.exports.registerTeacher = registerTeacher;
 module.exports.teacherLogin = teacherLogin;
 module.exports.testTeacher = testTeacher;

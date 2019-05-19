@@ -102,15 +102,6 @@ const studentLogin = (req, res) => {
   });
 };
 
-const testStudent = (req, res) => {
-  res.json({ msg: "Students works" });
-};
-
-/**
- * Returns a promise that resolves when all unlocked topics have been collated into an array
- */
-getUnlockedTopics = (resolve, reject) => {};
-
 const studentProfile = async (req, res) => {
   // get all info as shown in schema
   // change ObjectId to name
@@ -243,5 +234,4 @@ const completedItem = (req, res) => {
 module.exports.completedItem = completedItem;
 module.exports.registerStudent = registerStudent;
 module.exports.studentLogin = studentLogin;
-module.exports.testStudent = testStudent;
 module.exports.studentProfile = studentProfile;

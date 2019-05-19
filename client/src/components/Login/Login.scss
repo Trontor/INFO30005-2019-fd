@@ -8,11 +8,20 @@
   #logIn {
     #devLogin {
       font-size: 20px;
-      padding-bottom: 5px;
+      padding: 10px 5px 0px 5px;
       border-bottom: 0.5px solid gray;
     }
-    #dev-panel > div {
-      cursor: pointer;
+    #dev-panel {
+      padding: 5px;
+      > div {
+        cursor: pointer;
+      }
+    }
+    #developer-note {
+      position: absolute;
+      font-size: 12px;
+      font-family: "Courier New", Courier, monospace;
+      color: blue;
     }
     .modal-login {
       // margin: 12rem auto 0 auto;

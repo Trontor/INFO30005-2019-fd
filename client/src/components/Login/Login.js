@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./Login.scss";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginUser } from "../../actions/authActions";
+import { loginStudent, loginTeacher } from "../../actions/authActions";
 import classnames from "classnames";
 
 class Login extends Component {
@@ -12,6 +12,7 @@ class Login extends Component {
     this.state = {
       email: "jevin@student.unimelb.edu.au",
       password: "testok",
+      teacher: false,
       errors: {}
     };
   }
@@ -25,10 +26,15 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    this.props.loginUser(userData);
+    this.state.teacher
+      ? this.props.loginTeacher(userData)
+      : this.props.loginStudent(userData);
   };
-  fakeLogin = (username, pw) => {
-    this.setState({ email: username, password: pw }, this.processLogin);
+  fakeLogin = (username, pw, teacher = false) => {
+    this.setState(
+      { email: username, password: pw, teacher },
+      this.processLogin
+    );
   };
   onSubmit = e => {
     e.preventDefault();
@@ -108,10 +114,11 @@ class Login extends Component {
               </div>
               <div
                 id="dev-panel"
-                className="row text-center bg-info text-light p-2"
+                className="row text-center bg-info text-light"
               >
+                <span id="developer-note">[DEVELOPER TOOL]</span>
                 <div id="devLogin" className="col-12">
-                  Developer Quick Login
+                  Student Quick Login
                 </div>
                 <div
                   className="col-4"
@@ -137,6 +144,17 @@ class Login extends Component {
                 >
                   Elon Musk
                 </div>
+                <div id="devLogin" className="col-12">
+                  Teacher Quick Login
+                </div>
+                <div
+                  className="col-4"
+                  onClick={() =>
+                    this.fakeLogin("johnsmith@email.com", "secure123", true)
+                  }
+                >
+                  John Smith
+                </div>
               </div>
             </div>
           </div>
@@ -148,6 +166,7 @@ class Login extends Component {
 
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
+  loginTeacher: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -160,5 +179,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { loginUser }
+  { loginStudent, loginTeacher }
 )(Login);

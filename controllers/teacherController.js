@@ -66,11 +66,12 @@ const teacherLogin = (req, res) => {
     bcrypt.compare(password, teacher.password).then(isMatch => {
       if (isMatch) {
         // Payload for JWT Signing
-        const payload = {
-          id: teacher.id,
-          name: teacher.name,
-          avatar: teacher.avatar
-        };
+        // const payload = {
+        //   id: teacher.id,
+        //   name: teacher.name,
+        //   avatar: teacher.avatar
+        // };
+        const payload = teacher;
         // Sign token
         jwt.sign(
           payload,

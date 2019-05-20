@@ -3,9 +3,11 @@ import axios from "axios";
 import Loading from "../../Loading/Loading";
 import "./Article.scss";
 import MDReactComponent from "markdown-react-js";
+import StarpopUp from "../StarpopUp";
 
 class Article extends Component {
   state = {
+    finished: false,
     data: undefined
   };
   componentWillMount() {
@@ -17,13 +19,16 @@ class Article extends Component {
   }
 
   completeArticle = () => {
-    axios
-      .post("../../api/student/items/complete/", { id: this.id })
-      .then(res => {
-        if (res.status === 200) {
-          this.props.history.push("/dashboard");
-        }
-      });
+    this.setState({ finished: true });
+    setTimeout(() => {
+      axios
+        .post("../../api/student/items/complete/", { id: this.id })
+        .then(res => {
+          if (res.status === 200) {
+            this.props.history.push("/dashboard");
+          }
+        });
+    }, 2000);
   };
 
   render() {
@@ -31,7 +36,7 @@ class Article extends Component {
       return <Loading />;
     }
     const { title, image, content } = this.state.data;
-    console.log(this.state.data);
+
     return (
       <>
         <div id="article-header" className="text-center">
@@ -43,17 +48,23 @@ class Article extends Component {
               <div id="article-title">{title}</div>
             </div>
             <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-              <MDReactComponent text={content} />
+              {this.state.finished ? (
+                <StarpopUp value="20" />
+              ) : (
+                <MDReactComponent text={content} />
+              )}
             </div>
             <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 text-right">
-              <button
-                type="button"
-                style={{ width: "150px", height: "50px" }}
-                className="btn btn-warning"
-                onClick={this.completeArticle}
-              >
-                Next
-              </button>
+              {this.state.finished ? null : (
+                <button
+                  type="button"
+                  style={{ width: "150px", height: "50px" }}
+                  className="btn btn-warning"
+                  onClick={this.completeArticle}
+                >
+                  Next
+                </button>
+              )}
             </div>
           </div>
         </div>

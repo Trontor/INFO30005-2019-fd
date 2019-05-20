@@ -22,10 +22,13 @@ class CommunityTab extends Component {
             +Add Thread
           </button>
         )}
-        <div className={classNames("card table-responsive")}>
-          <table className="table table-hovor" id="community-table">
+        <div>
+          <table
+            className="table-responsive table table-striped table-hover table-bordered"
+            // id="community-table"
+          >
             <thead>
-              <tr>
+              <tr className="bg-success">
                 <th scope="col">DATE</th>
                 <th scope="col">TITLE</th>
                 <th scope="col">AUTHOR</th>
@@ -53,7 +56,7 @@ class CommunityTab extends Component {
     return (
       <div
         className={classNames(
-          "col-xl-6 offset-xl-3 col-lg-10 offset-lg-1 col-12 p-0 tab-pane",
+          "col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-12 p-0 tab-pane",
           { active: this.props.isTeacher }
         )}
         id="nav-community"

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Loading from "../../Loading/Loading";
 import "./Quiz.scss";
+import StarpopUp from "../StarpopUp";
 
 class Quiz extends Component {
   state = {
@@ -99,7 +100,7 @@ class Quiz extends Component {
               Submit
             </button>
           ) : (
-            <span id="quiz-correct">CORRECT </span>
+            <StarpopUp value="20" />
           )}
         </div>
       </div>

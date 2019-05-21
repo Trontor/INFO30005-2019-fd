@@ -10,16 +10,11 @@ const jwt = require("jsonwebtoken");
 const keys = require("../config/keys");
 const validateLoginInput = require("../validation/login");
 const validateRegisterInput = require("../validation/register");
-const {
-  getLeaderboard
-} = require("./teacherController");
+const { getLeaderboard } = require("./teacherController");
 
 const registerStudent = (req, res) => {
   // Check for payload errors (server-side input validation)
-  const {
-    errors,
-    isValid
-  } = validateRegisterInput(req.body);
+  const { errors, isValid } = validateRegisterInput(req.body);
   // The registration input fields is invalid
   if (!isValid) {
     return res.status(400).json(errors);
@@ -79,10 +74,7 @@ const studentLogin = (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   // Check for payload errors (server-side input validation)
-  const {
-    errors,
-    isValid
-  } = validateLoginInput(req.body);
+  const { errors, isValid } = validateLoginInput(req.body);
   // Find the student by email
   Student.findOne({
     email
@@ -105,7 +97,8 @@ const studentLogin = (req, res) => {
         // Sign token
         jwt.sign(
           payload,
-          keys.secretOrKey, {
+          keys.secretOrKey,
+          {
             expiresIn: "7d"
           },
           (err, token) => {
@@ -164,10 +157,7 @@ const studentProfile = async (req, res) => {
       return;
     }
     for (const item of topic.items) {
-      const {
-        type,
-        itemID
-      } = item;
+      const { type, itemID } = item;
       let itemInfo = undefined;
       switch (type) {
         case "Article":

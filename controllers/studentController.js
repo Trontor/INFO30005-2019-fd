@@ -10,11 +10,16 @@ const jwt = require("jsonwebtoken");
 const keys = require("../config/keys");
 const validateLoginInput = require("../validation/login");
 const validateRegisterInput = require("../validation/register");
-const { getLeaderboard } = require("./teacherController");
+const {
+  getLeaderboard
+} = require("./teacherController");
 
 const registerStudent = (req, res) => {
   // Check for payload errors (server-side input validation)
-  const { errors, isValid } = validateRegisterInput(req.body);
+  const {
+    errors,
+    isValid
+  } = validateRegisterInput(req.body);
   // The registration input fields is invalid
   if (!isValid) {
     return res.status(400).json(errors);
@@ -27,13 +32,19 @@ const registerStudent = (req, res) => {
     //test
     if (!teacher) {
       // There is no teacher to link the student to
-      return res.status(400).json({ teacher: "Teacher doesn't exist." });
+      return res.status(400).json({
+        teacher: "Teacher doesn't exist."
+      });
     }
     // Second, let's check if the email exists
-    Student.findOne({ email: req.body.email }).then(student => {
+    Student.findOne({
+      email: req.body.email
+    }).then(student => {
       if (student) {
         // There is a student with the email
-        return res.status(400).json({ email: "Email already exists." });
+        return res.status(400).json({
+          email: "Email already exists."
+        });
       } else {
         // There is no student with the email
         const avatar = gravatar.url(req.body.email, {
@@ -68,9 +79,14 @@ const studentLogin = (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   // Check for payload errors (server-side input validation)
-  const { errors, isValid } = validateLoginInput(req.body);
+  const {
+    errors,
+    isValid
+  } = validateLoginInput(req.body);
   // Find the student by email
-  Student.findOne({ email }).then(student => {
+  Student.findOne({
+    email
+  }).then(student => {
     if (!student) {
       // No student found!
       errors.email = "Student not found";
@@ -89,10 +105,14 @@ const studentLogin = (req, res) => {
         // Sign token
         jwt.sign(
           payload,
-          keys.secretOrKey,
-          { expiresIn: "7d" },
+          keys.secretOrKey, {
+            expiresIn: "7d"
+          },
           (err, token) => {
-            res.json({ success: "true", token: "Bearer " + token });
+            res.json({
+              success: "true",
+              token: "Bearer " + token
+            });
           }
         );
       } else {
@@ -130,7 +150,9 @@ const studentProfile = async (req, res) => {
   const teacher = await Teacher.findById(teacherID);
   if (!teacher) {
     // The teacherID does not exist
-    return res.status(400).send({ teacher: "Teacher doesn't exist." });
+    return res.status(400).send({
+      teacher: "Teacher doesn't exist."
+    });
   }
   let topics = [];
   for (const topicID of teacher.unlockedTopics) {
@@ -142,7 +164,10 @@ const studentProfile = async (req, res) => {
       return;
     }
     for (const item of topic.items) {
-      const { type, itemID } = item;
+      const {
+        type,
+        itemID
+      } = item;
       let itemInfo = undefined;
       switch (type) {
         case "Article":
@@ -191,7 +216,9 @@ const studentProfile = async (req, res) => {
       items
     });
   }
-  const relevantThreads = await Thread.find({ teacherID: req.user.teacherID });
+  const relevantThreads = await Thread.find({
+    teacherID: req.user.teacherID
+  });
   const userThreads = [];
   for (const thread of relevantThreads) {
     const postUser = await Student.findById(thread.authorID);
@@ -231,8 +258,10 @@ const completedItem = (req, res) => {
     if (err) {
       res.status(400).json(err);
     }
-    if (!student.completed.includes(completedID))
+    if (!student.completed.includes(completedID)) {
       student.completed.push(completedID);
+      student.stars += relevantItem.starAward;
+    }
     let relevantItem = await Quiz.findById(completedID);
     if (!relevantItem) {
       relevantItem = await Article.findById(completedID);
@@ -240,7 +269,6 @@ const completedItem = (req, res) => {
         relevantItem = await Video.findById(completedID);
       }
     }
-    student.stars += relevantItem.starAward;
     student.save();
     res.sendStatus(200);
   });

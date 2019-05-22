@@ -93,9 +93,7 @@ const addReply = (req, res) => {
       thread.replies.push(reply);
       thread.save(err => {
         if (err) {
-          res
-            .status(400)
-            .json({ status: "Fail to add reply.", errors: err.errors });
+          res.status(400).json({ status: "Fail to add reply.", errors: err.errors });
         } else {
           res.status(200).json({ status: "Succesfully added reply" });
         }
@@ -110,11 +108,9 @@ const addReply = (req, res) => {
 };
 
 const deleteThread = (req, res) => {
-  Thread.findOneAndDelete(req.params.id, (err, thread) => {
+  Thread.findByIdAndDelete(req.params.id, (err, thread) => {
     if (err) {
-      return res
-        .status(400)
-        .send({ success: "false", message: "Error deleting thread" });
+      return res.status(400).send({ success: "false", message: "Error deleting thread" });
     }
     res.status(200).send({
       success: "true",

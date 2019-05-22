@@ -1,0 +1,30 @@
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.8s ease-in ;
+    animation: scale-up-center 0.8s ease-in ;
+    font-size: 28px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}

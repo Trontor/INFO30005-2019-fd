@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Loading from "../../Loading/Loading";
 import "./Quiz.scss";
-import StarpopUp from "../StarpopUp";
+import StarpopUp from "../StarpopUp/StarpopUp";
 
 class Quiz extends Component {
   state = {

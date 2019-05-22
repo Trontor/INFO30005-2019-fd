@@ -3,11 +3,12 @@ import axios from "axios";
 import Loading from "../../Loading/Loading";
 import "./Article.scss";
 import MDReactComponent from "markdown-react-js";
-import StarpopUp from "../StarpopUp";
+import StarpopUp from "../StarpopUp/StarpopUp";
 
 class Article extends Component {
   state = {
     finished: false,
+    jump: false,
     data: undefined
   };
   componentWillMount() {
@@ -19,18 +20,22 @@ class Article extends Component {
   }
 
   completeArticle = () => {
-    this.setState({ finished: true });
-    setTimeout(() => {
+    if (!this.state.finished) {
+      this.setState({ finished: true });
+    } else {
+      this.setState({ jump: true });
+    }
+    if (this.state.jump) {
       axios
-        .post("../../api/student/items/complete/", { id: this.id })
-        .then(res => {
-          if (res.status === 200) {
-            this.props.history.push("/dashboard");
-          }
-        });
-    }, 2000);
+          .post("../../api/student/items/complete/", { id: this.id })
+          .then(res => {
+            if (res.status === 200) {
+              this.props.history.push("/dashboard");
+            }
+          });
+    }
   };
-
+z
   render() {
     if (!this.state.data) {
       return <Loading />;
@@ -45,17 +50,19 @@ class Article extends Component {
         <div className="container">
           <div className="row">
             <div className="col-12 text-center">
-              <div id="article-title">{title}</div>
+              {this.state.finished ? null: (
+                  <div id="article-title">{title}</div>
+              )}
             </div>
             <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
               {this.state.finished ? (
-                <StarpopUp value="20" />
+                <StarpopUp value="8" />
               ) : (
                 <MDReactComponent text={content} />
               )}
             </div>
             <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 text-right">
-              {this.state.finished ? null : (
+              {this.state.jump ? null : (
                 <button
                   type="button"
                   style={{ width: "150px", height: "50px" }}

@@ -248,11 +248,11 @@ const completedItem = (req, res) => {
     if (err) {
       res.status(400).json(err);
     }
+    let relevantItem = await Quiz.findById(completedID);
     if (!student.completed.includes(completedID)) {
       student.completed.push(completedID);
       student.stars += relevantItem.starAward;
     }
-    let relevantItem = await Quiz.findById(completedID);
     if (!relevantItem) {
       relevantItem = await Article.findById(completedID);
       if (!relevantItem) {

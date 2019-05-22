@@ -8,6 +8,7 @@ const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../config/keys");
+const mongoose = require("mongoose");
 const validateLoginInput = require("../validation/login");
 const validateRegisterInput = require("../validation/register");
 const { getLeaderboard } = require("./teacherController");
@@ -247,7 +248,8 @@ const completedItem = (req, res) => {
         relevantItem = await Video.findById(completedID);
       }
     }
-    if (!student.completed.includes(completedID)) {
+    const hasID = student.completed.some(val => val.toString() === completedID);
+    if (!hasID) {
       student.completed.push(completedID);
       student.stars += relevantItem.starAward;
     }

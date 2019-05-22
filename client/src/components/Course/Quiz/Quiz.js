@@ -22,7 +22,7 @@ class Quiz extends Component {
   completeQuiz = () => {
     axios.post("../../api/student/items/complete/", { id: this.id }).then(res => {
       if (res.status === 200) {
-        this.props.history.push("/dashboard");
+        setTimeout(() => this.props.history.push("/dashboard"), 3000);
       }
     });
   };
@@ -33,7 +33,7 @@ class Quiz extends Component {
       alert("That answer was incorrect :(\nTry again!");
     } else {
       this.setState({ correct: true, isFlipped: true });
-      setTimeout(this.completeQuiz, 1000);
+      this.completeQuiz();
     }
   };
   render() {
@@ -60,7 +60,11 @@ class Quiz extends Component {
       }
     ];
     return (
-      <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+      <ReactCardFlip
+        flipSpeedFrontToBack={1.2}
+        isFlipped={this.state.isFlipped}
+        flipDirection="horizontal"
+      >
         <div className="row" key="front">
           <div className="col-lg-4 offset-lg-4 col-md-12 my-5 text-center">
             <h1 id="question">Quiz: {title}</h1>

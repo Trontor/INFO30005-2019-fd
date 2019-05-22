@@ -8,7 +8,6 @@ import StarpopUp from "../StarpopUp/StarpopUp";
 class Article extends Component {
   state = {
     finished: false,
-    jump: false,
     data: undefined
   };
   componentWillMount() {
@@ -20,25 +19,19 @@ class Article extends Component {
   }
 
   completeArticle = () => {
-    if (!this.state.finished) {
-      this.setState({ finished: true });
-    } else {
-      this.setState({ jump: true });
-    }
-    if (this.state.jump) {
-      axios
-          .post("../../api/student/items/complete/", { id: this.id })
-          .then(res => {
-            if (res.status === 200) {
-              this.props.history.push("/dashboard");
-            }
-          });
-    }
+    this.setState({ finished: true });
+    axios.post("../../api/student/items/complete/", { id: this.id }).then(res => {
+      if (res.status === 200) {
+        setTimeout(() => this.props.history.push("/dashboard"), 3000);
+      }
+    });
   };
-z
+  z;
   render() {
     if (!this.state.data) {
       return <Loading />;
+    } else if (this.state.finished) {
+      return <StarpopUp value={this.state.data.starAward} />;
     }
     const { title, image, content } = this.state.data;
 
@@ -50,28 +43,20 @@ z
         <div className="container">
           <div className="row">
             <div className="col-12 text-center">
-              {this.state.finished ? null: (
-                  <div id="article-title">{title}</div>
-              )}
+              <div id="article-title">{title}</div>
             </div>
             <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-              {this.state.finished ? (
-                <StarpopUp value="8" />
-              ) : (
-                <MDReactComponent text={content} />
-              )}
+              <MDReactComponent text={content} />
             </div>
             <div className="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2 text-right">
-              {this.state.jump ? null : (
-                <button
-                  type="button"
-                  style={{ width: "150px", height: "50px" }}
-                  className="btn btn-warning"
-                  onClick={this.completeArticle}
-                >
-                  Next
-                </button>
-              )}
+              <button
+                type="button"
+                style={{ width: "150px", height: "50px" }}
+                className="btn btn-warning"
+                onClick={this.completeArticle}
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>

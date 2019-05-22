@@ -30,7 +30,7 @@ const CommunityPostRow = props => {
   };
   const threadLink = `/community/threads/${props.id}`;
   return (
-    <tr>
+    <tr className="text-center">
       {/* <td>
         <div className="form-check">
           <input type="checkbox" className="form-check-input" />

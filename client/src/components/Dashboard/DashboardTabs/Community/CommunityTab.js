@@ -25,7 +25,7 @@ class CommunityTab extends Component {
         <div className="table-responsive">
           <table id="tablePreview" class="table table-striped table-hover table-bordered">
             <thead>
-              <tr className="bg-success">
+              <tr id="community-table-background">
                 <th scope="col">DATE</th>
                 <th scope="col">TITLE</th>
                 <th scope="col">AUTHOR</th>

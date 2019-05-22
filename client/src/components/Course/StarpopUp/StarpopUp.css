@@ -22,7 +22,8 @@
 .scale-up-center {
   -webkit-animation: scale-up-center 0.8s ease-in;
   animation: scale-up-center 0.8s ease-in;
-  font-size: 28px;
   text-align: center;
-  /* font-family: "Dancing Script", cursive; */
+  line-height: 200px;
+  height: 200px;
+  font-size: 28px;
 }

@@ -26,7 +26,7 @@ class Article extends Component {
       }
     });
   };
-  z;
+
   render() {
     if (!this.state.data) {
       return <Loading />;

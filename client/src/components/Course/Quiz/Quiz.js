@@ -33,7 +33,7 @@ class Quiz extends Component {
       alert("That answer was incorrect :(\nTry again!");
     } else {
       this.setState({ correct: true });
-      setTimeout(this.completeQuiz, 500);
+      setTimeout(this.completeQuiz, 1000);
     }
   };
   render() {
@@ -69,8 +69,12 @@ class Quiz extends Component {
     return (
       <div className="row">
         <div className="col-lg-4 offset-lg-4 col-md-12 my-5 text-center">
-          <h1>Quiz: {title}</h1>
-          <h3 className="my-2">{content}</h3>
+          <h1 id="question">Quiz: {title}</h1>
+        </div>
+        <div className="col-lg-6 offset-lg-3 col-md-12 my-5 text-center">
+          <h3 id="quizcontent">{content}</h3>
+        </div>
+        <div className="col-lg-4 offset-lg-4 col-md-12 my-5 text-center">
           <hr />
           <div className="funky-radio text-left">
             {options.map(({ name, text }) => (

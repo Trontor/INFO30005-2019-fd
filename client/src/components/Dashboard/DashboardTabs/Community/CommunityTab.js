@@ -22,11 +22,8 @@ class CommunityTab extends Component {
             +Add Thread
           </button>
         )}
-        <div>
-          <table
-            className="table-responsive table table-striped table-hover table-bordered"
-            // id="community-table"
-          >
+        <div className="table-responsive">
+          <table id="tablePreview" class="table table-striped table-hover table-bordered">
             <thead>
               <tr className="bg-success">
                 <th scope="col">DATE</th>
@@ -55,10 +52,9 @@ class CommunityTab extends Component {
     );
     return (
       <div
-        className={classNames(
-          "col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-12 p-0 tab-pane",
-          { active: this.props.isTeacher }
-        )}
+        className={classNames("col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-12 p-0 tab-pane", {
+          active: this.props.isTeacher
+        })}
         id="nav-community"
         role="tabpanel"
         aria-labelledby="nav-community"

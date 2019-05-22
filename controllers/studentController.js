@@ -131,15 +131,7 @@ const studentReset = async (req, res) => {
 const studentProfile = async (req, res) => {
   // get all info as shown in schema
   // change ObjectId to name
-  const {
-    teacherID,
-    name,
-    email,
-    avatar,
-    yearLevel,
-    stars,
-    completed
-  } = req.user;
+  const { teacherID, name, email, avatar, yearLevel, stars, completed } = req.user;
   const teacher = await Teacher.findById(teacherID);
   if (!teacher) {
     // The teacherID does not exist
@@ -249,15 +241,15 @@ const completedItem = (req, res) => {
       res.status(400).json(err);
     }
     let relevantItem = await Quiz.findById(completedID);
-    if (!student.completed.includes(completedID)) {
-      student.completed.push(completedID);
-      student.stars += relevantItem.starAward;
-    }
     if (!relevantItem) {
       relevantItem = await Article.findById(completedID);
       if (!relevantItem) {
         relevantItem = await Video.findById(completedID);
       }
+    }
+    if (!student.completed.includes(completedID)) {
+      student.completed.push(completedID);
+      student.stars += relevantItem.starAward;
     }
     student.save();
     res.sendStatus(200);

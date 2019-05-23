@@ -28,7 +28,7 @@ class LeaderboardTab extends Component {
         <table class="table table-hovor" id="management-table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col"> </th>
               <th scope="col">First</th>
               <th scope="col">Last</th>
               <th scope="col">Email</th>
@@ -40,7 +40,24 @@ class LeaderboardTab extends Component {
           <tbody>
             {leaderboard.map((student, idx) => (
               <tr>
-                <td>{idx + 1}</td>
+                {(idx === 0) && (
+                  <td><img src="https://puu.sh/Dw2rg/d989a34dfa.png" alt="1" style={{
+                    width: "20px",
+                    height: "20px"
+                  }}/></td>
+                )}
+                {(idx === 1) && (
+                    <td><img src="https://puu.sh/Dw2rY/e139ce8709.png" alt="2" style={{
+                      width: "20px",
+                      height: "20px"
+                    }}/></td>
+                )}
+                {(idx === 2) && (
+                    <td><img src="https://puu.sh/Dw2sj/a9606cf990.png" alt="3" style={{
+                      width: "20px",
+                      height: "20px"
+                    }}/></td>
+                )}
                 <td>{student.name.split(" ")[0]}</td>
                 <td>{student.name.split(" ")[1]}</td>
                 <td>{student.email}</td>

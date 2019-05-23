@@ -6,6 +6,7 @@ import Loading from "../Loading/Loading";
 import "./Dashboard.scss";
 import DashboardTabs from "./DashboardTabs/DashboardTabs";
 import StudentHeader from "./StudentHeader/StudentHeader";
+import TeacherHeader from "./TeacherHeader/TeacherHeader";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -23,7 +24,7 @@ class Dashboard extends Component {
 
     return (
       <>
-        {isTeacher ? null : <StudentHeader profile={profile} />}
+        {isTeacher ? <TeacherHeader profile={profile} /> : <StudentHeader profile={profile} />}
         <DashboardTabs
           isTeacher={isTeacher}
           threads={profile.threads}

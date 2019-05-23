@@ -86,7 +86,7 @@ class LeaderboardTab extends Component {
                   <td>
                     <button
                       name={student.id}
-                      className="btn-primary"
+                      className="btn btn-warning"
                       onClick={this.resetUser}
                     >
                       Reset

@@ -25,6 +25,16 @@ const TeacherHeader = props => {
                                     </div>
                                 </div>
                             </div>
+                            <div className="col-12 col-md-5 col-lg-6 text-md-right text-center ">
+                                <div className="text-right d-inline-block">
+                                    <div id="completed-info">
+                                        <span></span>
+                                    </div>
+                                    <div id="not-completed">
+                                        <span>You are managing 25 students.</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

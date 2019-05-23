@@ -76,7 +76,10 @@ class Quiz extends Component {
             <hr />
             <div className="funky-radio text-left">
               {options.map(({ name, text }) => (
-                <div class="custom-control custom-radio">
+                <div class="custom-control custom-radio" style={{
+                  width: "350px",
+                  height: "35px"
+                }}>
                   <input
                     type="radio"
                     class="custom-control-input"

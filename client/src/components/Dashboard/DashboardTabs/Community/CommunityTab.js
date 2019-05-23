@@ -23,7 +23,10 @@ class CommunityTab extends Component {
           </button>
         )}
         <div className="table-responsive">
-          <table id="tablePreview" class="table table-striped table-hover table-bordered">
+          <table
+            id="tablePreview"
+            class="table table-striped table-hover table-bordered"
+          >
             <thead>
               <tr id="community-table-background">
                 <th scope="col">DATE</th>
@@ -52,9 +55,12 @@ class CommunityTab extends Component {
     );
     return (
       <div
-        className={classNames("col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-12 p-0 tab-pane", {
-          active: this.props.isTeacher
-        })}
+        className={classNames(
+          "col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-12 p-0 tab-pane",
+          {
+            active: this.props.isTeacher
+          }
+        )}
         id="nav-community"
         role="tabpanel"
         aria-labelledby="nav-community"

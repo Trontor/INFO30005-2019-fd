@@ -28,7 +28,7 @@ class Statistics extends Component {
                 '80-100%'
             ],
             datasets: [{
-                data: [completedCount[0], completedCount[1], completedCount[2]],
+                data: completedCount,
                 backgroundColor: [
                     '#FF6384',
                     '#36A2EB',
@@ -69,7 +69,7 @@ class Statistics extends Component {
                     borderWidth: 1,
                     hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                     hoverBorderColor: 'rgba(255,99,132,1)',
-                    data: [starCount[0], starCount[1], starCount[2], starCount[3], starCount[4], starCount[5]]
+                    data: starCount
                 }
             ]
         };

@@ -43,7 +43,7 @@ class Statistics extends Component {
         };
 
         let starCount = [];
-        for (let i = 0; i < 5; i++)
+        for (let i = 0; i < 6; i++)
             starCount.push(0);
         for (const student of leaderboard) {
             const star = student.stars;
@@ -55,12 +55,12 @@ class Statistics extends Component {
                 starCount[2] += 1;
             } else if (star < 40) {
                 starCount[3] += 1;
-            } else {
+            } else if (star < 60) {
                 starCount[4] += 1;
             }
         }
         const starData = {
-            labels: ['0-10', '10-20', '20-30', '30-40', '40+'],
+            labels: ['0-10', '10-20', '20-30', '30-40', '40-60', '60+'],
             datasets: [
                 {
                     label: 'Count',
@@ -69,7 +69,7 @@ class Statistics extends Component {
                     borderWidth: 1,
                     hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                     hoverBorderColor: 'rgba(255,99,132,1)',
-                    data: [starCount[0], starCount[1], starCount[2], starCount[3], starCount[4]]
+                    data: [starCount[0], starCount[1], starCount[2], starCount[3], starCount[4], starCount[5]]
                 }
             ]
         };

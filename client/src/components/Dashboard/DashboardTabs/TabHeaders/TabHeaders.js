@@ -48,6 +48,19 @@ const TabHeaders = props => {
             Topics
           </a>
         )}
+          {props.isTeacher && (
+              <a
+                  className="nav-item nav-link"
+                  id="nav-stats-tab"
+                  data-toggle="tab"
+                  href="#nav-stats"
+                  role="tab"
+                  aria-controls="nav-stats"
+                  aria-selected="true"
+              >
+                  Statistics
+              </a>
+          )}
       </div>
     </nav>
   );

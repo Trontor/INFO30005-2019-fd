@@ -4,6 +4,7 @@ import TabHeaders from "./TabHeaders/TabHeaders";
 import CommunityTab from "./Community/CommunityTab";
 import TopicsTab from "./TopicsTab/TopicsTab";
 import LeaderboardTab from "./Leaderboard/LeaderboardTab";
+import Statistics from "./Statistics/Statistics";
 
 const DashboardTabs = props => {
   const { isTeacher } = props;
@@ -17,7 +18,8 @@ const DashboardTabs = props => {
         {isTeacher ? null : (
           <TopicsTab topics={props.topics} completedItems={props.completedItems} />
         )}
-      </div>
+        {isTeacher ? (<Statistics isTeacher={isTeacher} leaderboard={props.leaderboard} />) : null}
+      </div>)
     </section>
   );
 };

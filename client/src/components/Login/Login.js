@@ -57,6 +57,7 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
+    const enableDev = this.props.location.pathname.includes("dev");
     return (
       <div className="logInPage">
         <div id="logIn">
@@ -112,50 +113,52 @@ class Login extends Component {
                   </div>
                 </form>
               </div>
-              <div
-                id="dev-panel"
-                className="row text-center bg-info text-light"
-              >
-                <span id="developer-note">[DEVELOPER TOOL]</span>
-                <div id="devLogin" className="col-12">
-                  Student Quick Login
-                </div>
+              {enableDev && (
                 <div
-                  className="col-4"
-                  onClick={() =>
-                    this.fakeLogin("janedoe@janedoe.com", "janedoe")
-                  }
+                  id="dev-panel"
+                  className="row text-center bg-info text-light"
                 >
-                  Jane Doe
+                  <span id="developer-note">[DEVELOPER TOOL]</span>
+                  <div id="devLogin" className="col-12">
+                    Student Quick Login
+                  </div>
+                  <div
+                    className="col-4"
+                    onClick={() =>
+                      this.fakeLogin("janedoe@janedoe.com", "janedoe")
+                    }
+                  >
+                    Jane Doe
+                  </div>
+                  <div
+                    className="col-4"
+                    onClick={() =>
+                      this.fakeLogin("jevin@student.unimelb.edu.au", "testok")
+                    }
+                  >
+                    Jevin Koshi
+                  </div>
+                  <div
+                    className="col-4"
+                    onClick={() =>
+                      this.fakeLogin("elonmusk@tesla.com", "elonmusk")
+                    }
+                  >
+                    Elon Musk
+                  </div>
+                  <div id="devLogin" className="col-12">
+                    Teacher Quick Login
+                  </div>
+                  <div
+                    className="col-4"
+                    onClick={() =>
+                      this.fakeLogin("johnsmith@email.com", "secure123", true)
+                    }
+                  >
+                    John Smith
+                  </div>
                 </div>
-                <div
-                  className="col-4"
-                  onClick={() =>
-                    this.fakeLogin("jevin@student.unimelb.edu.au", "testok")
-                  }
-                >
-                  Jevin Koshi
-                </div>
-                <div
-                  className="col-4"
-                  onClick={() =>
-                    this.fakeLogin("elonmusk@tesla.com", "elonmusk")
-                  }
-                >
-                  Elon Musk
-                </div>
-                <div id="devLogin" className="col-12">
-                  Teacher Quick Login
-                </div>
-                <div
-                  className="col-4"
-                  onClick={() =>
-                    this.fakeLogin("johnsmith@email.com", "secure123", true)
-                  }
-                >
-                  John Smith
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

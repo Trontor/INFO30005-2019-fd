@@ -26,15 +26,10 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    this.state.teacher
-      ? this.props.loginTeacher(userData)
-      : this.props.loginStudent(userData);
+    this.state.teacher ? this.props.loginTeacher(userData) : this.props.loginStudent(userData);
   };
   fakeLogin = (username, pw, teacher = false) => {
-    this.setState(
-      { email: username, password: pw, teacher },
-      this.processLogin
-    );
+    this.setState({ email: username, password: pw, teacher }, this.processLogin);
   };
   onSubmit = e => {
     e.preventDefault();
@@ -82,9 +77,7 @@ class Login extends Component {
                       value={this.state.email}
                       onChange={this.onChange}
                     />
-                    {errors.email && (
-                      <div className="invalid-feedback">{errors.email}</div>
-                    )}
+                    {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                   </div>
                   <div className="form-group">
                     <input
@@ -98,9 +91,24 @@ class Login extends Component {
                       value={this.state.password}
                       onChange={this.onChange}
                     />
-                    {errors.password && (
-                      <div className="invalid-feedback">{errors.password}</div>
-                    )}
+                    {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+                  </div>
+                  <div className="form-group">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="teacher-check"
+                        checked={this.state.teacher}
+                        onChange={() => {
+                          this.setState({ teacher: !this.state.teacher });
+                        }}
+                      />
+                      <label class="form-check-label" for="teacher-check">
+                        I am a teacher
+                      </label>
+                    </div>
                   </div>
                   <div className="form-group">
                     <button
@@ -114,35 +122,26 @@ class Login extends Component {
                 </form>
               </div>
               {enableDev && (
-                <div
-                  id="dev-panel"
-                  className="row text-center bg-info text-light"
-                >
+                <div id="dev-panel" className="row text-center bg-info text-light">
                   <span id="developer-note">[DEVELOPER TOOL]</span>
                   <div id="devLogin" className="col-12">
                     Student Quick Login
                   </div>
                   <div
                     className="col-4"
-                    onClick={() =>
-                      this.fakeLogin("janedoe@janedoe.com", "janedoe")
-                    }
+                    onClick={() => this.fakeLogin("janedoe@janedoe.com", "janedoe")}
                   >
                     Jane Doe
                   </div>
                   <div
                     className="col-4"
-                    onClick={() =>
-                      this.fakeLogin("jevin@student.unimelb.edu.au", "testok")
-                    }
+                    onClick={() => this.fakeLogin("jevin@student.unimelb.edu.au", "testok")}
                   >
                     Jevin Koshi
                   </div>
                   <div
                     className="col-4"
-                    onClick={() =>
-                      this.fakeLogin("elonmusk@tesla.com", "elonmusk")
-                    }
+                    onClick={() => this.fakeLogin("elonmusk@tesla.com", "elonmusk")}
                   >
                     Elon Musk
                   </div>
@@ -151,9 +150,7 @@ class Login extends Component {
                   </div>
                   <div
                     className="col-4"
-                    onClick={() =>
-                      this.fakeLogin("johnsmith@email.com", "secure123", true)
-                    }
+                    onClick={() => this.fakeLogin("johnsmith@email.com", "secure123", true)}
                   >
                     John Smith
                   </div>

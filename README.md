@@ -9,9 +9,9 @@
 - Members: Kevin, Miley, Yat, Rohyl
 
 ## Functionality Description
-
-### Homepage, login and sign-up
-* Homepage allows users to understand the purpose and goals of our educational website. Login and signup allow both 
+NOTE: 3 student logins + the teacher login can be easily accessed using the dev panel [here](https://hello-food.herokuapp.com/login/dev)
+### Homepage, Login and Sign-up
+* The homepage allows users to understand the purpose and goals of our educational website. The Login and Sign-up pages allow both 
 teachers and students to have access to the dashboard. 
 * Relevant URLs
     * https://hello-food.herokuapp.com
@@ -21,7 +21,6 @@ teachers and students to have access to the dashboard.
     website are for student login. Teacher login details: 
         * Email: johnsmith@email.com
         * Password: secure123
-    * Quick login can be found at https://hello-food.herokuapp.com/login/dev
 * Routes
     * routes/api/student
     * routes/api/teacher
@@ -73,7 +72,7 @@ teachers can reward the top 3 students with the most stars at the end of the wee
 #### Community System
 * The community sub-system enables teachers and students to engage in a collaborative peer-learning space 
 where students can request clarification on topics and share their own research. This system facilitates further 
-discussion in health and fitness, allowing students to gain a deeper understanding of the topics taught.
+discussion in health and fitness, allowing students to gain a deeper understanding of the topics taught.
 * Relevant URLs
     * https://hello-food.herokuapp.com/dashboard (Community Tab)
 * Routes

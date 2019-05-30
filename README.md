@@ -21,6 +21,7 @@ teachers and students to have access to the dashboard.
     website are for student login. Teacher login details: 
         * Email: johnsmith@email.com
         * Password: secure123
+    * Quick login can be found at https://hello-food.herokuapp.com/login/dev
 * Routes
     * routes/api/student
     * routes/api/teacher
